@@ -1,0 +1,296 @@
+[
+  {
+    "name": "Alcon Dailies Total 1 Toric (3 Months)",
+    "price": 310,
+    "cat": "daily",
+    "img": "alcon-dailies-total-1-toric-3-months",
+    "slug": "alcon-dailies-total-1-toric-3-months"
+  },
+  {
+    "name": "Acuvue Oasys Max 1 Day (3 Months)",
+    "price": 270,
+    "cat": "daily",
+    "img": "acuvue-oasys-max-1-day-3-months",
+    "slug": "acuvue-oasys-max-1-day-3-months"
+  },
+  {
+    "name": "Acuvue Moist (3 Months)",
+    "price": 190,
+    "cat": "daily",
+    "img": "acuvue-moist-daily-contact-lenses-3-months",
+    "slug": "acuvue-moist-daily-contact-lenses-3-months"
+  },
+  {
+    "name": "Acuvue Moist Toric (3 Months)",
+    "price": 250,
+    "cat": "daily",
+    "img": "acuvue-moist-toric-3-months",
+    "slug": "acuvue-moist-toric-3-months"
+  },
+  {
+    "name": "Acuvue Oasys HydraLuxe (3 Months)",
+    "price": 230,
+    "cat": "daily",
+    "img": "acuvue-oasys-hydraluxe-3-months",
+    "slug": "acuvue-oasys-hydraluxe-3-months"
+  },
+  {
+    "name": "Acuvue Oasys HydraLuxe Toric (3 Months)",
+    "price": 270,
+    "cat": "daily",
+    "img": "acuvue-oasys-hydraluxe-toric-3-months",
+    "slug": "acuvue-oasys-hydraluxe-toric-3-months"
+  },
+  {
+    "name": "Alcon Dailies Total 1 (3 Months)",
+    "price": 270,
+    "cat": "daily",
+    "img": "ciba-vision-dailies-total-1-3-months",
+    "slug": "ciba-vision-dailies-total-1-3-months"
+  },
+  {
+    "name": "Alcon Dailies Aqua Comfort Plus (3 Months)",
+    "price": 190,
+    "cat": "daily",
+    "img": "ciba-vision-aqua-comfort-plus-3-months",
+    "slug": "ciba-vision-aqua-comfort-plus-3-months"
+  },
+  {
+    "name": "Alcon Dailies Aqua Comfort Plus Multifocal (3 Months)",
+    "price": 310,
+    "cat": "daily",
+    "img": "alcon-dailies-aqua-comfort-plus-multifocal-3-months",
+    "slug": "alcon-dailies-aqua-comfort-plus-multifocal-3-months"
+  },
+  {
+    "name": "Bausch &amp; Lomb Biotrue OneDay (3 Months)",
+    "price": 170,
+    "cat": "daily",
+    "img": "bausch-lomb-biotrue-oneday-3-months",
+    "slug": "bausch-lomb-biotrue-oneday-3-months"
+  },
+  {
+    "name": "Bausch + Lomb Infuse 1 Day (3 Months)",
+    "price": 230,
+    "cat": "daily",
+    "img": "bausch-lomb-infuse-1-day-3-months",
+    "slug": "bausch-lomb-infuse-1-day-3-months"
+  },
+  {
+    "name": "Bausch + Lomb Infuse 1 Day Toric (3 Months)",
+    "price": 300,
+    "cat": "daily",
+    "img": "bausch-lomb-infuse-1-day-toric-3-months",
+    "slug": "bausch-lomb-infuse-1-day-toric-3-months"
+  },
+  {
+    "name": "Bausch + Lomb Infuse 1 Day Multifocal (3 Months)",
+    "price": 250,
+    "cat": "daily",
+    "img": "bausch-lomb-infuse-1-day-multifocal-3-months",
+    "slug": "bausch-lomb-infuse-1-day-multifocal-3-months"
+  },
+  {
+    "name": "CooperVision Myday 1 Day (3 Months)",
+    "price": 210,
+    "cat": "daily",
+    "img": "coopervision-myday-1-day-3-months",
+    "slug": "coopervision-myday-1-day-3-months"
+  },
+  {
+    "name": "CooperVision Myday 1 Day Toric (3 Months)",
+    "price": 270,
+    "cat": "daily",
+    "img": "coopervision-myday-1-day-toric-3-months",
+    "slug": "coopervision-myday-1-day-toric-3-months"
+  },
+  {
+    "name": "CooperVision Proclear 1 Day (3 Months)",
+    "price": 170,
+    "cat": "daily",
+    "img": "cooper-vision-proclear-1-day-3-months",
+    "slug": "cooper-vision-proclear-1-day-3-months"
+  },
+  {
+    "name": "CooperVision Proclear 1 Day Multifocal (3 Months)",
+    "price": 230,
+    "cat": "daily",
+    "img": "coopervision-proclear-1-day-multifocal-3-months",
+    "slug": "coopervision-proclear-1-day-multifocal-3-months"
+  },
+  {
+    "name": "CooperVision Clariti 1 Day (3 Months)",
+    "price": 160,
+    "cat": "daily",
+    "img": "cooper-vision-clariti-1-day-3-months",
+    "slug": "cooper-vision-clariti-1-day-3-months"
+  },
+  {
+    "name": "CooperVision Clariti 1 Day Toric (3 Months)",
+    "price": 190,
+    "cat": "daily",
+    "img": "coopervision-clariti-1-day-toric-3-months",
+    "slug": "coopervision-clariti-1-day-toric-3-months"
+  },
+  {
+    "name": "Acuvue 2 (6 Months)",
+    "price": 180,
+    "cat": "planned",
+    "img": "acuvue-2-6-months",
+    "slug": "acuvue-2-6-months"
+  },
+  {
+    "name": "Acuvue Oasys (6 Months)",
+    "price": 180,
+    "cat": "planned",
+    "img": "acuvue-oasys-6-months",
+    "slug": "acuvue-oasys-6-months"
+  },
+  {
+    "name": "Acuvue Oasys Toric (6 Months)",
+    "price": 250,
+    "cat": "planned",
+    "img": "acuvue-oasys-toric-6-months",
+    "slug": "acuvue-oasys-toric-6-months"
+  },
+  {
+    "name": "Acuvue Vita (6 Months)",
+    "price": 180,
+    "cat": "planned",
+    "img": "acuvue-vita-6-months",
+    "slug": "acuvue-vita-6-months"
+  },
+  {
+    "name": "Acuvue Vita for Astigmatism (6 Months)",
+    "price": 200,
+    "cat": "planned",
+    "img": "acuvue-vita-6-months-1",
+    "slug": "acuvue-vita-6-months-1"
+  },
+  {
+    "name": "Alcon Air Optix Night &amp; Day (6 Months)",
+    "price": 280,
+    "cat": "planned",
+    "img": "alcon-air-optix-night-day-6-months",
+    "slug": "alcon-air-optix-night-day-6-months"
+  },
+  {
+    "name": "Alcon Air Optix Toric (6 Months)",
+    "price": 220,
+    "cat": "planned",
+    "img": "alcon-air-optix-toric-6-months",
+    "slug": "alcon-air-optix-toric-6-months"
+  },
+  {
+    "name": "Alcon Air Optix Aqua Multifocal (6 Months)",
+    "price": 300,
+    "cat": "planned",
+    "img": "alcon-air-optix-aqua-multifocal-6-months",
+    "slug": "alcon-air-optix-aqua-multifocal-6-months"
+  },
+  {
+    "name": "CooperVision Proclear Toric (6 Months)",
+    "price": 180,
+    "cat": "planned",
+    "img": "coopervision-proclear-toric-6-months",
+    "slug": "coopervision-proclear-toric-6-months"
+  },
+  {
+    "name": "CooperVision Proclear Toric XR (6 Months)",
+    "price": 360,
+    "cat": "planned",
+    "img": "coopervision-proclear-toric-xr-6-months",
+    "slug": "coopervision-proclear-toric-xr-6-months"
+  },
+  {
+    "name": "CooperVision Proclear Multifocal (6 Months)",
+    "price": 260,
+    "cat": "planned",
+    "img": "coopervision-proclear-multifocal-6-months",
+    "slug": "coopervision-proclear-multifocal-6-months"
+  },
+  {
+    "name": "CooperVision Biofinity (6 Months)",
+    "price": 130,
+    "cat": "planned",
+    "img": "coopervision-biofinity-6-months",
+    "slug": "coopervision-biofinity-6-months"
+  },
+  {
+    "name": "CooperVision Biofinity XR (6 Months)",
+    "price": 150,
+    "cat": "planned",
+    "img": "coopervision-biofinity-xr-6-months",
+    "slug": "coopervision-biofinity-xr-6-months"
+  },
+  {
+    "name": "CooperVision Biofinity Toric (6 Months)",
+    "price": 180,
+    "cat": "planned",
+    "img": "coopervision-biofinity-toric-6-months",
+    "slug": "coopervision-biofinity-toric-6-months"
+  },
+  {
+    "name": "CooperVision Biofinity Toric XR (6 Months)",
+    "price": 320,
+    "cat": "planned",
+    "img": "coopervision-biofinity-toric-xr-6months",
+    "slug": "coopervision-biofinity-toric-xr-6months"
+  },
+  {
+    "name": "CooperVision Biofinity Multifocal (6 Months)",
+    "price": 240,
+    "cat": "planned",
+    "img": "coopervision-biofinity-multifocal-6-months",
+    "slug": "coopervision-biofinity-multifocal-6-months"
+  },
+  {
+    "name": "CooperVision Biofinity Toric Multifocal (6 Months)",
+    "price": 320,
+    "cat": "planned",
+    "img": "coopervision-biofinity-toric-multifocal-6-months",
+    "slug": "coopervision-biofinity-toric-multifocal-6-months"
+  },
+  {
+    "name": "[Daily] Acuvue 1-Day Define (3 Months)",
+    "price": 330,
+    "cat": "color",
+    "img": "daily-acuvue-1-day-define-3-months-1",
+    "slug": "daily-acuvue-1-day-define-3-months-1"
+  },
+  {
+    "name": "[Daily] Alcon Dailies Colors (3 Months)",
+    "price": 250,
+    "cat": "color",
+    "img": "daily-alcon-dailies-colors-3-months",
+    "slug": "daily-alcon-dailies-colors-3-months"
+  },
+  {
+    "name": "[Daily] Eyedia Clearcolor 1-day (3 Month)",
+    "price": 330,
+    "cat": "color",
+    "img": "daily-eyedia-clearcolor-1-day-3-month",
+    "slug": "daily-eyedia-clearcolor-1-day-3-month"
+  },
+  {
+    "name": "[Monthly] Eyedia Clearcolor (6 Months)",
+    "price": 150,
+    "cat": "color",
+    "img": "monthly-eyedia-clearcolor-6-months-1",
+    "slug": "monthly-eyedia-clearcolor-6-months-1"
+  },
+  {
+    "name": "[Monthly] Alcon Air Optix Colors (6 Months)",
+    "price": 310,
+    "cat": "color",
+    "img": "monthly-alcon-air-optix-colors-6-months",
+    "slug": "monthly-alcon-air-optix-colors-6-months"
+  },
+  {
+    "name": "[Monthly] Eyedia ClearColor (6 Months)",
+    "price": 150,
+    "cat": "color",
+    "img": "monthly-eyedia-clearcolor-6-months",
+    "slug": "monthly-eyedia-clearcolor-6-months"
+  }
+]

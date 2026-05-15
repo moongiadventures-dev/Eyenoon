@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Checkout · Contact lenses | EYE NOON OPTICAL</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&family=Barlow+Condensed:wght@800&display=swap" rel="stylesheet"/>
+<style>
+  body { font-family: Manrope, sans-serif; margin: 0; min-height: 100vh; color: #f4f4f5; background: #0c0c0e; }
+  .font-display { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; text-transform: uppercase; }
+  .checkout-bg {
+    background:
+      radial-gradient(ellipse 120% 80% at 50% -20%, rgba(224, 17, 95, 0.12), transparent 50%),
+      linear-gradient(180deg, #121214 0%, #0c0c0e 40%, #0a0a0c 100%);
+  }
+</style>
+</head>
+<body class="checkout-bg min-h-screen antialiased" data-i18n-title-doc="meta.checkout">
+<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-14">
+  <div class="flex justify-end mb-3">
+    <div class="flex items-center gap-1" role="group" data-i18n-aria="lang.toggleAria">
+      <button type="button" class="lang-btn border-0 bg-transparent cursor-pointer text-white/75 text-[0.7rem] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded hover:text-white" data-lang="en" data-i18n="lang.en">EN</button>
+      <span class="text-white/25 select-none text-[0.7rem]">|</span>
+      <button type="button" class="lang-btn border-0 bg-transparent cursor-pointer text-white/75 text-[0.7rem] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded hover:text-white" data-lang="ko" data-i18n="lang.ko">KO</button>
+    </div>
+  </div>
+  <a href="cart.html" class="inline-flex text-xs uppercase tracking-[0.2em] text-[#E0115F] font-semibold no-underline hover:text-[#ff4d8d]" data-i18n="checkout.backCart">&larr; Back to cart</a>
+  <h1 class="font-display text-3xl sm:text-4xl text-white mt-6 mb-2 tracking-tight" data-i18n="checkout.title">Checkout</h1>
+  <p id="checkout-intro" class="text-sm text-white/55 max-w-2xl mb-8 leading-relaxed"></p>
+
+  <p id="top-err" class="hidden text-sm text-red-200 bg-red-950/60 border border-red-500/30 px-4 py-3 mb-6 rounded-lg" role="alert"></p>
+
+  <div id="empty" class="hidden rounded-2xl border border-white/10 bg-white/[0.04] p-8 text-sm text-white/55 text-center" data-i18n-html="checkout.empty">
+    Your cart is empty. <a href="contact-lenses.html" class="text-[#E0115F] font-medium hover:underline">Browse contact lenses</a>
+  </div>
+
+  <form id="form" class="hidden">
+    <div class="lg:grid lg:grid-cols-[1fr_min(380px,100%)] lg:gap-10 xl:gap-14 lg:items-start">
+      <!-- Left: cart + details -->
+      <div class="space-y-8 min-w-0">
+        <section class="rounded-2xl border border-white/10 bg-white/[0.03] p-5 sm:p-7">
+          <h2 class="font-display text-lg text-white tracking-wide mb-5" data-i18n="checkout.yourCart">Your cart</h2>
+          <div id="checkout-line-items" class="divide-y divide-white/10"></div>
+        </section>
+
+        <section class="rounded-2xl border border-white/10 bg-white/[0.03] p-5 sm:p-7">
+          <h2 class="font-display text-lg text-white tracking-wide mb-4" data-i18n="checkout.yourDetails">Your details</h2>
+          <label class="block mb-4">
+            <span class="text-[0.65rem] uppercase tracking-widest text-white/45" data-i18n="checkout.fullName">Full name</span>
+            <input type="text" name="customerName" id="customerName" required autocomplete="name"
+              class="mt-1.5 w-full rounded-lg border border-white/15 bg-white/[0.06] px-3 py-2.5 text-sm text-white placeholder:text-white/35 outline-none transition-colors focus:border-[#E0115F]/50 focus:ring-1 focus:ring-[#E0115F]/25"/>
+          </label>
+          <label class="block mb-4">
+            <span class="text-[0.65rem] uppercase tracking-widest text-white/45" data-i18n="checkout.dob">Date of birth</span>
+            <input type="date" name="customerDateOfBirth" id="customerDateOfBirth" required
+              class="mt-1.5 w-full rounded-lg border border-white/15 bg-white/[0.06] px-3 py-2.5 text-sm text-white outline-none transition-colors focus:border-[#E0115F]/50 focus:ring-1 focus:ring-[#E0115F]/25 [color-scheme:dark]"/>
+          </label>
+          <label class="block mb-4">
+            <span class="text-[0.65rem] uppercase tracking-widest text-white/45" data-i18n="checkout.email">Email</span>
+            <input type="email" name="customerEmail" id="customerEmail" required autocomplete="email"
+              class="mt-1.5 w-full rounded-lg border border-white/15 bg-white/[0.06] px-3 py-2.5 text-sm text-white placeholder:text-white/35 outline-none transition-colors focus:border-[#E0115F]/50 focus:ring-1 focus:ring-[#E0115F]/25"/>
+          </label>
+          <label class="block mb-4">
+            <span class="text-[0.65rem] uppercase tracking-widest text-white/45" data-i18n="checkout.phone">Phone</span>
+            <input type="tel" name="customerPhone" id="customerPhone" required autocomplete="tel"
+              class="mt-1.5 w-full rounded-lg border border-white/15 bg-white/[0.06] px-3 py-2.5 text-sm text-white placeholder:text-white/35 outline-none transition-colors focus:border-[#E0115F]/50 focus:ring-1 focus:ring-[#E0115F]/25"/>
+          </label>
+
+          <p class="text-[0.65rem] uppercase tracking-widest text-white/45 mb-3 mt-6" data-i18n="checkout.shipBlock">Shipping address</p>
+          <p class="text-xs text-white/40 mb-4 leading-relaxed" data-i18n="checkout.shipHelp">We use your ZIP to estimate sales tax and shipping. Final amounts may be adjusted when we confirm your order.</p>
+          <label class="block mb-4">
+            <span class="text-[0.65rem] uppercase tracking-widest text-white/45" data-i18n="checkout.street">Street address</span>
+            <input type="text" name="addressLine1" id="addressLine1" required autocomplete="address-line1"
+              class="mt-1.5 w-full rounded-lg border border-white/15 bg-white/[0.06] px-3 py-2.5 text-sm text-white placeholder:text-white/35 outline-none transition-colors focus:border-[#E0115F]/50 focus:ring-1 focus:ring-[#E0115F]/25" placeholder="123 Main St"/>
+          </label>
+          <label class="block mb-4">
+            <span class="text-[0.65rem] uppercase tracking-widest text-white/45"><span data-i18n="checkout.apt">Apt, suite, unit</span> <span class="normal-case tracking-normal text-white/35" data-i18n="checkout.optional">(optional)</span></span>
+            <input type="text" name="addressLine2" id="addressLine2" autocomplete="address-line2"
+              class="mt-1.5 w-full rounded-lg border border-white/15 bg-white/[0.06] px-3 py-2.5 text-sm text-white placeholder:text-white/35 outline-none transition-colors focus:border-[#E0115F]/50 focus:ring-1 focus:ring-[#E0115F]/25"/>
+          </label>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+            <label class="block">
+              <span class="text-[0.65rem] uppercase tracking-widest text-white/45" data-i18n="checkout.city">City</span>
+              <input type="text" name="city" id="city" required autocomplete="address-level2"
+                class="mt-1.5 w-full rounded-lg border border-white/15 bg-white/[0.06] px-3 py-2.5 text-sm text-white placeholder:text-white/35 outline-none transition-colors focus:border-[#E0115F]/50 focus:ring-1 focus:ring-[#E0115F]/25"/>
+            </label>
+            <label class="block">
+              <span class="text-[0.65rem] uppercase tracking-widest text-white/45" data-i18n="checkout.state">State</span>
+              <select name="state" id="state" required autocomplete="address-level1"
+                class="mt-1.5 w-full rounded-lg border border-white/15 bg-[#141416] px-3 py-2.5 text-sm text-white outline-none transition-colors focus:border-[#E0115F]/50 focus:ring-1 focus:ring-[#E0115F]/25">
+                <option value="" data-i18n="checkout.selectState">Select state</option>
+              </select>
+            </label>
+          </div>
+          <label class="block">
+            <span class="text-[0.65rem] uppercase tracking-widest text-white/45" data-i18n="checkout.zip">ZIP code</span>
+            <input type="text" name="zip" id="zip" required inputmode="numeric" maxlength="10" pattern="[0-9]{5}(-[0-9]{4})?" autocomplete="postal-code"
+              class="mt-1.5 w-full max-w-[12rem] rounded-lg border border-white/15 bg-white/[0.06] px-3 py-2.5 text-sm text-white placeholder:text-white/35 outline-none transition-colors focus:border-[#E0115F]/50 focus:ring-1 focus:ring-[#E0115F]/25" placeholder="90001"/>
+          </label>
+        </section>
+
+        <div id="prescription-block" class="rounded-2xl border border-white/10 bg-white/[0.03] p-5 sm:p-7">
+          <h2 class="font-display text-lg text-white tracking-wide mb-2" data-i18n="checkout.rxTitle">Prescription</h2>
+          <p id="rx-instructions" class="text-xs text-white/50 mb-4 leading-relaxed" data-i18n="checkout.rxHelp">Upload a clear photo or scan of your contact lens prescription (PDF, JPG, or PNG, max 12&nbsp;MB).</p>
+          <p id="rx-attached-note" class="hidden text-xs text-[#E0115F] font-semibold mb-4 m-0" data-i18n="checkout.rxFromCart">Prescription file from your cart step will be included with this order.</p>
+          <label class="block">
+            <input type="file" name="prescription" id="rx" required accept=".pdf,.jpg,.jpeg,.png,application/pdf,image/jpeg,image/png"
+              class="block w-full text-sm text-white/70 file:mr-4 file:rounded-md file:border-0 file:bg-[#E0115F] file:text-white file:px-4 file:py-2.5 file:text-xs file:font-bold file:uppercase file:tracking-wider"/>
+          </label>
+        </div>
+
+        <div id="existing-patient-note" class="hidden rounded-2xl border border-[#E0115F]/35 bg-[#E0115F]/[0.07] p-5 sm:p-7">
+          <h2 class="font-display text-lg text-white tracking-wide mb-2" data-i18n="checkout.existingRxTitle">Prescription on file</h2>
+          <p class="text-xs text-white/70 m-0 leading-relaxed" data-i18n="checkout.existingRxBody">We have your prescription on record from a prior visit. Enter your details below and complete payment—no upload needed.</p>
+        </div>
+
+        <p id="err" class="hidden text-sm text-red-200 bg-red-950/50 border border-red-500/25 px-4 py-3 rounded-lg" role="alert"></p>
+      </div>
+
+      <!-- Right: sticky order summary -->
+      <aside class="mt-10 lg:mt-0 lg:sticky lg:top-8 self-start">
+        <div class="rounded-2xl border border-white/10 bg-[#141416] p-6 sm:p-7 shadow-2xl shadow-black/40">
+          <h2 class="font-display text-xl text-white tracking-wide mb-4" data-i18n="checkout.orderSummary">Order summary</h2>
+          <div id="checkout-sidebar-items" class="space-y-2 text-sm mb-4" aria-label="Items in this order"></div>
+          <p id="checkout-summary-prescription" class="text-xs mb-4 pb-4 border-b border-white/10 text-white/60 leading-relaxed"></p>
+          <div class="space-y-3 text-sm">
+            <div class="flex justify-between gap-4 text-white/70">
+              <span data-i18n="checkout.subtotal">Subtotal</span>
+              <span id="summary-subtotal" class="font-semibold text-white tabular-nums"></span>
+            </div>
+            <div class="flex justify-between gap-4 text-white/70">
+              <span id="summary-tax-label" class="text-white/55">Est. sales tax</span>
+              <span id="summary-tax" class="font-semibold text-white tabular-nums">—</span>
+            </div>
+            <div class="flex justify-between gap-4 text-white/70">
+              <span id="summary-delivery-label" data-i18n="checkout.delivery">Delivery / shipping</span>
+              <span id="summary-delivery" class="font-semibold text-white tabular-nums">—</span>
+            </div>
+            <p id="summary-shipping-hint" class="hidden text-xs text-amber-200/80 pt-0 m-0" data-i18n="checkout.shipHint">Enter state and ZIP to estimate shipping.</p>
+          </div>
+          <div class="mt-6 pt-5 border-t border-white/10 flex justify-between items-baseline gap-4">
+            <span class="font-display text-lg text-white" data-i18n="checkout.total">Total</span>
+            <span id="summary-grand-total" class="text-2xl font-bold text-white tabular-nums"></span>
+          </div>
+          <p class="text-[0.65rem] text-white/40 mt-3 leading-relaxed" data-i18n="checkout.taxEstNote">Tax and shipping are estimates. We may adjust when we confirm your order.</p>
+
+          <button type="submit" id="pay" class="w-full mt-6 bg-[#E0115F] text-white border-0 py-4 text-xs font-bold uppercase tracking-[0.2em] cursor-pointer rounded-lg hover:opacity-95 disabled:opacity-45 disabled:cursor-not-allowed transition-opacity" data-i18n="checkout.submit">
+            Submit order
+          </button>
+          <p class="text-[0.65rem] text-white/35 text-center mt-4 m-0" data-i18n="checkout.nextHint">Next: choose PayPal or card — your order # is applied automatically</p>
+
+          <p class="flex items-center justify-center gap-1.5 text-[0.65rem] text-white/35 mt-6 m-0">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" class="opacity-70" aria-hidden="true"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg>
+            <span data-i18n="checkout.secureCheckout">Secure checkout</span>
+          </p>
+        </div>
+      </aside>
+    </div>
+  </form>
+
+  <div id="done" class="hidden space-y-8">
+    <div class="lg:grid lg:grid-cols-[1fr_min(380px,100%)] lg:gap-10 xl:gap-14 lg:items-start">
+      <div class="rounded-2xl border border-[#E0115F]/30 bg-white/[0.04] p-6 sm:p-8">
+        <p class="text-[0.65rem] uppercase tracking-[0.28em] text-[#E0115F] font-bold mb-2" data-i18n="checkout.orderReceivedBadge">Order received</p>
+        <p id="payment-paid-banner" class="hidden text-sm text-emerald-200 bg-emerald-950/50 border border-emerald-500/30 px-4 py-3 rounded-lg mb-4 m-0" role="status"></p>
+        <p id="done-lead" class="text-sm text-white/65 mb-6 leading-relaxed" data-i18n-html="checkout.leadDone">Complete payment for the <strong class="text-white">amount due</strong> below. Your <strong class="text-white">order #</strong> is sent automatically with PayPal when you continue.</p>
+        <div class="flex flex-wrap items-baseline gap-x-6 gap-y-3 border border-white/10 rounded-xl p-4 bg-black/20">
+          <div>
+            <span class="text-[0.6rem] uppercase tracking-widest text-white/40 block" data-i18n="checkout.orderNum">Order #</span>
+            <span id="oid" class="font-mono text-sm font-semibold text-white break-all"></span>
+          </div>
+        <div>
+          <span class="text-[0.6rem] uppercase tracking-widest text-white/40 block" data-i18n="checkout.amountDue">Amount due</span>
+          <span id="due" class="text-2xl font-bold text-[#E0115F]"></span>
+        </div>
+      </div>
+      <p id="done-pricing-breakdown" class="hidden text-xs text-white/50 mt-4 leading-relaxed m-0"></p>
+
+      <div id="done-order-summary" class="mt-6 pt-6 border-t border-white/10">
+          <h3 class="font-display text-sm tracking-wide text-white mb-3" data-i18n="checkout.orderSummary">Order summary</h3>
+          <p id="done-lines-unavailable" class="hidden text-xs text-white/45 m-0" data-i18n="checkout.linesUnavailable">Line details are not available for this session. Your order # and amount due above are still valid.</p>
+
+          <!-- Mobile card layout (hidden on lg and up) -->
+          <div id="done-order-cards" class="lg:hidden space-y-2"></div>
+
+          <!-- Desktop table layout (hidden on smaller screens) -->
+          <div id="done-order-table-block" class="hidden lg:block overflow-x-auto -mx-1">
+            <table class="w-full text-sm border-collapse min-w-[280px]" aria-label="Order line items">
+              <thead>
+                <tr class="text-[0.65rem] uppercase tracking-wider text-white/40 border-b border-white/10">
+                  <th scope="col" class="py-2 pr-3 text-left font-semibold" data-i18n="checkout.thProduct">Product</th>
+                  <th scope="col" class="py-2 px-2 text-right font-semibold whitespace-nowrap" data-i18n="checkout.thQty">Qty</th>
+                  <th scope="col" class="py-2 px-2 text-right font-semibold whitespace-nowrap" data-i18n="checkout.thPrice">Price each</th>
+                  <th scope="col" class="py-2 pl-2 text-right font-semibold whitespace-nowrap" data-i18n="checkout.thLine">Line total</th>
+                </tr>
+              </thead>
+              <tbody id="done-order-lines"></tbody>
+            </table>
+          </div>
+          <p id="done-prescription-status" class="hidden text-xs text-[#E0115F] font-medium mt-3 leading-relaxed m-0"></p>
+        </div>
+
+      </div>
+
+      <div class="rounded-2xl border border-white/10 bg-[#141416] overflow-hidden shadow-2xl shadow-black/40">
+        <div class="px-6 pt-6 pb-4 border-b border-white/10">
+          <h2 class="font-display text-xl sm:text-2xl text-white tracking-tight m-0" data-i18n="checkout.payTitle">Payment</h2>
+          <p class="text-xs text-white/45 mt-2 m-0 leading-relaxed" data-i18n-html="checkout.paySecureHosted">Pay the <strong class="text-white font-semibold">exact amount due</strong> above. Card and PayPal use secure checkout on our server. PayPal.me uses your order # in the note when configured.</p>
+          <p id="payment-link-err" class="hidden text-xs text-amber-100 bg-amber-950/50 border border-amber-500/30 px-3 py-2.5 mt-3 m-0 rounded-lg" data-i18n="checkout.paymentLinkErr">Set your PayPal.me username in js/payment-config.js for one-tap payment links.</p>
+        </div>
+
+        <div class="divide-y divide-white/10">
+          <div>
+            <label class="flex items-center gap-4 px-6 py-4 cursor-pointer hover:bg-white/[0.04] transition-colors">
+              <input type="radio" name="pay-method" value="card" class="pay-method-radio accent-[#E0115F] w-4 h-4 shrink-0 border-white/20" checked />
+              <span class="flex-1 text-sm font-semibold text-white" data-i18n="checkout.methodCard">Credit / debit card</span>
+              <span class="text-[0.65rem] font-bold uppercase tracking-[0.1em] text-white/50 shrink-0">Stripe</span>
+            </label>
+            <div id="pay-panel-card" class="pay-method-panel bg-black/25 px-6 py-6 border-t border-white/[0.06]">
+              <p class="text-xs text-white/50 text-center m-0 mb-5 leading-relaxed" data-i18n-html="checkout.panelCardStripe">Pay online with card (Visa, Mastercard, Amex, and more). You will be redirected to Stripe’s secure checkout.</p>
+              <button type="button" id="stripe-hosted-btn"
+                class="w-full text-center bg-[#635bff] text-white px-4 py-3.5 text-xs font-bold uppercase tracking-[0.15em] rounded-md min-h-[48px] border-0 cursor-pointer hover:opacity-95 disabled:opacity-45 disabled:cursor-not-allowed" data-i18n="checkout.payCardStripe">
+                Pay with card
+              </button>
+              <p class="text-[0.65rem] text-white/40 text-center mt-5 mb-2 m-0" data-i18n="checkout.orPhoneCard">Or pay by phone or in store</p>
+              <p class="text-xs text-white/50 text-center m-0 mb-4 leading-relaxed" data-i18n-html="checkout.cardPanelBody">
+                Have your <strong class="text-white">order #</strong> and <strong class="text-white">amount due</strong> ready—we charge the exact total shown above.
+              </p>
+              <a href="tel:+12133881447" class="block w-full text-center bg-white text-[#0A0A0A] px-4 py-3.5 text-xs font-bold uppercase tracking-[0.15em] no-underline hover:opacity-95 rounded-md min-h-[48px] flex items-center justify-center border border-white/20" data-i18n="checkout.callPayCard">
+                Call to pay by card
+              </a>
+              <p class="text-[0.65rem] text-white/40 text-center mt-4 m-0" data-i18n="checkout.cardPanelAddr">301 S Western Ave #103, Los Angeles, CA 90020</p>
+            </div>
+          </div>
+
+          <div>
+            <label class="flex items-center gap-4 px-6 py-4 cursor-pointer hover:bg-white/[0.04] transition-colors">
+              <input type="radio" name="pay-method" value="paypal" class="pay-method-radio accent-[#E0115F] w-4 h-4 shrink-0" />
+              <span class="flex-1 text-sm font-semibold text-white" data-i18n="checkout.methodPaypal">PayPal</span>
+              <span class="text-[0.65rem] font-bold uppercase tracking-[0.12em] text-[#0070ba]">PayPal</span>
+            </label>
+            <div id="pay-panel-paypal" class="pay-method-panel hidden bg-black/25 px-6 py-6 border-t border-white/[0.06]">
+              <p class="text-xs text-white/50 text-center m-0 mb-5 leading-relaxed" data-i18n-html="checkout.panelPaypalHosted">Sign in to PayPal and approve payment for the exact total. Funds are captured when you finish on PayPal.</p>
+              <button type="button" id="paypal-hosted-btn"
+                class="w-full text-center bg-[#ffc439] text-[#003087] px-4 py-3.5 text-xs font-bold uppercase tracking-[0.15em] rounded-md min-h-[48px] border border-[#ffb800] cursor-pointer hover:opacity-95 disabled:opacity-45 disabled:cursor-not-allowed" data-i18n="checkout.payPaypalHosted">
+                Pay with PayPal
+              </button>
+              <p class="text-[0.65rem] text-white/40 text-center mt-5 mb-2 m-0" data-i18n="checkout.orPaypalMe">Or use PayPal.me</p>
+              <a id="paypal-link" href="#" target="_blank" rel="noopener noreferrer"
+                class="block w-full text-center bg-black/30 text-[#ffc439] px-4 py-3 text-xs font-bold uppercase tracking-[0.12em] no-underline hover:opacity-95 rounded-md min-h-[44px] flex items-center justify-center border border-white/10" data-i18n="checkout.paypalBtn">
+                Continue with PayPal.me
+              </a>
+              <p class="text-xs text-white/40 text-center mt-4 m-0 leading-relaxed" data-i18n-html="checkout.panelPaypalMeNote">Opens PayPal.me with your <strong class="text-white">order total</strong>. Your payment note is copied when you tap.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <p class="text-xs text-white/40 text-center" data-i18n-html="checkout.questions">Questions? <a href="tel:+12133881447" class="text-[#E0115F] hover:underline">213.388.1447</a> · <a href="contact.html" class="text-[#E0115F] hover:underline">Contact</a></p>
+    <a href="eyenoon_updated.html" class="block text-center text-xs font-bold uppercase tracking-[0.2em] text-white/35 hover:text-[#E0115F]" data-i18n="checkout.backHome">Back to home</a>
+  </div>
+</main>
+
+<script src="js/i18n.js"></script>
+<script src="js/checkout-config.js"></script>
+<script src="js/checkout-tax-delivery.js"></script>
+<script src="js/payment-config.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/cart-entry-gate.js"></script>
+<script>
+(function () {
+  var LAST_ORDER_KEY = "eyenoon_last_order_v1";
+  var LAST_ORDER_MAX_AGE_MS = 7 * 24 * 60 * 60 * 1000;
+
+  var apiBaseEarly = window.EYE_NOON_CHECKOUT_API || "http://127.0.0.1:4242";
+  var apiEarly = String(apiBaseEarly).replace(/\/$/, "");
+  var qsEarly = new URLSearchParams(location.search);
+  if (qsEarly.get("stripe_ok") === "1" && qsEarly.get("session_id")) {
+    fetch(
+      apiEarly +
+        "/api/stripe/complete?session_id=" +
+        encodeURIComponent(qsEarly.get("session_id"))
+    )
+      .then(function (r) {
+        return r.json().then(function (d) {
+          return { ok: r.ok, d: d };
+        });
+      })
+      .then(function (x) {
+        if (!x.ok) throw new Error(x.d.error || "Verification failed");
+        var d = x.d;
+        try {
+          sessionStorage.setItem(
+            LAST_ORDER_KEY,
+            JSON.stringify({
+              orderId: d.orderId,
+              subtotal: d.subtotal,
+              estimatedTax: d.estimatedTax,
+              delivery: d.delivery,
+              deliveryLabel: d.deliveryLabel,
+              taxLabel: d.taxLabel,
+              total: d.total,
+              totalFormatted: d.totalFormatted,
+              existingCustomer: !!d.existingCustomer,
+              prescriptionLabel: d.prescriptionLabel || "",
+              lines: d.lines || [],
+              paymentCompleted: "stripe",
+              savedAt: Date.now(),
+            })
+          );
+        } catch (e) {}
+        history.replaceState({}, "", location.pathname);
+        location.reload();
+      })
+      .catch(function (e) {
+        history.replaceState({}, "", location.pathname);
+        alert(e.message || "Could not verify card payment.");
+      });
+    return;
+  }
+  if (qsEarly.get("paypal_ok") === "1" && qsEarly.get("token") && qsEarly.get("eyenoon_order")) {
+    fetch(
+      apiEarly +
+        "/api/paypal/capture?token=" +
+        encodeURIComponent(qsEarly.get("token")) +
+        "&eyenoon_order=" +
+        encodeURIComponent(qsEarly.get("eyenoon_order"))
+    )
+      .then(function (r) {
+        return r.json().then(function (d) {
+          return { ok: r.ok, d: d };
+        });
+      })
+      .then(function (x) {
+        if (!x.ok) throw new Error(x.d.error || "PayPal capture failed");
+        var d = x.d;
+        try {
+          sessionStorage.setItem(
+            LAST_ORDER_KEY,
+            JSON.stringify({
+              orderId: d.orderId,
+              subtotal: d.subtotal,
+              estimatedTax: d.estimatedTax,
+              delivery: d.delivery,
+              deliveryLabel: d.deliveryLabel,
+              taxLabel: d.taxLabel,
+              total: d.total,
+              totalFormatted: d.totalFormatted,
+              existingCustomer: !!d.existingCustomer,
+              prescriptionLabel: d.prescriptionLabel || "",
+              lines: d.lines || [],
+              paymentCompleted: "paypal",
+              savedAt: Date.now(),
+            })
+          );
+        } catch (e) {}
+        history.replaceState({}, "", location.pathname);
+        location.reload();
+      })
+      .catch(function (e) {
+        history.replaceState({}, "", location.pathname);
+        alert(e.message || "Could not complete PayPal payment.");
+      });
+    return;
+  }
+
+  var form = document.getElementById("form");
+  var done = document.getElementById("done");
+  var empty = document.getElementById("empty");
+  var checkoutLineItems = document.getElementById("checkout-line-items");
+  var err = document.getElementById("err");
+  var pay = document.getElementById("pay");
+  var checkoutIntroEl = document.getElementById("checkout-intro");
+  var lastDonePricing = null;
+
+  function T(key) {
+    return window.EyeNoonI18n ? window.EyeNoonI18n.t(key) : key;
+  }
+
+  var pm = window.EYE_NOON_PAYMENT || {};
+
+  function money(n) {
+    return "$" + Number(n).toFixed(2);
+  }
+
+  function escapeHtml(s) {
+    return String(s)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/"/g, "&quot;");
+  }
+
+  function getCheckoutPrescriptionLabel() {
+    var ctx = window.EyeNoonCart.getLensOrderContext && window.EyeNoonCart.getLensOrderContext();
+    if (ctx && ctx.existingCustomer) return T("checkout.rxSidebarOnFile");
+    if (ctx && ctx.prescriptionUpload && ctx.prescriptionUpload.base64) {
+      return T("checkout.rxSidebarCart");
+    }
+    var rx = document.getElementById("rx");
+    if (rx && !rx.disabled && rx.files && rx.files[0]) {
+      return T("checkout.rxSidebarAttachedName").replace("{name}", rx.files[0].name);
+    }
+    return T("checkout.rxSidebarUpload");
+  }
+
+  function renderSidebarOrderSummary() {
+    var container = document.getElementById("checkout-sidebar-items");
+    var rxEl = document.getElementById("checkout-summary-prescription");
+    if (!container || !rxEl) return;
+    var cartLines = window.EyeNoonCart.load();
+    container.innerHTML = "";
+    cartLines.forEach(function (l) {
+      var div = document.createElement("div");
+      div.className = "flex justify-between gap-2 text-sm";
+      div.innerHTML =
+        '<span class="min-w-0 text-white/80">' +
+        escapeHtml(l.name || l.slug || "Item") +
+        '</span><span class="shrink-0 tabular-nums text-white/80">× ' +
+        (Math.max(1, parseInt(l.qty, 10) || 1)) +
+        "</span>";
+      container.appendChild(div);
+    });
+    var label = getCheckoutPrescriptionLabel();
+    rxEl.textContent = label;
+    var pending = label === T("checkout.rxSidebarUpload");
+    rxEl.className =
+      "text-xs mb-4 pb-4 border-b border-white/10 leading-relaxed " +
+      (pending ? "text-white/45" : "text-[#E0115F] font-medium");
+  }
+
+  function updateCheckoutTotals() {
+    var TD = window.EyeNoonCheckoutTaxDelivery;
+    if (!TD || !TD.estimate) return;
+    var cartLines = window.EyeNoonCart.load();
+    var sub = 0;
+    cartLines.forEach(function (l) {
+      sub += l.price * l.qty;
+    });
+    var stateEl = document.getElementById("state");
+    var zipEl = document.getElementById("zip");
+    var state = stateEl ? stateEl.value : "";
+    var zip = zipEl ? zipEl.value : "";
+    var est = TD.estimate(sub, state, zip);
+    var subEl = document.getElementById("summary-subtotal");
+    var taxEl = document.getElementById("summary-tax");
+    var taxLab = document.getElementById("summary-tax-label");
+    var delEl = document.getElementById("summary-delivery");
+    var delLab = document.getElementById("summary-delivery-label");
+    var grandEl = document.getElementById("summary-grand-total");
+    var hint = document.getElementById("summary-shipping-hint");
+    if (subEl) subEl.textContent = money(est.subtotal);
+    if (taxLab) taxLab.textContent = est.taxLabel;
+    if (taxEl) taxEl.textContent = money(est.estimatedTax);
+    if (delLab) delLab.textContent = est.deliveryLabel;
+    if (delEl) delEl.textContent = est.incompleteShipping ? "—" : money(est.delivery);
+    if (hint) hint.classList.toggle("hidden", !est.incompleteShipping);
+    if (grandEl) grandEl.textContent = money(est.grandTotal);
+  }
+
+  var addressPricingWired = false;
+  function wireAddressPricingOnce() {
+    if (addressPricingWired) return;
+    addressPricingWired = true;
+    var TD = window.EyeNoonCheckoutTaxDelivery;
+    if (TD && TD.populateUsStateSelect) TD.populateUsStateSelect(document.getElementById("state"));
+    ["state", "zip", "city"].forEach(function (id) {
+      var el = document.getElementById(id);
+      if (!el) return;
+      el.addEventListener("input", updateCheckoutTotals);
+      el.addEventListener("change", updateCheckoutTotals);
+    });
+  }
+
+  function renderCheckoutLineItems() {
+    if (!checkoutLineItems) return;
+    var cartLines = window.EyeNoonCart.load();
+    checkoutLineItems.innerHTML = "";
+    var sum = 0;
+    cartLines.forEach(function (l) {
+      sum += l.price * l.qty;
+      var slug = String(l.slug || "").replace(/"/g, "");
+      var imgSrc = l.img ? escapeHtml(l.img) : "";
+      var name = escapeHtml(l.name || l.slug || "Item");
+      var unit = money(l.price);
+      var lineTot = money(l.price * l.qty);
+      var qty = Math.max(1, parseInt(l.qty, 10) || 1);
+
+      var row = document.createElement("div");
+      row.className = "flex flex-wrap gap-4 py-5 first:pt-0";
+      row.dataset.slug = slug;
+      row.innerHTML =
+        '<div class="shrink-0">' +
+        (imgSrc
+          ? '<img src="' + imgSrc + '" alt="" class="w-[4.5rem] h-[4.5rem] sm:w-24 sm:h-24 object-cover rounded-lg bg-white/5 border border-white/10"/>'
+          : '<div class="w-[4.5rem] h-[4.5rem] sm:w-24 sm:h-24 rounded-lg bg-white/5 border border-white/10"></div>') +
+        "</div>" +
+        '<div class="flex-1 min-w-[140px]">' +
+        '<div class="font-semibold text-white leading-snug">' +
+        name +
+        "</div>" +
+        '<div class="text-xs text-white/45 mt-1">Contact lenses · prescription supply</div>' +
+        '<div class="text-sm text-white/55 mt-2">' +
+        unit +
+        " each</div>" +
+        "</div>" +
+        '<div class="flex flex-row sm:flex-col items-center sm:items-end gap-3 sm:gap-2 ml-auto">' +
+        '<div class="inline-flex items-center rounded-lg border border-white/15 bg-black/30">' +
+        '<button type="button" class="checkout-qty-minus px-2.5 py-2 text-white/70 hover:text-white hover:bg-white/10 rounded-l-lg text-lg leading-none" aria-label="Decrease quantity">−</button>' +
+        '<span class="checkout-qty-val w-8 text-center text-sm font-medium text-white tabular-nums">' +
+        qty +
+        "</span>" +
+        '<button type="button" class="checkout-qty-plus px-2.5 py-2 text-white/70 hover:text-white hover:bg-white/10 rounded-r-lg text-lg leading-none" aria-label="Increase quantity">+</button>' +
+        "</div>" +
+        '<div class="font-semibold text-white tabular-nums min-w-[4.5rem] text-right">' +
+        lineTot +
+        "</div>" +
+        '<button type="button" class="checkout-remove p-1.5 text-white/35 hover:text-red-400 rounded-md hover:bg-white/5" aria-label="Remove item">' +
+        '<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg>' +
+        "</button>" +
+        "</div>";
+      checkoutLineItems.appendChild(row);
+    });
+    updateCheckoutTotals();
+    renderSidebarOrderSummary();
+
+    checkoutLineItems.querySelectorAll("[data-slug]").forEach(function (row) {
+      var slug = row.dataset.slug;
+      row.querySelector(".checkout-qty-minus").addEventListener("click", function () {
+        var lines = window.EyeNoonCart.load();
+        var cur = lines.filter(function (x) {
+          return x.slug === slug;
+        })[0];
+        if (!cur) return;
+        var q = Math.max(1, (parseInt(cur.qty, 10) || 1) - 1);
+        window.EyeNoonCart.setQty(slug, q);
+        refreshCheckoutAfterCartChange();
+      });
+      row.querySelector(".checkout-qty-plus").addEventListener("click", function () {
+        var lines = window.EyeNoonCart.load();
+        var cur = lines.filter(function (x) {
+          return x.slug === slug;
+        })[0];
+        if (!cur) return;
+        var q = (parseInt(cur.qty, 10) || 1) + 1;
+        window.EyeNoonCart.setQty(slug, q);
+        refreshCheckoutAfterCartChange();
+      });
+      row.querySelector(".checkout-remove").addEventListener("click", function () {
+        window.EyeNoonCart.remove(slug);
+        refreshCheckoutAfterCartChange();
+      });
+    });
+  }
+
+  function refreshCheckoutAfterCartChange() {
+    lines = window.EyeNoonCart.load();
+    if (!lines.length) {
+      form.classList.add("hidden");
+      empty.classList.remove("hidden");
+      return;
+    }
+    renderCheckoutLineItems();
+  }
+
+  function renderDoneOrderSummary(orderLines, prescriptionLabel) {
+    var tbody = document.getElementById("done-order-lines");
+    var cards = document.getElementById("done-order-cards");
+    var miss = document.getElementById("done-lines-unavailable");
+    var tableBlock = document.getElementById("done-order-table-block");
+    var rxStatus = document.getElementById("done-prescription-status");
+    if (!tbody) return;
+    tbody.innerHTML = "";
+    if (cards) cards.innerHTML = "";
+    var rxLabel = prescriptionLabel && String(prescriptionLabel).trim();
+    function setDoneRxLine() {
+      if (!rxStatus) return;
+      if (rxLabel) {
+        rxStatus.textContent = T("checkout.doneRxPrefix") + rxLabel;
+        rxStatus.classList.remove("hidden");
+      } else {
+        rxStatus.classList.add("hidden");
+        rxStatus.textContent = "";
+      }
+    }
+    if (!orderLines || !orderLines.length) {
+      if (miss) miss.classList.remove("hidden");
+      if (tableBlock) tableBlock.classList.add("hidden");
+      setDoneRxLine();
+      return;
+    }
+    if (miss) miss.classList.add("hidden");
+    if (tableBlock) tableBlock.classList.remove("hidden");
+    setDoneRxLine();
+    orderLines.forEach(function (line) {
+      var name = line.name != null ? String(line.name) : String(line.slug || "Item");
+      var qty = Math.max(1, parseInt(line.qty, 10) || 1);
+      var unit = line.unitPrice != null ? Number(line.unitPrice) : NaN;
+      var lineTotal = line.lineTotal != null ? Number(line.lineTotal) : NaN;
+      if (!Number.isFinite(unit)) {
+        unit = Number.isFinite(lineTotal) ? lineTotal / qty : 0;
+      }
+      if (!Number.isFinite(lineTotal)) {
+        lineTotal = unit * qty;
+      }
+      var tr = document.createElement("tr");
+      tr.className = "border-b border-white/[0.08] last:border-0";
+      tr.innerHTML =
+        '<td class="py-3 pr-3 text-white/85 align-top">' +
+        escapeHtml(name) +
+        "</td>" +
+        '<td class="py-3 px-2 text-right tabular-nums text-white/80">' +
+        qty +
+        "</td>" +
+        '<td class="py-3 px-2 text-right tabular-nums text-white/55">' +
+        escapeHtml(money(unit)) +
+        "</td>" +
+        '<td class="py-3 pl-2 text-right font-semibold tabular-nums text-white">' +
+        escapeHtml(money(lineTotal)) +
+        "</td>";
+      tbody.appendChild(tr);
+      if (cards) {
+        var card = document.createElement("div");
+        card.className = "border border-white/10 rounded p-3 space-y-1";
+        card.innerHTML = '<div class="font-semibold text-white">' + escapeHtml(name) + '</div><div class="flex justify-between text-xs text-white/60"><span>' + qty + '×</span><span>' + escapeHtml(money(unit)) + '</span><span class="font-semibold text-white">' + escapeHtml(money(lineTotal)) + '</span></div>';
+        cards.appendChild(card);
+      }
+    });
+  }
+
+  function showErr(msg) {
+    err.textContent = msg;
+    err.classList.remove("hidden");
+  }
+
+  function hideErr() {
+    err.classList.add("hidden");
+  }
+
+  function showTopErr(msg) {
+    var topErr = document.getElementById("top-err");
+    topErr.textContent = msg;
+    topErr.classList.remove("hidden");
+    try {
+      topErr.scrollIntoView({ behavior: "smooth", block: "start" });
+    } catch (se) {}
+  }
+
+  function hideTopErr() {
+    document.getElementById("top-err").classList.add("hidden");
+  }
+
+  (function paymentCancelFromUrl() {
+    var params = new URLSearchParams(location.search);
+    if (params.get("stripe_cancel") === "1") {
+      history.replaceState({}, "", location.pathname);
+      showTopErr(T("checkout.stripeCanceled"));
+    } else if (params.get("paypal_cancel") === "1") {
+      history.replaceState({}, "", location.pathname);
+      showTopErr(T("checkout.paypalCanceled"));
+    }
+  })();
+
+  var lines = window.EyeNoonCart.load();
+
+  function memoText(orderId, amountStr) {
+    return "Eye Noon order " + orderId + " — " + amountStr;
+  }
+
+  function fillDonePricingBreakdown(p) {
+    var br = document.getElementById("done-pricing-breakdown");
+    if (!br) return;
+    if (p != null && p.subtotal != null && p.total != null) {
+      var tpl = T("checkout.donePricingTpl");
+      br.textContent = tpl
+        .replace("{sub}", money(Number(p.subtotal)))
+        .replace("{tax}", money(Number(p.estimatedTax != null ? p.estimatedTax : 0)))
+        .replace("{delLabel}", p.deliveryLabel || T("checkout.delivery"))
+        .replace("{del}", money(Number(p.delivery != null ? p.delivery : 0)))
+        .replace("{tot}", money(Number(p.total)));
+      br.classList.remove("hidden");
+    } else {
+      br.classList.add("hidden");
+      br.textContent = "";
+    }
+  }
+
+  function syncPaymentMethodPanels() {
+    var v = document.querySelector('#done input[name="pay-method"]:checked');
+    if (!v) return;
+    ["card", "paypal"].forEach(function (k) {
+      var el = document.getElementById("pay-panel-" + k);
+      if (el) el.classList.toggle("hidden", v.value !== k);
+    });
+  }
+
+  var paymentMethodUIWired = false;
+  function wirePaymentMethodUI() {
+    if (!paymentMethodUIWired) {
+      paymentMethodUIWired = true;
+      document.getElementById("done").addEventListener("change", function (e) {
+        if (e.target && e.target.getAttribute("name") === "pay-method") syncPaymentMethodPanels();
+      });
+    }
+    syncPaymentMethodPanels();
+  }
+
+  function setupHostedPayments(orderId) {
+    var api = String(window.EYE_NOON_CHECKOUT_API || "http://127.0.0.1:4242").replace(/\/$/, "");
+    var stripeBtn = document.getElementById("stripe-hosted-btn");
+    var paypalBtn = document.getElementById("paypal-hosted-btn");
+    fetch(api + "/api/payment-options")
+      .then(function (r) {
+        return r.json();
+      })
+      .then(function (opts) {
+        if (stripeBtn) {
+          stripeBtn.disabled = !opts.stripe;
+          stripeBtn.onclick = function () {
+            if (!opts.stripe) return;
+            stripeBtn.disabled = true;
+            fetch(api + "/api/stripe/create-checkout-session", {
+              method: "POST",
+              headers: { "Content-Type": "application/json", Accept: "application/json" },
+              body: JSON.stringify({ orderId: orderId }),
+            })
+              .then(function (r) {
+                return r.json().then(function (d) {
+                  return { ok: r.ok, d: d };
+                });
+              })
+              .then(function (x) {
+                if (!x.ok) throw new Error(x.d.error || "Stripe unavailable");
+                if (x.d.url) {
+                  window.location.href = x.d.url;
+                  return;
+                }
+                throw new Error("No checkout URL");
+              })
+              .catch(function (e) {
+                alert(e.message || "Could not start card checkout.");
+                stripeBtn.disabled = false;
+              });
+          };
+        }
+        if (paypalBtn) {
+          paypalBtn.disabled = !opts.paypal;
+          paypalBtn.onclick = function () {
+            if (!opts.paypal) return;
+            paypalBtn.disabled = true;
+            fetch(api + "/api/paypal/create-order", {
+              method: "POST",
+              headers: { "Content-Type": "application/json", Accept: "application/json" },
+              body: JSON.stringify({ orderId: orderId }),
+            })
+              .then(function (r) {
+                return r.json().then(function (d) {
+                  return { ok: r.ok, d: d };
+                });
+              })
+              .then(function (x) {
+                if (!x.ok) throw new Error(x.d.error || "PayPal unavailable");
+                if (x.d.approvalUrl) {
+                  window.location.href = x.d.approvalUrl;
+                  return;
+                }
+                throw new Error("No approval URL");
+              })
+              .catch(function (e) {
+                alert(e.message || "Could not start PayPal.");
+                paypalBtn.disabled = false;
+              });
+          };
+        }
+      })
+      .catch(function () {});
+  }
+
+  function applyPaymentLinks(orderId, data) {
+    var amt = data.totalFormatted != null ? String(data.totalFormatted) : Number(data.total).toFixed(2);
+    amt = amt.replace(/^\$/, "").trim();
+    var amountDisplay = "$" + amt;
+    var memo = memoText(orderId, amountDisplay);
+
+    var paypalUser = (pm.paypalMe || "").replace(/^@/, "").trim();
+
+    var paypalEl = document.getElementById("paypal-link");
+    var errEl = document.getElementById("payment-link-err");
+
+    if (paypalUser) {
+      paypalEl.href =
+        "https://www.paypal.com/paypalme/" +
+        encodeURIComponent(paypalUser) +
+        "/" +
+        encodeURIComponent(amt);
+      paypalEl.title = "PayPal.me " + amountDisplay + " (order " + orderId + ")";
+    } else {
+      paypalEl.href = "https://www.paypal.com/paypalme/";
+      paypalEl.title = "Add paypalMe in js/payment-config.js";
+    }
+
+    if (errEl) {
+      var apiOpts = String(window.EYE_NOON_CHECKOUT_API || "http://127.0.0.1:4242").replace(/\/$/, "");
+      fetch(apiOpts + "/api/payment-options")
+        .then(function (r) {
+          return r.json();
+        })
+        .then(function (opts) {
+          var needMe = !paypalUser && !opts.stripe && !opts.paypal;
+          errEl.classList.toggle("hidden", !needMe);
+        })
+        .catch(function () {
+          errEl.classList.toggle("hidden", !(!paypalUser));
+        });
+    }
+
+    function copyMemoToClipboard() {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(memo).catch(function () {});
+      }
+    }
+    if (paypalEl) {
+      paypalEl.onclick = function () {
+        copyMemoToClipboard();
+      };
+    }
+
+    wirePaymentMethodUI();
+    setupHostedPayments(orderId);
+  }
+
+  function tryRestorePaymentScreen() {
+    if (lines.length > 0) return false;
+    var raw;
+    try {
+      raw = sessionStorage.getItem(LAST_ORDER_KEY);
+    } catch (e) {
+      return false;
+    }
+    if (!raw) return false;
+    var o;
+    try {
+      o = JSON.parse(raw);
+    } catch (e) {
+      return false;
+    }
+    if (!o || !o.orderId || !o.savedAt) return false;
+    if (Date.now() - o.savedAt > LAST_ORDER_MAX_AGE_MS) return false;
+
+    var amtStr = o.totalFormatted != null ? String(o.totalFormatted) : Number(o.total).toFixed(2);
+    document.getElementById("oid").textContent = o.orderId;
+    document.getElementById("due").textContent = "$" + amtStr.replace(/^\$/, "");
+    var lead = document.getElementById("done-lead");
+    if (lead) {
+      lead.textContent = T("checkout.leadRefresh");
+    }
+    if (checkoutIntroEl) {
+      checkoutIntroEl.textContent = T("checkout.introRestore");
+    }
+    applyPaymentLinks(o.orderId, {
+      total: o.total,
+      totalFormatted: o.totalFormatted != null ? o.totalFormatted : amtStr,
+      existingCustomer: !!o.existingCustomer,
+    });
+    var paidBanner = document.getElementById("payment-paid-banner");
+    if (paidBanner) {
+      if (o.paymentCompleted === "stripe") {
+        paidBanner.textContent = T("checkout.paidBannerStripe");
+        paidBanner.classList.remove("hidden");
+      } else if (o.paymentCompleted === "paypal") {
+        paidBanner.textContent = T("checkout.paidBannerPaypal");
+        paidBanner.classList.remove("hidden");
+      } else {
+        paidBanner.classList.add("hidden");
+        paidBanner.textContent = "";
+      }
+    }
+    renderDoneOrderSummary(o.lines, o.prescriptionLabel || "");
+    lastDonePricing = o;
+    fillDonePricingBreakdown(o);
+    empty.classList.add("hidden");
+    form.classList.add("hidden");
+    done.classList.remove("hidden");
+    return true;
+  }
+
+  if (tryRestorePaymentScreen()) {
+    return;
+  }
+
+  if (!lines.length) {
+    empty.classList.remove("hidden");
+    return;
+  }
+
+  for (var i = 0; i < lines.length; i++) {
+    if (lines[i].kind && lines[i].kind !== "contact_lens") {
+      showTopErr(T("checkout.onlyLenses"));
+      return;
+    }
+  }
+
+  form.classList.remove("hidden");
+
+  function base64ToBlob(base64, mimeType) {
+    var bin = atob(base64);
+    var len = bin.length;
+    var arr = new Uint8Array(len);
+    for (var i = 0; i < len; i++) arr[i] = bin.charCodeAt(i);
+    return new Blob([arr], { type: mimeType || "application/octet-stream" });
+  }
+
+  var orderCtx = window.EyeNoonCart.getLensOrderContext && window.EyeNoonCart.getLensOrderContext();
+  var existingBlock = document.getElementById("existing-patient-note");
+  var prescriptionBlock = document.getElementById("prescription-block");
+  var rxInput = document.getElementById("rx");
+  var rxInstructions = document.getElementById("rx-instructions");
+  var rxAttachedNote = document.getElementById("rx-attached-note");
+
+  if (orderCtx && orderCtx.existingCustomer) {
+    existingBlock.classList.remove("hidden");
+    prescriptionBlock.classList.add("hidden");
+    rxInput.removeAttribute("required");
+    rxInput.disabled = true;
+    rxInput.value = "";
+    checkoutIntroEl.textContent = T("checkout.introExisting");
+  } else if (orderCtx && orderCtx.prescriptionUpload && orderCtx.prescriptionUpload.base64) {
+    existingBlock.classList.add("hidden");
+    rxInput.removeAttribute("required");
+    rxInput.disabled = true;
+    rxInput.classList.add("hidden");
+    rxInput.setAttribute("aria-hidden", "true");
+    rxAttachedNote.classList.remove("hidden");
+    rxInstructions.textContent = T("checkout.rxInstructionsCart");
+    checkoutIntroEl.textContent = T("checkout.introCartRx");
+  } else {
+    existingBlock.classList.add("hidden");
+    if (checkoutIntroEl) checkoutIntroEl.innerHTML = T("checkout.intro");
+  }
+
+  if (rxInput) {
+    rxInput.addEventListener("change", function () {
+      renderSidebarOrderSummary();
+    });
+  }
+
+  var rxPrefill = window.EyeNoonCart.getLensPrescription && window.EyeNoonCart.getLensPrescription();
+  if (rxPrefill) {
+    if (rxPrefill.name) form.customerName.value = rxPrefill.name;
+    if (rxPrefill.dateOfBirth) form.customerDateOfBirth.value = rxPrefill.dateOfBirth;
+    if (rxPrefill.email) form.customerEmail.value = rxPrefill.email;
+    if (rxPrefill.phone) form.customerPhone.value = rxPrefill.phone;
+  }
+
+  wireAddressPricingOnce();
+  renderCheckoutLineItems();
+
+  (function pingOrderServer() {
+    var base = (window.EYE_NOON_CHECKOUT_API || "http://127.0.0.1:4242").replace(/\/$/, "");
+    fetch(base + "/health")
+      .then(function (r) {
+        if (!r.ok) throw new Error("bad status");
+      })
+      .catch(function () {
+        showTopErr(T("checkout.errPing").replace("{url}", base));
+      });
+  })();
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    hideErr();
+    hideTopErr();
+    var zipVal = form.zip.value.trim();
+    if (!/^\d{5}(-\d{4})?$/.test(zipVal)) {
+      showErr(T("checkout.errZip"));
+      return;
+    }
+
+    var fd = new FormData();
+    fd.append("cart", JSON.stringify(window.EyeNoonCart.load()));
+    fd.append("customerName", form.customerName.value.trim());
+    fd.append("customerDateOfBirth", form.customerDateOfBirth.value.trim());
+    fd.append("customerEmail", form.customerEmail.value.trim());
+    fd.append("customerPhone", form.customerPhone.value.trim());
+    fd.append("addressLine1", form.addressLine1.value.trim());
+    fd.append("addressLine2", form.addressLine2.value.trim());
+    fd.append("city", form.city.value.trim());
+    fd.append("state", form.state.value);
+    fd.append("zip", zipVal);
+
+    var ctx = window.EyeNoonCart.getLensOrderContext && window.EyeNoonCart.getLensOrderContext();
+    var isExisting = !!(ctx && ctx.existingCustomer);
+    fd.append("existingCustomer", isExisting ? "true" : "false");
+
+    if (isExisting) {
+      /* prescription already on file at the store */
+    } else if (ctx && ctx.prescriptionUpload && ctx.prescriptionUpload.base64) {
+      var u = ctx.prescriptionUpload;
+      var uploadBlob = base64ToBlob(u.base64, u.mimeType);
+      fd.append("prescription", uploadBlob, u.fileName || "prescription.pdf");
+    } else {
+      var rx = document.getElementById("rx").files[0];
+      if (!rx) {
+        showErr(T("checkout.errRx"));
+        return;
+      }
+      fd.append("prescription", rx, rx.name);
+    }
+    pay.disabled = true;
+    pay.textContent = T("checkout.submitting");
+
+    var apiBase = window.EYE_NOON_CHECKOUT_API || "http://127.0.0.1:4242";
+    var api = String(apiBase).replace(/\/$/, "");
+    fetch(api + "/api/submit-order", {
+      method: "POST",
+      body: fd,
+    })
+      .then(function (r) {
+        return r.text().then(function (text) {
+          var data;
+          try {
+            data = text ? JSON.parse(text) : {};
+          } catch (parseErr) {
+            throw new Error((text && text.slice ? text.slice(0, 180) : "") || T("checkout.errParse"));
+          }
+          if (!r.ok) throw new Error(data.error || T("checkout.errOrder") + " (" + r.status + ").");
+          return data;
+        });
+      })
+      .then(function (data) {
+        var orderId = data.orderId;
+        var amt = data.totalFormatted || Number(data.total).toFixed(2);
+        document.getElementById("oid").textContent = orderId;
+        document.getElementById("due").textContent = "$" + String(amt).replace(/^\$/, "");
+        var lead = document.getElementById("done-lead");
+        if (lead) {
+          lead.textContent = data.existingCustomer ? T("checkout.leadPostExisting") : T("checkout.leadPostNew");
+        }
+
+        applyPaymentLinks(orderId, data);
+        var paidB = document.getElementById("payment-paid-banner");
+        if (paidB) {
+          paidB.classList.add("hidden");
+          paidB.textContent = "";
+        }
+        renderDoneOrderSummary(data.lines, data.prescriptionLabel || "");
+        lastDonePricing = data;
+        fillDonePricingBreakdown(data);
+
+        try {
+          sessionStorage.setItem(
+            LAST_ORDER_KEY,
+            JSON.stringify({
+              orderId: data.orderId,
+              subtotal: data.subtotal,
+              estimatedTax: data.estimatedTax,
+              delivery: data.delivery,
+              deliveryLabel: data.deliveryLabel,
+              taxLabel: data.taxLabel,
+              total: data.total,
+              totalFormatted: data.totalFormatted,
+              existingCustomer: !!data.existingCustomer,
+              prescriptionLabel: data.prescriptionLabel || "",
+              lines: data.lines,
+              savedAt: Date.now(),
+            })
+          );
+        } catch (serr) {}
+
+        try {
+          window.EyeNoonCart.clear();
+        } catch (x) {}
+
+        form.classList.add("hidden");
+        done.classList.remove("hidden");
+        window.scrollTo(0, 0);
+      })
+      .catch(function (x) {
+        var m = x && x.message ? x.message : String(x);
+        var net =
+          /failed to fetch|networkerror|load failed|network request failed/i.test(m) ||
+          (typeof x === "object" && x && x.name === "TypeError");
+        if (net) {
+          showTopErr(T("checkout.errFetch").replace("{url}", api));
+        }
+        showErr(m || T("checkout.errOrder"));
+        pay.disabled = false;
+        pay.textContent = T("checkout.submit");
+      });
+  });
+
+  window.addEventListener("eyenoon-lang-change", function () {
+    if (lastDonePricing) fillDonePricingBreakdown(lastDonePricing);
+    if (form && !form.classList.contains("hidden")) {
+      renderSidebarOrderSummary();
+      updateCheckoutTotals();
+    }
+    if (pay && !pay.disabled) pay.textContent = T("checkout.submit");
+  });
+})();
+</script>
+</body>
+</html>

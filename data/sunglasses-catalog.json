@@ -1,0 +1,694 @@
+{
+  "brands": [
+    {
+      "id": "cutler-gross",
+      "name": "Cutler and Gross",
+      "source_note": "Imagery and model names from the brand's official site at build time.",
+      "frames": [
+        {
+          "model": "1386 Square Sunglasses",
+          "image": "images/sunglasses/cutler-gross/1386-Square-Sunglasses.jpg",
+          "detail_url": "https://www.cutlerandgross.com/products/1386-square-sunglasses",
+          "description": "A Cutler and Gross signature, the 1386 sunglass presents an amplified take on American acetate shapes from the 50s. The chunky 9mm frame is gilded with vintage pins and lightened with interior and exterior milling."
+        },
+        {
+          "model": "Kensington 1424 Aviator Sunglasses",
+          "image": "images/sunglasses/cutler-gross/Kensington-1424-Aviator-Sunglasses.jpg",
+          "detail_url": "https://www.cutlerandgross.com/products/kensington-1424-titanium-navigator-sunglasses",
+          "description": "The Kensington 1424 is a study on the balance between strength and lightness. Forged from Japanese titanium with utmost attention to its engineering, this navigator sunglass offers a near-weightless air. The Oyster pin is subtly engrained throughout, even down to the engraved nose pads that act as a secret signature honouring its artisans, without loudly declaring it. Featuring ZEISS sun lenses for optimal performance and maximum UV protection. Each frame in the Knightsbridge Green collection is presented in highly limited quantities of 350, and uniquely finished with its bespoke edition number."
+        },
+        {
+          "model": "1394 Aviator Sunglasses",
+          "image": "images/sunglasses/cutler-gross/1394-Aviator-Sunglasses.jpg",
+          "detail_url": "https://www.cutlerandgross.com/products/1394-aviator-sunglasses",
+          "description": "An archive aviator Cutler and Gross frame from the 1970s laid the foundations for the 1394 sunglass. It is handcrafted from acetate to a distinguished profile with squared lenses and a double bridge, with polished Compass Star pins to detail the temples."
+        },
+        {
+          "model": "Sloane 1423 Aviator Sunglasses",
+          "image": "images/sunglasses/cutler-gross/Sloane-1423-Aviator-Sunglasses.jpg",
+          "detail_url": "https://www.cutlerandgross.com/products/sloane-1423-titanium-aviator-sunglasses",
+          "description": "Worked with the same precision of a fine jeweller, the Sloane 1423 is exemplified by its material beauty. Handcrafted in Sabae, Japan, the aviator sunglass is reimaged through the architectural lens of titanium. Along the brow bar, nose bridge and temples lie an evolved Oyster pin, inspired by dynamic British supercars of the 60s and 70s and meticulously placed to give depth to the refined style. Featuring ZEISS sun lenses for optimal performance and maximum UV protection. Each frame in the Knightsbridge Green collection is presented in highly limited quantities of 350, and uniquely finished with its bespoke edition number."
+        },
+        {
+          "model": "9261 Cat Eye Sunglasses",
+          "image": "images/sunglasses/cutler-gross/9261-Cat-Eye-Sunglasses.jpg",
+          "detail_url": "https://www.cutlerandgross.com/products/9261-limited-edition-obsious-cat-eye-sunglasses",
+          "description": "Handcrafted from striated acetate with blackened hardware, the 9261 is no ordinary sunglass. The silhouette nods to classic Americana frames from the 50s, while a sculptural browline and chamfering lend a new dimension."
+        },
+        {
+          "model": "1432 Square Sunglasses",
+          "image": "images/sunglasses/cutler-gross/1432-Square-Sunglasses.jpg",
+          "detail_url": "https://www.cutlerandgross.com/products/1432-square-sunglases",
+          "description": "A study of composure, the 1432 Square Sunglass offers utmost design complexities, balanced by sculptural yet minimalistic angles. Each frame is carefully handcrafted in Italy, and finished with meticulous internal chamfer and bevel milling to add fluid lightness to the 3D profile. Temples are elevated to gradually build in thickness—reflecting the art of subtlety that permeates the collection. Features ZEISS LightPro® sun lenses, which provide excellent digital device-readability and minimise glare."
+        },
+        {
+          "model": "1422 Square Sunglasses",
+          "image": "images/sunglasses/cutler-gross/1422-Square-Sunglasses.jpg",
+          "detail_url": "https://www.cutlerandgross.com/products/1422-square-sunglasses",
+          "description": "The avant garde boldness of 60s style informed the geometries of the 1422 sunglass. Angular lugs sweep around square lenses, while sculptural facets add dimension. The chunky frame was handcrafted in our atelier over the course of 255 hours. A limited production of 350 frames."
+        },
+        {
+          "model": "1410 Square Polarised Sunglasses",
+          "image": "images/sunglasses/cutler-gross/1410-Square-Polarised-Sunglasses.jpg",
+          "detail_url": "https://www.cutlerandgross.com/products/1410-square-polarised-sunglasses-black",
+          "description": "The geometry of mid-century Modernist architecture informed this square sunglass. It is handcrafted with a straight brow bar that juts down at the nose bridge. Angular lugs are mirrored by a slanted lens edge, while sharp temples complete the design."
+        },
+        {
+          "model": "Ladbroke 1427 Oval Sunglasses",
+          "image": "images/sunglasses/cutler-gross/Ladbroke-1427-Oval-Sunglasses.jpg",
+          "detail_url": "https://www.cutlerandgross.com/products/ladbroke-1427-titanium-oval-sunglasses",
+          "description": "The Ladbroke 1427 sunglass is a modern-day relic, born from centuries-old titanium mastery yet intended for a contemporary eye. Continuing the story of blending past and present, the vintage-inspired oval silhouette is balanced with a reimagined take on the Oyster pin throughout, inspired by legacy British supercars of the 60s and 70s. Speaking to both Cutler and Gross’s lineage and continuous design evolution. Featuring ZEISS sun lenses for optimal performance and maximum UV protection. Each frame in the Knightsbridge Green collection is presented in highly limited quantities of 350, and uniquely finished with its bespoke edition number."
+        },
+        {
+          "model": "1394 Aviator Polarised Sunglasses",
+          "image": "images/sunglasses/cutler-gross/1394-Aviator-Polarised-Sunglasses.jpg",
+          "detail_url": "https://www.cutlerandgross.com/products/1394-aviator-polarised-sunglasses-black",
+          "description": "An archive aviator sunglass Cutler and Gross frame from the 70s laid the foundations for the 1394 sunglass. It is handcrafted from acetate to a distinguished profile with squared lenses and a double bridge. Polished Compass Star pins detail the temples."
+        },
+        {
+          "model": "Cranley 1425 Aviator Sunglasses",
+          "image": "images/sunglasses/cutler-gross/Cranley-1425-Aviator-Sunglasses.jpg",
+          "detail_url": "https://www.cutlerandgross.com/products/cranley-1425-titanium-aviator-sunglasses",
+          "description": "An interpretation of the classic navigator, the Cranley 1425 sunglass embraces the striking artistry of titanium and is shaped by the hand of skilled artisans in Sabae, Japan. Drawing influences from design details of legacy British supercars, the evolved Oyster pin traces its way across our archive and finds itself on key points from the brow bar and hinges, striking a resemblance to filigree of fine jewellery. Featuring ZEISS sun lenses for optimal performance and maximum UV protection. The Knightsbridge Green collection is presented in highly limited quantities, with each frame uniquely finished with its bespoke edition number."
+        },
+        {
+          "model": "9782 Aviator Polarised Sunglasses",
+          "image": "images/sunglasses/cutler-gross/9782-Aviator-Polarised-Sunglasses.jpg",
+          "detail_url": "https://www.cutlerandgross.com/products/9782-aviator-polarised-sunglasses-black",
+          "description": "The 9782 aviator sunglasses pay tribute to the hedonism and happenings of the late 80s and 90s, when Cutler and Gross customers like Iggy Pop and Grace Jones frequented Studio 54. It's rooted in our bestselling 1394 frame, reworked with a slightly narrower bridge and classic teardrop lenses. Compass Star pins and Art Deco core wire add subtle yet distinctive detail."
+        },
+        {
+          "model": "GR14 Aviator Sunglasses",
+          "image": "images/sunglasses/cutler-gross/GR14-Aviator-Sunglasses.jpg",
+          "detail_url": "https://www.cutlerandgross.com/products/gr14-aviator-sunglasses",
+          "description": "The Graham Cutler collection scales bold yet timeless styles into refined proportions, as presented by the GR14 sunglass—a reimagined take on our classic 0822 aviator. Handcrafted in Italy from 8mm acetate, the discerning silhouette features signature 3D milling and bevelling to offer a lightness and comfort when worn throughout the day."
+        },
+        {
+          "model": "Kensington 1424 Aviator Polarised Sunglasses",
+          "image": "images/sunglasses/cutler-gross/Kensington-1424-Aviator-Polarised-Sunglasses.jpg",
+          "detail_url": "https://www.cutlerandgross.com/products/kensington-1424-aviator-polarised-sunglasses-black",
+          "description": "The Kensington 1424 is a study on the balance between strength and lightness. Forged from Japanese titanium with utmost attention to its engineering, this navigator sunglass offers a near-weightless air. The Oyster pin is subtly engrained throughout, even down to the engraved nose pads that act as a secret signature honouring its artisans, without loudly declaring it. Featuring ZEISS sun lenses for optimal performance and maximum UV protection. Each frame in the Knightsbridge Green collection is presented in highly limited quantities of 350, and uniquely finished with its bespoke edition number."
+        },
+        {
+          "model": "0004 Aviator Sunglasses",
+          "image": "images/sunglasses/cutler-gross/0004-Aviator-Sunglasses.jpg",
+          "detail_url": "https://www.cutlerandgross.com/products/0004-aviator-sunglasses",
+          "description": "The 0004 sunglass presents a subtle update on the classic navigator frame, sculpted with octagonal edges and a double browline. It's handcrafted in Italy from polished precious metals to an ultra-light design. Available in 18K White Gold Rhodium, 18K Gold, 18K Rose Gold, and a combination of 24K Yellow Gold and 18K Rhodium."
+        },
+        {
+          "model": "1388 Square Sunglasses",
+          "image": "images/sunglasses/cutler-gross/1388-Square-Sunglasses.jpg",
+          "detail_url": "https://www.cutlerandgross.com/products/1388-square-sunglasses",
+          "description": "The 1388 square sunglass takes inspiration from an archive frame connected to New York streetwear in the late 70s. Handcrafted to a maximalist silhouette, it is detailed with chunky temples and threaded with Groove core wire."
+        },
+        {
+          "model": "The Great Frog Lucky Diamond I Round Sunglasses",
+          "image": "images/sunglasses/cutler-gross/The-Great-Frog-Lucky-Diamond-I-Round-Sunglasses.jpg",
+          "detail_url": "https://www.cutlerandgross.com/products/the-great-frog-lucky-diamond-i-round-sunglasses",
+          "description": "The Cutler and Gross X The Great Frog collaboration fuses heritage handiwork with gothic undertones, and these round sunglasses are exemplary. They're crafted in Italy to a flat-top design that's spliced by Sterling Silver iconography — Dagger frontal pins and Skull and Crossbones emblems at the temples. Flat, gradient lenses complete the set."
+        }
+      ]
+    },
+    {
+      "id": "linda-farrow",
+      "name": "Linda Farrow",
+      "source_note": "Imagery and model names from the brand's official site at build time.",
+      "frames": [
+        {
+          "model": "Quynh Sunglasses in 22K Gold and Dusk",
+          "image": "images/sunglasses/linda-farrow/Quynh-Sunglasses-in-22K-Gold-and-Dusk.jpg",
+          "detail_url": "https://www.lindafarrow.com/products/quynh-sunglasses-in-22k-gold-and-dusk",
+          "description": "The Quynh aviator frame is crafted from pure Japanese titanium plated in 22K light gold. Fitted with dusk gradient lenses in lavender, pink, and blue with gentle faceting like a diamond on the edging. They offer full UV protection. The frame is fitted with adjustable titanium nose pads that offer a tailored fit by allowing bespoke positioning for enhanced comfort."
+        },
+        {
+          "model": "Bayer Sunglasses in Matt Champagne and Pink",
+          "image": "images/sunglasses/linda-farrow/Bayer-Sunglasses-in-Matt-Champagne-and-Pink.jpg",
+          "detail_url": "https://www.lindafarrow.com/products/bayer-sunglasses-in-matt-champagne-and-pink",
+          "description": "This product is a limited edition of 100. The edition number is printed on the inside of the temple #/100. The Bayer aviator frame is crafted from matt champagne plated pure Japanese titanium and paired with pink gradient lenses offering full UV protection. The frame is fitted with adjustable titanium nose pads that offer a tailored fit by allowing bespoke positioning for enhanced comfort."
+        },
+        {
+          "model": "Miranda Sunglasses in 22K Gold and Pink",
+          "image": "images/sunglasses/linda-farrow/Miranda-Sunglasses-in-22K-Gold-and-Pink.jpg",
+          "detail_url": "https://www.lindafarrow.com/products/miranda-sunglasses-in-22k-gold-and-pink",
+          "description": "This product is a limited edition of 110. The edition number is printed on the inside of the temple #/110. The Miranda oversized frame is crafted from 22k gold plated pure Japanese titanium and fitted with pink gradient lenses offering full UV protection. The nose bridge features a unique, subtle twist design, adding an artistic touch. The frame is fitted with adjustable titanium nose pads that offer a tailored fit by allowing bespoke positioning for enhanced comfort."
+        },
+        {
+          "model": "Macy Vista Temple Sunglasses in Wine",
+          "image": "images/sunglasses/linda-farrow/Macy-Vista-Temple-Sunglasses-in-Wine.jpg",
+          "detail_url": "https://www.lindafarrow.com/products/macy-sunglasses-in-wine",
+          "description": "This product is a limited edition of 130. The edition number is printed on the inside of the temple #/130. Introducing the Macy oversized frame featuring our newly designed Vista Temple, for the geometric cut-out design that works like a \"vista\" you can peer through. This frame is crafted from Italian wine acetate rims and contrasting 22k gold plated Japanese titanium temples featuring a geometric cut-out design ,giving them a sculptural, high-fashion appearance. Fitted with mauve gradient lenses offering full UV protection and sculpted nose pads for a tailored fit."
+        },
+        {
+          "model": "Lyra Sunglasses in Honey",
+          "image": "images/sunglasses/linda-farrow/Lyra-Sunglasses-in-Honey.jpg",
+          "detail_url": "https://www.lindafarrow.com/products/lyra-sunglasses-in-honey",
+          "description": "The Lyra oval frame is crafted from Italian acetate in warm, translucent honey. Fitted with camel gradient lenses offering full UV protection. The frame features sculpted nose pads for a tailored fit."
+        },
+        {
+          "model": "Lina Sunglasses in Honey",
+          "image": "images/sunglasses/linda-farrow/Lina-Sunglasses-in-Honey.jpg",
+          "detail_url": "https://www.lindafarrow.com/products/lina-sunglasses-in-honey",
+          "description": "This product is a limited edition of 80. The edition number is printed on the inside of the temple #/80. Crafted from Italian chunky acetate in warm, translucent honey these oval-shaped sunglasses are fitted with camel gradient lenses offering full UV protection. The temple bears our signature gold-plated titanium eyelet, compatible with our accessories, monogrammed with 'London 1970' to mark the founding of the brand. The frame features sculpted nose pads for a tailored fit."
+        },
+        {
+          "model": "Susie Vista Temple Sunglasses in Honey",
+          "image": "images/sunglasses/linda-farrow/Susie-Vista-Temple-Sunglasses-in-Honey.jpg",
+          "detail_url": "https://www.lindafarrow.com/products/susie-sunglasses-in-honey",
+          "description": "Introducing the Susie oval frame featuring our newly designed Vista Temple, for the geometric cut-out design that works like a \"vista\" you can peer through. This frame is crafted from Italian acetate in warm, translucent honey and contrasting matt champagne Japanese titanium sleek temples featuring a geometric cut-out design , giving them a sculptural, high-fashion appearance. Fitted with camel gradient lenses offering full UV protection and sculpted nose pads for a tailored fit."
+        },
+        {
+          "model": "Iris Sunglasses in Honey",
+          "image": "images/sunglasses/linda-farrow/Iris-Sunglasses-in-Honey.jpg",
+          "detail_url": "https://www.lindafarrow.com/products/iris-sunglasses-in-honey",
+          "description": "This product is a limited edition of 70. The edition number is printed on the inside of the temple #/70. This oval frame embodies minimalist elegance with a bold twist. Crafted from Italian acetate in warm, translucent honey. Fitted with camel gradient lenses offering full UV protection. The frame features sculpted nose pads for a tailored fit."
+        },
+        {
+          "model": "Celia Sunglasses in Truffle and Dusk",
+          "image": "images/sunglasses/linda-farrow/Celia-Sunglasses-in-Truffle-and-Dusk.jpg",
+          "detail_url": "https://www.lindafarrow.com/products/celia-sunglasses-in-truffle",
+          "description": "This product is a limited edition of 100. The edition number is printed on the inside of the temple #/100. Sculpted from truffle Italian acetate this combination frame features 22K light gold plated pure Japanese titanium temples. The Celia is fitted with dusk gradient lenses offering full UV protection. Adjustable titanium nose pads offer a tailored fit by allowing bespoke positioning for enhanced comfort."
+        },
+        {
+          "model": "Lina Sunglasses in Truffle and Dusk",
+          "image": "images/sunglasses/linda-farrow/Lina-Sunglasses-in-Truffle-and-Dusk.jpg",
+          "detail_url": "https://www.lindafarrow.com/products/lina-sunglasses-in-truffle",
+          "description": "This product is a limited edition of 80. The edition number is printed on the inside of the temple #/80. Crafted from Italian chunky acetate in truffle, these oval-shaped sunglasses are fitted with dusk gradient lenses offering full UV protection. The temple bears our signature gold-plated titanium eyelet, compatible with our accessories, monogrammed with 'London 1970' to mark the founding of the brand. The frame features sculpted nose pads for a tailored fit."
+        },
+        {
+          "model": "Laura Sunglasses in Truffle and Dusk",
+          "image": "images/sunglasses/linda-farrow/Laura-Sunglasses-in-Truffle-and-Dusk.jpg",
+          "detail_url": "https://www.lindafarrow.com/products/laura-sunglasses-in-truffle",
+          "description": "This product is a limited edition of 120. The edition number is printed on the inside of the temple #/120. The Laura angular frame is crafted from Italian acetate in truffle with sculpted nose pads for a comfortable fit. . The contour eyelet hinge is crafted as a sculptural wrap around element. This custom hardware curves from the temple and extends seamlessly onto the front of the acetate frame. Finished in hand-applied colour leaving fine raised lines of gold-plated metal, the design reveals industrial screw detailing and our iconic 22k gold plated Japanese titanium eyelet bearing the brand logo. Fitted with dusk gradient lenses offering full UV protection."
+        },
+        {
+          "model": "Margot Sunglasses in 22K Gold and Dusk",
+          "image": "images/sunglasses/linda-farrow/Margot-Sunglasses-in-22K-Gold-and-Dusk.jpg",
+          "detail_url": "https://www.lindafarrow.com/products/margot-sunglasses-in-22k-gold-and-dusk",
+          "description": "The Margot hexagon frame is crafted from pure Japanese titanium in 22K gold. Fitted with brown lenses offering full UV protection. The frame is fitted with adjustable titanium nose pads that offer a tailored fit by allowing bespoke positioning for enhanced comfort. A piece of designer eyewear for those seeking luxury sunglasses and a modern silhouette."
+        },
+        {
+          "model": "Heath Sunglasses in Black and Mocha",
+          "image": "images/sunglasses/linda-farrow/Heath-Sunglasses-in-Black-and-Mocha.jpg",
+          "detail_url": "https://www.lindafarrow.com/products/heath-sunglasses-in-black-and-mocha",
+          "description": "The Heath oval frame features black rims crafted from Italian acetate and contrasting nickel temples with gold details. This style is fitted with mocha gradient lenses offering full UV protection. The frame features sculpted nose pads for a tailored fit."
+        },
+        {
+          "model": "Sheri Sunglasses in Matt Champagne and Mocha",
+          "image": "images/sunglasses/linda-farrow/Sheri-Sunglasses-in-Matt-Champagne-and-Mocha.jpg",
+          "detail_url": "https://www.lindafarrow.com/products/sheri-sunglasses-in-matt-champagne-and-mocha",
+          "description": "The Sheri cat eye frame features a chunky matt champagne pure Japanese titanium structure fitted with mocha gradient lenses, offering full UV protection. The temples are crafted from brown Italian acetate with gold accents , adding a luxurious touch. The frame is fitted with adjustable titanium nose pads that offer a tailored fit by allowing bespoke positioning for enhanced comfort."
+        },
+        {
+          "model": "Sheri Sunglasses in 22K Gold and Black",
+          "image": "images/sunglasses/linda-farrow/Sheri-Sunglasses-in-22K-Gold-and-Black.jpg",
+          "detail_url": "https://www.lindafarrow.com/products/sheri-sunglasses-in-22k-gold-and-grey",
+          "description": "The Sheri cat eye frame features a chunky 22k gold plated pure Japanese titanium structure fitted with solid grey lenses, offering full UV protection. The temples are crafted from black Italian acetate with gold accents , adding a luxurious touch. The frame is fitted with adjustable titanium nose pads that offer a tailored fit by allowing bespoke positioning for enhanced comfort."
+        },
+        {
+          "model": "Stanley Sunglasses in Black",
+          "image": "images/sunglasses/linda-farrow/Stanley-Sunglasses-in-Black.jpg",
+          "detail_url": "https://www.lindafarrow.com/products/stanley-sunglasses-in-black",
+          "description": "Finely sculpted black acetate rims are paired with a delicate nickel titanium frame work which runs along the inner brown and into sleek tapered temples. The Stanley d-frame is fitted with solid grey lenses offer anti-glare and 100% UV protection."
+        },
+        {
+          "model": "Susie Vista Temple Sunglasses in Black and Mocha Lens",
+          "image": "images/sunglasses/linda-farrow/Susie-Vista-Temple-Sunglasses-in-Black-and-Mocha-Lens.jpg",
+          "detail_url": "https://www.lindafarrow.com/products/susie-sunglasses-in-black-and-mocha",
+          "description": "Introducing the Susie oval frame featuring our newly designed Vista Temple, for the geometric cut-out design that works like a \"vista\" you can peer through. This frame is crafted from rich Italian black acetate rims and contrasting matt nickel Japanese titanium sleek temples featuring a geometric cut-out design , giving them a sculptural, high-fashion appearance. Fitted with mocha gradient lenses offering full UV protection and sculpted nose pads for a tailored fit."
+        },
+        {
+          "model": "Macy Vista Temple Sunglasses in Honey",
+          "image": "images/sunglasses/linda-farrow/Macy-Vista-Temple-Sunglasses-in-Honey.jpg",
+          "detail_url": "https://www.lindafarrow.com/products/macy-sunglasses-in-honey",
+          "description": "Introducing the Macy oversized frame featuring our newly designed Vista Temple, for the geometric cut-out design that works like a \"vista\" you can peer through. This frame is crafted from Italian acetate rims in warm, translucent honey and contrasting 22k gold plated Japanese titanium temples featuring a geometric cut-out design ,giving them a sculptural, high-fashion appearance. Fitted with camel gradient lenses offering full UV protection and sculpted nose pads for a tailored fit."
+        },
+        {
+          "model": "Miranda Sunglasses in 22K Gold and Green",
+          "image": "images/sunglasses/linda-farrow/Miranda-Sunglasses-in-22K-Gold-and-Green.jpg",
+          "detail_url": "https://www.lindafarrow.com/products/miranda-sunglasses-in-22k-gold-and-green",
+          "description": "This product is a limited edition of 70. The edition number is printed on the inside of the temple #/70. The Miranda oversized frame is crafted from 22k gold plated pure Japanese titanium and fitted with deep green lenses offering full UV protection. The nose bridge features a unique, subtle twist design, adding an artistic touch. The frame is fitted with adjustable titanium nose pads that offer a tailored fit by allowing bespoke positioning for enhanced comfort."
+        },
+        {
+          "model": "Jessica Sunglasses in Dark Tortoiseshell",
+          "image": "images/sunglasses/linda-farrow/Jessica-Sunglasses-in-Dark-Tortoiseshell.jpg",
+          "detail_url": "https://www.lindafarrow.com/products/jessica-sunglasses-in-dark-tortoiseshell",
+          "description": "Introducing the Jessica rectangular frame. This rimless sunglasses are engineered with a 4mm glossy edged lens in solid deep green and anchored by bold hardware at each corner, dark tortoiseshell Italian acetate temples inset with our signature matt champagne titanium eyelet bearing the brand logo. The frame is fitted with adjustable titanium nose pads that offer a tailored fit by allowing bespoke positioning for enhanced comfort."
+        }
+      ]
+    },
+    {
+      "id": "lgr",
+      "name": "L.G.R",
+      "source_note": "Imagery and model names from the brand's official site at build time.",
+      "frames": [
+        {
+          "model": "Reunion",
+          "image": "images/sunglasses/lgr/Reunion.jpg",
+          "detail_url": "https://www.lgrworld.com/en/product/reunion-zambezi-forest-99-orange-photochromic/",
+          "description": "L.G.R handmade in Italy. Sunglasses try-on at Eye Noon Optical."
+        },
+        {
+          "model": "Algiers",
+          "image": "images/sunglasses/lgr/Algiers.jpg",
+          "detail_url": "https://www.lgrworld.com/en/product/algiers-damasco-dust-98-green-vintage-photohromic/",
+          "description": "L.G.R handmade in Italy. Sunglasses try-on at Eye Noon Optical."
+        },
+        {
+          "model": "Monrovia",
+          "image": "images/sunglasses/lgr/Monrovia.jpg",
+          "detail_url": "https://www.lgrworld.com/en/product/monrovia-damasco-dust-98-brown-gradient/",
+          "description": "L.G.R handmade in Italy. Sunglasses try-on at Eye Noon Optical."
+        },
+        {
+          "model": "Gabon",
+          "image": "images/sunglasses/lgr/Gabon.jpg",
+          "detail_url": "https://www.lgrworld.com/en/product/gabon-havana-chiaro-02-blue-gradient-photochromic/",
+          "description": "L.G.R handmade in Italy. Sunglasses try-on at Eye Noon Optical."
+        },
+        {
+          "model": "Aloe",
+          "image": "images/sunglasses/lgr/Aloe.jpg",
+          "detail_url": "https://www.lgrworld.com/en/product/aloe-havana-pink-91-light-pink-photochromic/",
+          "description": "L.G.R handmade in Italy. Sunglasses try-on at Eye Noon Optical."
+        },
+        {
+          "model": "Raffaello | Maxton Hall",
+          "image": "images/sunglasses/lgr/Raffaello-Maxton-Hall.jpg",
+          "detail_url": "https://www.lgrworld.com/en/product/raffaello-maxton-hall-black-01-yellow-gradient-photochromic/",
+          "description": "L.G.R handmade in Italy. Sunglasses try-on at Eye Noon Optical."
+        },
+        {
+          "model": "Meknes | Lions of Ethiopia | NETFLIX EMILY IN PARIS",
+          "image": "images/sunglasses/lgr/Meknes-Lions-of-Ethiopia-NETFLIX-EMILY-IN-PARIS.jpg",
+          "detail_url": "https://www.lgrworld.com/en/product/meknes-lions-of-ethiopia-netflix-emily-in-paris-gold-havana-scuro-09-green-vintage-photochromic/",
+          "description": "L.G.R handmade in Italy. Sunglasses try-on at Eye Noon Optical."
+        },
+        {
+          "model": "Marrakech Bold",
+          "image": "images/sunglasses/lgr/Marrakech-Bold.jpg",
+          "detail_url": "https://www.lgrworld.com/en/product/marrakech-bold-champagne-havana-scuro-49c-green-vintage-gradient-photochromic/",
+          "description": "L.G.R handmade in Italy. Sunglasses try-on at Eye Noon Optical."
+        },
+        {
+          "model": "Reunion | Netflix THE SANDMAN",
+          "image": "images/sunglasses/lgr/Reunion-Netflix-THE-SANDMAN.jpg",
+          "detail_url": "https://www.lgrworld.com/en/product/reunion-lgr-honey-08-green-g15/",
+          "description": "L.G.R handmade in Italy. Sunglasses try-on at Eye Noon Optical."
+        },
+        {
+          "model": "Marrakech",
+          "image": "images/sunglasses/lgr/Marrakech.jpg",
+          "detail_url": "https://www.lgrworld.com/en/product/marrakech-havana-chiaro-02-green-g15/",
+          "description": "L.G.R handmade in Italy. Sunglasses try-on at Eye Noon Optical."
+        },
+        {
+          "model": "Zanzibar",
+          "image": "images/sunglasses/lgr/Zanzibar.jpg",
+          "detail_url": "https://www.lgrworld.com/en/product/zanzibar-lgr-black-01-yellow-gradient-photochromic/",
+          "description": "L.G.R handmade in Italy. Sunglasses try-on at Eye Noon Optical."
+        },
+        {
+          "model": "Kigali",
+          "image": "images/sunglasses/lgr/Kigali.jpg",
+          "detail_url": "https://www.lgrworld.com/en/product/kigali-black-gold-01d-yellow-gradient-photochromic/",
+          "description": "L.G.R handmade in Italy. Sunglasses try-on at Eye Noon Optical."
+        },
+        {
+          "model": "Simba",
+          "image": "images/sunglasses/lgr/Simba.jpg",
+          "detail_url": "https://www.lgrworld.com/en/product/simba-crystal-brown-76-sunbrown-gradient-photochromic/",
+          "description": "L.G.R handmade in Italy. Sunglasses try-on at Eye Noon Optical."
+        },
+        {
+          "model": "Asmara II",
+          "image": "images/sunglasses/lgr/Asmara-II.jpg",
+          "detail_url": "https://www.lgrworld.com/en/product/asmara-ii-black-01d-yellow-gradient-photochromic/",
+          "description": "L.G.R handmade in Italy. Sunglasses try-on at Eye Noon Optical."
+        },
+        {
+          "model": "Suez",
+          "image": "images/sunglasses/lgr/Suez.jpg",
+          "detail_url": "https://www.lgrworld.com/en/product/suez-black-matt-22-grey-polarized/",
+          "description": "L.G.R handmade in Italy. Sunglasses try-on at Eye Noon Optical."
+        },
+        {
+          "model": "Raffaello | Maxton Hall",
+          "image": "images/sunglasses/lgr/Raffaello-Maxton-Hall-2.jpg",
+          "detail_url": "https://www.lgrworld.com/en/product/raffaello-maxton-hall-havana-maculato-39-blue-hd-gradient/",
+          "description": "L.G.R handmade in Italy. Sunglasses try-on at Eye Noon Optical."
+        }
+      ]
+    },
+    {
+      "id": "retrosuperfuture",
+      "name": "Retrosuperfuture",
+      "source_note": "Imagery and model names from the brand's official site at build time.",
+      "frames": [
+        {
+          "model": "10 Corso Como Seoul II",
+          "image": "images/sunglasses/retrosuperfuture/10-Corso-Como-Seoul-II.jpg",
+          "detail_url": "https://www.retrosuperfuture.com/products/if8x",
+          "description": "SUPER and 10 Corso Como Seoul have developed an exceptional collaborative project with the kind support of Korean musical phenomenon Super Junior. SUPER's Classic silhouette was produced in a vibrant dark havana acetate and enriched with unique chunky golden décor that represents the bold beauty and elegance of Italian style. This model sports lenses by ZEISS in black. The box contains a soft case and a cleaning cloth. Size: L Lens Width: 58mm Frame Front: 146mm Frame Side: 145mm Product Code Size L: 7LV"
+        },
+        {
+          "model": "1968 3627",
+          "image": "images/sunglasses/retrosuperfuture/1968-3627.jpg",
+          "detail_url": "https://www.retrosuperfuture.com/products/igkr",
+          "description": "The box contains a semi-hard case and a cleaning cloth. Sizes: R Lens Width: 52 mm Frame Front: Frame Side: 145 mm Product Code Size R: D9G"
+        },
+        {
+          "model": "1968 Black",
+          "image": "images/sunglasses/retrosuperfuture/1968-Black.jpg",
+          "detail_url": "https://www.retrosuperfuture.com/products/ijs7",
+          "description": "The box contains a semi-hard case and a cleaning cloth. Sizes: R Lens Width: 52 mm Frame Front: Frame Side: 145 mm Product Code Size R: UU1"
+        },
+        {
+          "model": "1968 Espresso",
+          "image": "images/sunglasses/retrosuperfuture/1968-Espresso.jpg",
+          "detail_url": "https://www.retrosuperfuture.com/products/iabj",
+          "description": "The box contains a semi-hard case and a cleaning cloth. Sizes: R Lens Width: 52 mm Frame Front: Frame Side: 145 mm Product Code Size R: ACR"
+        },
+        {
+          "model": "1968 Refined",
+          "image": "images/sunglasses/retrosuperfuture/1968-Refined.jpg",
+          "detail_url": "https://www.retrosuperfuture.com/products/iiot",
+          "description": "The box contains a semi-hard case and a cleaning cloth. Sizes: R Lens Width: 52 mm Frame Front: Frame Side: 145 mm Product Code Size R: 18E"
+        },
+        {
+          "model": "1968 Sereno",
+          "image": "images/sunglasses/retrosuperfuture/1968-Sereno.jpg",
+          "detail_url": "https://www.retrosuperfuture.com/products/imv4",
+          "description": "The box contains a semi-hard case and a cleaning cloth. Sizes: R Lens Width: 52 mm Frame Front: Frame Side: 145 mm Product Code Size R: DJA"
+        },
+        {
+          "model": "3go Black",
+          "image": "images/sunglasses/retrosuperfuture/3go-Black.jpg",
+          "detail_url": "https://www.retrosuperfuture.com/products/izzn",
+          "description": "These Diesel iconic sunglasses are a statement piece. The frames are crafted from acetate and feature the \"Diesel for successful living\" red logo on each temple. Sizes: R Lens Width: Frame Front: Frame Side: 145 mm Product Code Size R: TRN"
+        },
+        {
+          "model": "4 Cerniere Ambra",
+          "image": "images/sunglasses/retrosuperfuture/4-Cerniere-Ambra.jpg",
+          "detail_url": "https://www.retrosuperfuture.com/products/i00y",
+          "description": "Created for the exclusive Italian-American brand Ottomila, 4 Cerniere is a cutting-edge piece of eyewear that elevates timeless simplicity to iconic contemporary style. 4 Cerniere means 4 hinges in Italian, this unique feature strengthens the structure and allows perfect alignment between the temples and the front of the glasses. The model features wide, squared lenses and chunky acetate rims with geometric temple tips, conceived as a crossover between 1950s glamour and daring masculinity. The model’s sturdy construction has been carved on the inside of the frame, resulting in a high-end piece. This version comes with Bordeaux lenses and light amber acetate. This translucent effect highlights the personalized metal core with Frank Lloyd Wright pattern decoration in the temples. Sizes: R Le"
+        },
+        {
+          "model": "4 Cerniere Black Tie",
+          "image": "images/sunglasses/retrosuperfuture/4-Cerniere-Black-Tie.jpg",
+          "detail_url": "https://www.retrosuperfuture.com/products/iduo",
+          "description": "Created for the exclusive Italian-American brand Ottomila, 4 Cerniere is a cutting-edge piece of eyewear that elevates timeless simplicity to iconic contemporary style. 4 Cerniere means 4 hinges in Italian, this unique feature strengthens the structure and allows perfect alignment between the temples and the front of the glasses. The model features wide, squared lenses and chunky acetate rims with geometric temple tips, conceived as a crossover between 1950s glamour and daring masculinity. The model’s sturdy construction has been carved on the inside of the frame, resulting in a high-end piece. This version comes in an ultra dark semitransparent black acetate and matching lenses. Sizes: R Lens Width: 51 mm Frame Front: Frame Side: 145 mm Product Code Size R: 49G"
+        },
+        {
+          "model": "4 Cerniere Fiammato",
+          "image": "images/sunglasses/retrosuperfuture/4-Cerniere-Fiammato.jpg",
+          "detail_url": "https://www.retrosuperfuture.com/products/idpa",
+          "description": "Created for the exclusive Italian-American brand Ottomila, 4 Cerniere is a cutting-edge piece of eyewear that elevates timeless simplicity to iconic contemporary style. 4 Cerniere means 4 hinges in Italian, this unique feature strengthens the structure and allows perfect alignment between the temples and the front of the glasses. The model features wide, squared lenses and chunky acetate rims with geometric temple tips, conceived as a crossover between 1950s glamour and daring masculinity. The model’s sturdy construction has been carved on the inside of the frame, resulting in a high-end piece. This version comes in a classic striped Havana acetate and deep blue lenses. Sizes: R Lens Width: 51 mm Frame Front: Frame Side: 145 mm Product Code Size R: S4J"
+        },
+        {
+          "model": "4 Cerniere Fumo di Londra",
+          "image": "images/sunglasses/retrosuperfuture/4-Cerniere-Fumo-di-Londra.jpg",
+          "detail_url": "https://www.retrosuperfuture.com/products/iyhx",
+          "description": "Created for the exclusive Italian-American brand Ottomila, 4 Cerniere is a cutting-edge piece of eyewear that elevates timeless simplicity to iconic contemporary style. 4 Cerniere means 4 hinges in Italian, this unique feature strengthens the structure and allows perfect alignment between the temples and the front of the glasses. The model features wide, squared lenses and chunky acetate rims with geometric temple tips, conceived as a crossover between 1950s glamour and daring masculinity. The model’s sturdy construction has been carved on the inside of the frame, resulting in a high-end piece. This version comes in forest green lenses and grey semitransparent acetate which allows a glimpse into the metal details inside the temples. Sizes: R Lens Width: 51 mm Frame Front: Frame Side: 145 m"
+        },
+        {
+          "model": "49Er Afrika Moross",
+          "image": "images/sunglasses/retrosuperfuture/49Er-Afrika-Moross.jpg",
+          "detail_url": "https://www.retrosuperfuture.com/products/i0gk",
+          "description": "Sizes: R Lens Width: 52 mm Frame Front: 136 mm Frame Side: 145 mm Product Code Size R: 792"
+        },
+        {
+          "model": "49Er Blonde Havana",
+          "image": "images/sunglasses/retrosuperfuture/49Er-Blonde-Havana.jpg",
+          "detail_url": "https://www.retrosuperfuture.com/products/ir7k",
+          "description": "Sizes: R Lens Width: 52 mm Frame Front: 136 mm Frame Side: 145 mm Product Code Size R: 466"
+        },
+        {
+          "model": "49Er Crystal",
+          "image": "images/sunglasses/retrosuperfuture/49Er-Crystal.jpg",
+          "detail_url": "https://www.retrosuperfuture.com/products/ivvv",
+          "description": "Sizes: R Lens Width: 52 mm Frame Front: 136 mm Frame Side: 145 mm Product Code Size R: 464"
+        },
+        {
+          "model": "49Er Crystal Green",
+          "image": "images/sunglasses/retrosuperfuture/49Er-Crystal-Green.jpg",
+          "detail_url": "https://www.retrosuperfuture.com/products/iqs0",
+          "description": "Sizes: R Lens Width: 52 mm Frame Front: 136 mm Frame Side: 145 mm Product Code Size R: 463"
+        },
+        {
+          "model": "49Er Dark Havana",
+          "image": "images/sunglasses/retrosuperfuture/49Er-Dark-Havana.jpg",
+          "detail_url": "https://www.retrosuperfuture.com/products/i90j",
+          "description": "Sizes: R Lens Width: 52 mm Frame Front: 136 mm Frame Side: 145 mm Product Code Size R: 467"
+        },
+        {
+          "model": "49Er Havana",
+          "image": "images/sunglasses/retrosuperfuture/49Er-Havana.jpg",
+          "detail_url": "https://www.retrosuperfuture.com/products/i00u",
+          "description": "Sizes: R Lens Width: 52 mm Frame Front: 136 mm Frame Side: 145 mm Product Code Size R: 465"
+        },
+        {
+          "model": "49Er Horizon",
+          "image": "images/sunglasses/retrosuperfuture/49Er-Horizon.jpg",
+          "detail_url": "https://www.retrosuperfuture.com/products/iicj",
+          "description": "Sizes: R Lens Width: 52 mm Frame Front: 136 mm Frame Side: 145 mm Product Code Size R: 784"
+        },
+        {
+          "model": "49Er Montana",
+          "image": "images/sunglasses/retrosuperfuture/49Er-Montana.jpg",
+          "detail_url": "https://www.retrosuperfuture.com/products/i2d7",
+          "description": "Sizes: R Lens Width: 52 mm Frame Front: 136 mm Frame Side: 145 mm Product Code Size R: 794"
+        },
+        {
+          "model": "49Er Resin",
+          "image": "images/sunglasses/retrosuperfuture/49Er-Resin.jpg",
+          "detail_url": "https://www.retrosuperfuture.com/products/irnv",
+          "description": "Sizes: R / L Lens Width: 52 / 55 mm Frame Front: 136 / 145 mm Frame Side: 145 mm Product Code Size R: 882 Product Code Size L: MK8"
+        }
+      ]
+    },
+    {
+      "id": "yuichi-toyama",
+      "name": "YUICHI TOYAMA.",
+      "source_note": "Representative YUICHI TOYAMA. styles; placeholder imagery. See https://yuichitoyama.com/ for current collections.",
+      "frames": [
+        {
+          "model": "U-180",
+          "image": "images/sunglasses/yuichi-toyama/U-180.jpg",
+          "detail_url": "https://yuichitoyama.com/",
+          "description": "Made in Japan. Available to try in store at Eye Noon Optical."
+        },
+        {
+          "model": "U-179",
+          "image": "images/sunglasses/yuichi-toyama/U-179.jpg",
+          "detail_url": "https://yuichitoyama.com/",
+          "description": "Made in Japan. Available to try in store at Eye Noon Optical."
+        },
+        {
+          "model": "U-178",
+          "image": "images/sunglasses/yuichi-toyama/U-178.jpg",
+          "detail_url": "https://yuichitoyama.com/",
+          "description": "Made in Japan. Available to try in store at Eye Noon Optical."
+        },
+        {
+          "model": "U-177",
+          "image": "images/sunglasses/yuichi-toyama/U-177.jpg",
+          "detail_url": "https://yuichitoyama.com/",
+          "description": "Made in Japan. Available to try in store at Eye Noon Optical."
+        },
+        {
+          "model": "U-129RS",
+          "image": "images/sunglasses/yuichi-toyama/U-129RS.jpg",
+          "detail_url": "https://yuichitoyama.com/",
+          "description": "Made in Japan. Available to try in store at Eye Noon Optical."
+        },
+        {
+          "model": "U-128RS",
+          "image": "images/sunglasses/yuichi-toyama/U-128RS.jpg",
+          "detail_url": "https://yuichitoyama.com/",
+          "description": "Made in Japan. Available to try in store at Eye Noon Optical."
+        },
+        {
+          "model": "U-181",
+          "image": "images/sunglasses/yuichi-toyama/U-181.jpg",
+          "detail_url": "https://yuichitoyama.com/",
+          "description": "Made in Japan. Available to try in store at Eye Noon Optical."
+        },
+        {
+          "model": "U-176",
+          "image": "images/sunglasses/yuichi-toyama/U-176.jpg",
+          "detail_url": "https://yuichitoyama.com/",
+          "description": "Made in Japan. Available to try in store at Eye Noon Optical."
+        },
+        {
+          "model": "U-175",
+          "image": "images/sunglasses/yuichi-toyama/U-175.jpg",
+          "detail_url": "https://yuichitoyama.com/",
+          "description": "Made in Japan. Available to try in store at Eye Noon Optical."
+        },
+        {
+          "model": "U-174",
+          "image": "images/sunglasses/yuichi-toyama/U-174.jpg",
+          "detail_url": "https://yuichitoyama.com/",
+          "description": "Made in Japan. Available to try in store at Eye Noon Optical."
+        },
+        {
+          "model": "U-173",
+          "image": "images/sunglasses/yuichi-toyama/U-173.jpg",
+          "detail_url": "https://yuichitoyama.com/",
+          "description": "Made in Japan. Available to try in store at Eye Noon Optical."
+        },
+        {
+          "model": "U-172",
+          "image": "images/sunglasses/yuichi-toyama/U-172.jpg",
+          "detail_url": "https://yuichitoyama.com/",
+          "description": "Made in Japan. Available to try in store at Eye Noon Optical."
+        },
+        {
+          "model": "U-171",
+          "image": "images/sunglasses/yuichi-toyama/U-171.jpg",
+          "detail_url": "https://yuichitoyama.com/",
+          "description": "Made in Japan. Available to try in store at Eye Noon Optical."
+        },
+        {
+          "model": "U-169",
+          "image": "images/sunglasses/yuichi-toyama/U-169.jpg",
+          "detail_url": "https://yuichitoyama.com/",
+          "description": "Made in Japan. Available to try in store at Eye Noon Optical."
+        },
+        {
+          "model": "U-168",
+          "image": "images/sunglasses/yuichi-toyama/U-168.jpg",
+          "detail_url": "https://yuichitoyama.com/",
+          "description": "Made in Japan. Available to try in store at Eye Noon Optical."
+        },
+        {
+          "model": "U-167",
+          "image": "images/sunglasses/yuichi-toyama/U-167.jpg",
+          "detail_url": "https://yuichitoyama.com/",
+          "description": "Made in Japan. Available to try in store at Eye Noon Optical."
+        },
+        {
+          "model": "U-166",
+          "image": "images/sunglasses/yuichi-toyama/U-166.jpg",
+          "detail_url": "https://yuichitoyama.com/",
+          "description": "Made in Japan. Available to try in store at Eye Noon Optical."
+        },
+        {
+          "model": "U-165",
+          "image": "images/sunglasses/yuichi-toyama/U-165.jpg",
+          "detail_url": "https://yuichitoyama.com/",
+          "description": "Made in Japan. Available to try in store at Eye Noon Optical."
+        },
+        {
+          "model": "U-164",
+          "image": "images/sunglasses/yuichi-toyama/U-164.jpg",
+          "detail_url": "https://yuichitoyama.com/",
+          "description": "Made in Japan. Available to try in store at Eye Noon Optical."
+        },
+        {
+          "model": "U-163",
+          "image": "images/sunglasses/yuichi-toyama/U-163.jpg",
+          "detail_url": "https://yuichitoyama.com/",
+          "description": "Made in Japan. Available to try in store at Eye Noon Optical."
+        }
+      ]
+    },
+    {
+      "id": "akila",
+      "name": "AKILA",
+      "source_note": "Representative AKILA styles; placeholder imagery. See https://akila.la/ for current collections.",
+      "frames": [
+        {
+          "model": "Rune",
+          "image": "images/sunglasses/akila/Rune.jpg",
+          "detail_url": "https://akila.la/products/rune-2639",
+          "description": "Designed in Los Angeles. Made in Japan."
+        },
+        {
+          "model": "Rey",
+          "image": "images/sunglasses/akila/Rey.jpg",
+          "detail_url": "https://akila.la/products/rey-2606",
+          "description": "Designed in Los Angeles. Made in Japan."
+        },
+        {
+          "model": "Helix",
+          "image": "images/sunglasses/akila/Helix.jpg",
+          "detail_url": "https://akila.la/products/helix-2630",
+          "description": "Designed in Los Angeles. Made in Japan."
+        },
+        {
+          "model": "Atlas",
+          "image": "images/sunglasses/akila/Atlas.jpg",
+          "detail_url": "https://akila.la/products/atlas-2604",
+          "description": "Designed in Los Angeles. Made in Japan."
+        },
+        {
+          "model": "Mira",
+          "image": "images/sunglasses/akila/Mira.jpg",
+          "detail_url": "https://akila.la/products/mira-2636",
+          "description": "Designed in Los Angeles. Made in Japan."
+        },
+        {
+          "model": "Nomos",
+          "image": "images/sunglasses/akila/Nomos.jpg",
+          "detail_url": "https://akila.la/products/nomos-2619",
+          "description": "Designed in Los Angeles. Made in Japan."
+        },
+        {
+          "model": "Lo-Fi",
+          "image": "images/sunglasses/akila/Lo-Fi.jpg",
+          "detail_url": "https://akila.la/products/lo-fi-2551",
+          "description": "Designed in Los Angeles. Made in Japan."
+        },
+        {
+          "model": "Crux",
+          "image": "images/sunglasses/akila/Crux.jpg",
+          "detail_url": "https://akila.la/products/crux-2531",
+          "description": "Designed in Los Angeles. Made in Japan."
+        },
+        {
+          "model": "Nebula",
+          "image": "images/sunglasses/akila/Nebula.jpg",
+          "detail_url": "https://akila.la/products/nebula-2413",
+          "description": "Designed in Los Angeles. Made in Japan."
+        },
+        {
+          "model": "Newt",
+          "image": "images/sunglasses/akila/Newt.jpg",
+          "detail_url": "https://akila.la/products/newt-2541",
+          "description": "Designed in Los Angeles. Made in Japan."
+        },
+        {
+          "model": "Stereo",
+          "image": "images/sunglasses/akila/Stereo.jpg",
+          "detail_url": "https://akila.la/products/stereo-2543",
+          "description": "Designed in Los Angeles. Made in Japan."
+        },
+        {
+          "model": "Alien",
+          "image": "images/sunglasses/akila/Alien.jpg",
+          "detail_url": "https://akila.la/products/alien-2532",
+          "description": "Designed in Los Angeles. Made in Japan."
+        },
+        {
+          "model": "Atria",
+          "image": "images/sunglasses/akila/Atria.jpg",
+          "detail_url": "https://akila.la/products/atria-2530",
+          "description": "Designed in Los Angeles. Made in Japan."
+        },
+        {
+          "model": "Sequence",
+          "image": "images/sunglasses/akila/Sequence.jpg",
+          "detail_url": "https://akila.la/products/sequence-2545",
+          "description": "Designed in Los Angeles. Made in Japan."
+        },
+        {
+          "model": "IO",
+          "image": "images/sunglasses/akila/IO.jpg",
+          "detail_url": "https://akila.la/products/io-2549",
+          "description": "Designed in Los Angeles. Made in Japan."
+        }
+      ]
+    }
+  ]
+}

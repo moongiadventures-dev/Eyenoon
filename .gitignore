@@ -1,0 +1,30 @@
+# --- Secrets — never commit ---
+server/.env
+.env
+
+# --- Dependencies ---
+server/node_modules/
+node_modules/
+
+# --- Runtime / generated ---
+server/uploads/
+*.log
+npm-debug.log*
+
+# --- OS / editor cruft ---
+.DS_Store
+Thumbs.db
+.claude/
+
+# --- Local-only large media (not used by the site) ---
+Recording*.mp4
+Glasses_rise_to_*.mp4
+glasstryon.mp4
+sunglasses2.mp4
+
+# --- Dev backups and preview thumbnails ---
+data/*.bak.json
+images/**/*.orig.*
+_pv_*
+_preview_*
+

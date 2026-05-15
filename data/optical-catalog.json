@@ -1,0 +1,700 @@
+{
+  "brands": [
+    {
+      "id": "cutler-gross",
+      "name": "Cutler and Gross",
+      "source_note": "Imagery and model names from the brand's official site at build time.",
+      "frames": [
+        {
+          "model": "1410 Square Optical (Large)",
+          "image": "images/optical/cutler-gross/0.jpg",
+          "detail_url": "https://www.cutlerandgross.com/products/1410-square-optical-glasses-large",
+          "description": "The geometry of mid-century Modernist architecture informed this square sunglass. It is handcrafted with a straight brow bar that juts down at the nose bridge. Angular lugs are mirrored by a slanted lens edge, while sharp temples complete the design."
+        },
+        {
+          "model": "1386 Square Opticals",
+          "image": "images/optical/cutler-gross/1386-Square-Opticals.jpg",
+          "detail_url": "https://www.cutlerandgross.com/products/1386-optical-square-glasses",
+          "description": "A Cutler and Gross signature, the 1386 square optical presents an amplified take on American acetate shapes from the 50s. The chunky 9mm frame is gilded with vintage pins and lightened with interior and exterior milling."
+        },
+        {
+          "model": "1402 Square Opticals",
+          "image": "images/optical/cutler-gross/1402-Square-Opticals.jpg",
+          "detail_url": "https://www.cutlerandgross.com/products/1402-square-optical-glasses",
+          "description": "The 1402 optical is unapologetically bold, sculpted from 10mm-thick acetate to a square silhouette that nods to our 1980s archive. Oyster and Compass Star pins add polish to the design, which is constructed with striped Hazard core wire and Minimal temple tips."
+        },
+        {
+          "model": "1394 Aviator Opticals",
+          "image": "images/optical/cutler-gross/1394-Aviator-Opticals.jpg",
+          "detail_url": "https://www.cutlerandgross.com/products/1394-optical-aviator-glasses",
+          "description": "The 1394 draws inspiration from Cutler and Gross frames created in the 70s. The bold aviator is handcrafted from polished acetate and finished with Compass Star pins."
+        },
+        {
+          "model": "1394 Aviator Opticals (Small)",
+          "image": "images/optical/cutler-gross/1394-Aviator-Opticals-Small.jpg",
+          "detail_url": "https://www.cutlerandgross.com/products/1394-small-optical-aviator-glasses",
+          "description": "The 1394 draws inspiration from Cutler and Gross frames created in the 70s. The bold aviator is handcrafted from polished acetate and finished with Compass Star pins."
+        },
+        {
+          "model": "0847 Kingsman Aviator Opticals",
+          "image": "images/optical/cutler-gross/0847-Kingsman-Aviator-Opticals.jpg",
+          "detail_url": "https://www.cutlerandgross.com/products/0847-kingsman-optical-aviator-glasses",
+          "description": "The 0847 formed the foundations of the first Kingsman collection, created in collaboration with director Matthew Vaughn and the costume design team. It is sculpted with a distinctive browline and paddle temples. As seen on Colin Firth, Michael Caine, and Taron Egerton in 'Kingsman: The Secret Service'."
+        },
+        {
+          "model": "1410 Square Opticals",
+          "image": "images/optical/cutler-gross/1410-Square-Opticals.jpg",
+          "detail_url": "https://www.cutlerandgross.com/products/1410-square-optical-glasses",
+          "description": "The geometry of mid-century Modernist architecture informed this square optical. It is handcrafted with a straight brow bar that juts down at the nose bridge. Angular lugs are mirrored by a slanted lens edge, while this season's Desert temples complete the design."
+        },
+        {
+          "model": "9325 Rectangle Opticals",
+          "image": "images/optical/cutler-gross/9325-Rectangle-Opticals.jpg",
+          "detail_url": "https://www.cutlerandgross.com/products/9325-rectangle-optical-glasses",
+          "description": "The 9325 optical is handcrafted from 10mm-thick acetate to a chubby rectangular silhouette. It is milled on the interior to lighten the weight and threaded with Hazard core wire."
+        },
+        {
+          "model": "9894 Rectangle Opticals",
+          "image": "images/optical/cutler-gross/9894-Rectangle-Opticals.jpg",
+          "detail_url": "https://www.cutlerandgross.com/products/9894-square-optical-glasses",
+          "description": "Referencing the classic 0894 worn by musician Jarvis Cocker of the band Pulp throughout the late 1980s and into the 1990s, the 9894 is a salute to the ingenuity of Cutler and Gross in the 1980s. Details include a retro reverse nose bump, side-mounted hinges and our signature fender temples. This particular placement of the hinges means one size can fit a much wider variety of face shapes."
+        },
+        {
+          "model": "1393 Square Opticals",
+          "image": "images/optical/cutler-gross/1393-Square-Opticals.jpg",
+          "detail_url": "https://www.cutlerandgross.com/products/1393-optical-square-glasses",
+          "description": "The Oyster pin has been a Cutler and Gross motif since 1969 and the legacy continues with the 1393 optical. The defiant square silhouette features milling and straight temple tips for a sculptural finish."
+        },
+        {
+          "model": "9782 Aviator Opticals",
+          "image": "images/optical/cutler-gross/9782-Aviator-Opticals.jpg",
+          "detail_url": "https://www.cutlerandgross.com/products/9782-optical-aviator-glasses",
+          "description": "Cutler and Gross's archetypal 9782 sunglass has been retooled as an optical, complete with a slim double nose bridge. Milling and bevelling add subtle dimension to the design, which culminates in Fender temples."
+        },
+        {
+          "model": "0772 Square Opticals",
+          "image": "images/optical/cutler-gross/11.jpg",
+          "detail_url": "https://www.cutlerandgross.com/products/0772-optical-square-glasses",
+          "description": "A Cutler and Gross signature that's defied decades, the 0772 optical is handcrafted with a heavy brow line and tapered temples. The square silhouette is detailed with polished Diamond pins."
+        },
+        {
+          "model": "GR01 Round Opticals",
+          "image": "images/optical/cutler-gross/GR01-Round-Opticals.jpg",
+          "detail_url": "https://www.cutlerandgross.com/products/gr01-round-optical-glasses",
+          "description": "Perfectly round, lightweight, and balanced, the GR01 succinctly distils the themes and purposes of the Graham Cutler Capsule. Featuring comfort milled nose-pads and a slightly wider bridge for a frame that sits comfortably all day."
+        },
+        {
+          "model": "The Great Frog Titan Square Opticals",
+          "image": "images/optical/cutler-gross/The-Great-Frog-Titan-Square-Opticals.jpg",
+          "detail_url": "https://www.cutlerandgross.com/products/the-great-frog-titan-square-optical-glasses",
+          "description": "This Cutler and Gross X The Great Frog sunglass is handcarved to a faceted profile with chunky block lugs. Created in collaboration with rock'n'roll jeweller The Great Frog, the antagonistic frame is gilded with Dagger pins."
+        },
+        {
+          "model": "The Great Frog Crossbones Square Opticals",
+          "image": "images/optical/cutler-gross/The-Great-Frog-Crossbones-Square-Opticals.jpg",
+          "detail_url": "https://www.cutlerandgross.com/products/the-great-frog-square-glasses-crossbones-003",
+          "description": "Our current 9772 frame which served as the base for the Crossbones is currently one of our bestselling models, originating from a style group that was first created in 1985. The 925 Sterling Silver crossbones detailing, taken from The Great Frog's logo, sits on the redesigned temple which is thickened at the hinge for both a bolder silhouette and improved stability. These are a great pair of everyday glasses with attitude in abundance."
+        },
+        {
+          "model": "1390 Round Opticals",
+          "image": "images/optical/cutler-gross/1390-Round-Opticals.jpg",
+          "detail_url": "https://www.cutlerandgross.com/products/1390-optical-round-glasses",
+          "description": "A swooping browline defines the eccentric 1390 round optical. It is inlaid with Compass Star pins and rendered in a spectrum of acetates."
+        },
+        {
+          "model": "1414 Rectangle Opticals",
+          "image": "images/optical/cutler-gross/1414-Rectangle-Opticals.jpg",
+          "detail_url": "https://www.cutlerandgross.com/products/1414-optical-rectangle-glasses",
+          "description": "Architectural and artisanal, the 1414 is handcrafted to an oversized square with a flat top and pressed nose bump. It is structured with Modernist core wire and lightened with milled edges."
+        },
+        {
+          "model": "9261 Cat Eye Opticals",
+          "image": "images/optical/cutler-gross/9261-Cat-Eye-Opticals.jpg",
+          "detail_url": "https://www.cutlerandgross.com/products/9261-cat-eye-optical-glasses",
+          "description": "The classic black optical takes a striking turn with the 9261. It is handcrafted from striated monochrome acetate with a curved browline and chamfered temples. Blackened hardware adds further intrigue."
+        },
+        {
+          "model": "9690 Square Opticals",
+          "image": "images/optical/cutler-gross/9690-Square-Opticals.jpg",
+          "detail_url": "https://www.cutlerandgross.com/products/9690-square-optical-glasses",
+          "description": "A square optical, the Cutler and Gross way. The 9690 is our creative director's frame of choice, sculpted with chunky temples and stable 7-bar hinges. It nods to angular styles popularised by 90s Hollywood, while striped Hazard core wire adds a contemporary note."
+        },
+        {
+          "model": "9852 Rectangle Opticals",
+          "image": "images/optical/cutler-gross/9852-Rectangle-Opticals.jpg",
+          "detail_url": "https://www.cutlerandgross.com/products/9852-rectangle-optical-glasses",
+          "description": "The 9852 is a visual homage to the spies that operated in the shadows of 1970s London. Subtle milling adds discreet detail to the browline, which slopes down to dropped hinges. Compass Star pins gild the frontal and temples. Each piece is handmade in our atelier over 265 hours."
+        }
+      ]
+    },
+    {
+      "id": "linda-farrow",
+      "name": "Linda Farrow",
+      "source_note": "Imagery and model names from the brand's official site at build time.",
+      "frames": [
+        {
+          "model": "Blakher Optical in Ash",
+          "image": "images/optical/linda-farrow/0.jpg",
+          "detail_url": "https://www.lindafarrow.com/products/blakher-optical-in-ash",
+          "description": "The Blakher d-frame is sculpted from Italian ash acetate with a 22k light gold plated pure Japanese titanium framework which runs into sleek tapered temples. The frame is fitted with adjustable titanium nose pads that offer a tailored fit by allowing bespoke positioning for enhanced comfort."
+        },
+        {
+          "model": "Mauro Optical in Wine",
+          "image": "images/optical/linda-farrow/1.jpg",
+          "detail_url": "https://www.lindafarrow.com/products/mauro-optical-in-wine",
+          "description": "Finely sculpted wine acetate rims are paired with matt champagne Japanese titanium frame work which runs along the inner brown and into sleek tapered temples. This optical d-frame is fitted with adjustable titanium nose pads that offer a tailored fit by allowing bespoke positioning for enhanced comfort."
+        },
+        {
+          "model": "Paulson Optical in Ash",
+          "image": "images/optical/linda-farrow/2.jpg",
+          "detail_url": "https://www.lindafarrow.com/products/paulson-optical-in-ash",
+          "description": "The Paulson d-frame is crafted from a combination of ash Italian acetate rim and 22k light gold plated pure Japanese titanium temples. At the brow, a bespoke hardware plate adds a refined architectural detail to the frame. This frame is fitted sculpted nose pads for a tailored fit."
+        },
+        {
+          "model": "Blakher Optical in Wine",
+          "image": "images/optical/linda-farrow/3.jpg",
+          "detail_url": "https://www.lindafarrow.com/products/blakher-optical-in-wine",
+          "description": "The Blakher d-frame is sculpted from Italian wine acetate with a matt champagne Japanese titanium framework which runs into sleek tapered temples. The frame is fitted with adjustable titanium nose pads that offer a tailored fit by allowing bespoke positioning for enhanced comfort."
+        },
+        {
+          "model": "Blakher Optical in Black",
+          "image": "images/optical/linda-farrow/4.jpg",
+          "detail_url": "https://www.lindafarrow.com/products/blakher-optical-in-black",
+          "description": "An elevated D-frame silhouette crafted from Italian black acetate and contrasting 22 karat gold plated pure Japanese titanium temples. This refined optical frame features a strong architectural brow line, sculpted temples, and adjustable nose pads for enhanced comfort."
+        },
+        {
+          "model": "Micky Optical in Black",
+          "image": "images/optical/linda-farrow/5.jpg",
+          "detail_url": "https://www.lindafarrow.com/products/micky-optical-in-black",
+          "description": "The Micky d-frame combines black acetate rims and nickel temples with 22k gold plated details crafted from pure Japanese titanium. The frame features sculpted nose pads for a tailored fit."
+        },
+        {
+          "model": "Mauro Optical in Black",
+          "image": "images/optical/linda-farrow/6.jpg",
+          "detail_url": "https://www.lindafarrow.com/products/mauro-optical-in-black",
+          "description": "Finely sculpted black acetate rims are paired with nickel titanium frame work which runs along the inner brown and into sleek tapered temples. This optical d-frame is fitted with adjustable titanium nose pads that offer a tailored fit by allowing bespoke positioning for enhanced comfort."
+        },
+        {
+          "model": "Daley Optical in Satin Black",
+          "image": "images/optical/linda-farrow/7.jpg",
+          "detail_url": "https://www.lindafarrow.com/products/daley-optical-in-satin-black",
+          "description": "The Daley oval optical frame features a satin black painted rim encircled by a contrasting 22K yellow gold-plated pure Japanese titanium framework, blending luxury with modern style. This frame is fitted with adjustable nose pads for a comfortable, bespoke fit."
+        },
+        {
+          "model": "Bennet Optical in Wine",
+          "image": "images/optical/linda-farrow/8.jpg",
+          "detail_url": "https://www.lindafarrow.com/products/bennet-optical-in-wine",
+          "description": "Finely sculpted wine acetate rims are paired with a delicate matt champagne plated titanium frame work which runs along the inner brown and into sleek tapered temples. This optical d-frame is fitted with adjustable titanium nose pads that offer a tailored fit by allowing bespoke positioning for enhanced comfort."
+        },
+        {
+          "model": "Marco Optical in Wine",
+          "image": "images/optical/linda-farrow/9.jpg",
+          "detail_url": "https://www.lindafarrow.com/products/marco-optical-in-wine",
+          "description": "This product is a limited edition of 120. The edition number is printed on the inside of the temple #/120. Featuring a combination frame of matt champagne plated pure Japanese titanium temples and wine acetate rims, this oval is fitted with adjustable titanium nose pads that offer a tailored fit by allowing bespoke positioning for enhanced comfort."
+        },
+        {
+          "model": "Stanley Optical in Wine",
+          "image": "images/optical/linda-farrow/10.jpg",
+          "detail_url": "https://www.lindafarrow.com/products/stanley-optical-in-wine",
+          "description": "The Stanley d-frame is crafted from Italian acetate rims in wine and 22k light gold plated pure Japanese titanium temples. The frame features sculpted nose pads for a tailored fit."
+        },
+        {
+          "model": "Danilo Optical in Wine",
+          "image": "images/optical/linda-farrow/11.jpg",
+          "detail_url": "https://www.lindafarrow.com/products/danilo-optical-in-wine",
+          "description": "This product is a limited edition of 100. The edition number is printed on the inside of the temple #/100. The Danilo angular frame features a contrasting matt champagne frame and wine acetate rims. The frame is fitted with adjustable titanium nose pads that offer a tailored fit by allowing bespoke positioning for enhanced comfort."
+        },
+        {
+          "model": "Micky Optical in Truffle",
+          "image": "images/optical/linda-farrow/12.jpg",
+          "detail_url": "https://www.lindafarrow.com/products/micky-optical-in-truffle",
+          "description": "The Micky d-frame combine truffle acetate rims and 22k white gold plated temples crafted from pure Japanese titanium. The frame features sculpted nose pads for a tailored fit."
+        },
+        {
+          "model": "Page Optical in Truffle",
+          "image": "images/optical/linda-farrow/13.jpg",
+          "detail_url": "https://www.lindafarrow.com/products/page-optical-in-truffle",
+          "description": "The Page oval frame is crafted from 22k white gold plated pure Japanese titanium and Italian acetate rims in truffle. The frame is fitted with adjustable titanium nose pads that offer a tailored fit by allowing bespoke positioning for enhanced comfort."
+        },
+        {
+          "model": "Heath Optical in Truffle",
+          "image": "images/optical/linda-farrow/14.jpg",
+          "detail_url": "https://www.lindafarrow.com/products/heath-optical-in-truffle",
+          "description": "The Heath oval frame features truffle rims crafted from Italian acetate and contrasting 22k plated pure Japanese titanium temples. The frame features sculpted nose pads for a tailored fit."
+        },
+        {
+          "model": "Bennet Optical in Black",
+          "image": "images/optical/linda-farrow/15.jpg",
+          "detail_url": "https://www.lindafarrow.com/products/bennet-optical-in-black",
+          "description": "Finely sculpted black acetate rims are paired with a delicate 22 karat yellow gold plated titanium frame work which runs along the inner brown and into sleek tapered temples. This optical d-frame is fitted with adjustable titanium nose pads that offer a tailored fit by allowing bespoke positioning for enhanced comfort."
+        },
+        {
+          "model": "Stanley Optical in Black",
+          "image": "images/optical/linda-farrow/16.jpg",
+          "detail_url": "https://www.lindafarrow.com/products/stanley-optical-in-black",
+          "description": "The Stanley d-frame is crafted from Italian acetate rims in black and nickel pure Japanese titanium temples. The frame features sculpted nose pads for a tailored fit."
+        },
+        {
+          "model": "Dahlia Optical in Brown",
+          "image": "images/optical/linda-farrow/17.jpg",
+          "detail_url": "https://www.lindafarrow.com/products/dahlia-optical-in-brown",
+          "description": "Sculpted from matt champagne pure Japanese titanium and featuring brown rim, the Dahlia in Black is a refined oval optical frame that balances delicate engineering with timeless elegance. Adjustable nose pads ensure all-day comfort, while the lightweight construction offers an effortlessly refined silhouette."
+        },
+        {
+          "model": "Daley Optical in Satin Mocha",
+          "image": "images/optical/linda-farrow/18.jpg",
+          "detail_url": "https://www.lindafarrow.com/products/daley-optical-in-satin-mocha",
+          "description": "The Daley oval optical frame features a satin mocha painted rim encircled by a contrasting 22K yellow gold-plated pure Japanese titanium framework, blending luxury with modern style. This frame is fitted with adjustable nose pads for a comfortable, bespoke fit."
+        },
+        {
+          "model": "Heath Optical in Honey",
+          "image": "images/optical/linda-farrow/19.jpg",
+          "detail_url": "https://www.lindafarrow.com/products/heath-optical-in-honey",
+          "description": "This product is a limited edition of 60. The edition number is printed on the inside of the temple #/60. The Heath oval frame features warm, translucent honey rims crafted from Italian acetate and contrasting matt champagne pure Japanese titanium temples. The frame features sculpted nose pads for a tailored fit."
+        }
+      ]
+    },
+    {
+      "id": "lgr",
+      "name": "L.G.R",
+      "source_note": "Imagery and model names from the brand's official site at build time.",
+      "frames": [
+        {
+          "model": "Congo",
+          "image": "images/optical/lgr/0.jpg",
+          "detail_url": "https://www.lgrworld.com/en/product/congo-gold-olive-green-94/",
+          "description": "L.G.R handmade in Italy. Try-on and lens pairing at Eye Noon Optical."
+        },
+        {
+          "model": "Tunisi",
+          "image": "images/optical/lgr/1.jpg",
+          "detail_url": "https://www.lgrworld.com/en/product/tunisi-crystal-pink-71/",
+          "description": "L.G.R handmade in Italy. Try-on and lens pairing at Eye Noon Optical."
+        },
+        {
+          "model": "Senegal",
+          "image": "images/optical/lgr/2.jpg",
+          "detail_url": "https://www.lgrworld.com/en/product/senegal-crystal-dark-grey-78/",
+          "description": "L.G.R handmade in Italy. Try-on and lens pairing at Eye Noon Optical."
+        },
+        {
+          "model": "Malabo",
+          "image": "images/optical/lgr/3.jpg",
+          "detail_url": "https://www.lgrworld.com/en/product/malabo-ash-grey-92/",
+          "description": "L.G.R handmade in Italy. Try-on and lens pairing at Eye Noon Optical."
+        },
+        {
+          "model": "Meknes | Lions of Ethiopia",
+          "image": "images/optical/lgr/4.jpg",
+          "detail_url": "https://www.lgrworld.com/en/product/meknes-lions-of-ethiopia-silver-havana-maculato-acetate-rim-39/",
+          "description": "L.G.R handmade in Italy. Try-on and lens pairing at Eye Noon Optical."
+        },
+        {
+          "model": "Karnak | Lions of Ethiopia",
+          "image": "images/optical/lgr/5.jpg",
+          "detail_url": "https://www.lgrworld.com/en/product/karnak-lions-of-ethiopia-black-crystal-brown-acetate-rim-76-2/",
+          "description": "L.G.R handmade in Italy. Try-on and lens pairing at Eye Noon Optical."
+        },
+        {
+          "model": "Kalahari",
+          "image": "images/optical/lgr/6.jpg",
+          "detail_url": "https://www.lgrworld.com/en/product/kalahari-black-crystal-gold-01d/",
+          "description": "L.G.R handmade in Italy. Try-on and lens pairing at Eye Noon Optical."
+        },
+        {
+          "model": "Algiers",
+          "image": "images/optical/lgr/7.jpg",
+          "detail_url": "https://www.lgrworld.com/en/product/algiers-havana-maculato-39/",
+          "description": "L.G.R handmade in Italy. Try-on and lens pairing at Eye Noon Optical."
+        },
+        {
+          "model": "Cactus | Lions of Ethiopia",
+          "image": "images/optical/lgr/8.jpg",
+          "detail_url": "https://www.lgrworld.com/en/product/cactus-lions-of-ethiopia-black-crystal-gold-acetate-rim-01d/",
+          "description": "L.G.R handmade in Italy. Try-on and lens pairing at Eye Noon Optical."
+        },
+        {
+          "model": "Marrakech Bold",
+          "image": "images/optical/lgr/9.jpg",
+          "detail_url": "https://www.lgrworld.com/en/product/marrakech-bold-havana-tobacco-90/",
+          "description": "L.G.R handmade in Italy. Try-on and lens pairing at Eye Noon Optical."
+        },
+        {
+          "model": "Zanzibar Bold",
+          "image": "images/optical/lgr/10.jpg",
+          "detail_url": "https://www.lgrworld.com/en/product/zanzibar-bold-navy-blue-matt-36/",
+          "description": "L.G.R handmade in Italy. Try-on and lens pairing at Eye Noon Optical."
+        },
+        {
+          "model": "Cecile",
+          "image": "images/optical/lgr/11.jpg",
+          "detail_url": "https://www.lgrworld.com/en/product/cecile-havana-caramel-102/",
+          "description": "L.G.R handmade in Italy. Try-on and lens pairing at Eye Noon Optical."
+        },
+        {
+          "model": "Cameroon",
+          "image": "images/optical/lgr/12.jpg",
+          "detail_url": "https://www.lgrworld.com/en/product/cameroon-damasco-dust-98/",
+          "description": "L.G.R handmade in Italy. Try-on and lens pairing at Eye Noon Optical."
+        },
+        {
+          "model": "Desert",
+          "image": "images/optical/lgr/13.jpg",
+          "detail_url": "https://www.lgrworld.com/en/product/desert-copia/",
+          "description": "L.G.R handmade in Italy. Try-on and lens pairing at Eye Noon Optical."
+        },
+        {
+          "model": "Simba",
+          "image": "images/optical/lgr/14.jpg",
+          "detail_url": "https://www.lgrworld.com/en/product/simba-crystal-brown-76/",
+          "description": "L.G.R handmade in Italy. Try-on and lens pairing at Eye Noon Optical."
+        },
+        {
+          "model": "Tanganyika",
+          "image": "images/optical/lgr/15.jpg",
+          "detail_url": "https://www.lgrworld.com/en/product/tanganyika-jungle-green-95/",
+          "description": "L.G.R handmade in Italy. Try-on and lens pairing at Eye Noon Optical."
+        },
+        {
+          "model": "Djibouti Bold",
+          "image": "images/optical/lgr/16.jpg",
+          "detail_url": "https://www.lgrworld.com/en/product/djibouti-bold-crystal-grey-70/",
+          "description": "L.G.R handmade in Italy. Try-on and lens pairing at Eye Noon Optical."
+        },
+        {
+          "model": "Malabo Bold",
+          "image": "images/optical/lgr/17.jpg",
+          "detail_url": "https://www.lgrworld.com/en/product/malabo-bold-crystal-brown-76/",
+          "description": "L.G.R handmade in Italy. Try-on and lens pairing at Eye Noon Optical."
+        },
+        {
+          "model": "Fez Bold",
+          "image": "images/optical/lgr/18.jpg",
+          "detail_url": "https://www.lgrworld.com/en/product/fez-bold-sapphire-blue-89/",
+          "description": "L.G.R handmade in Italy. Try-on and lens pairing at Eye Noon Optical."
+        },
+        {
+          "model": "Tripoli",
+          "image": "images/optical/lgr/19.jpg",
+          "detail_url": "https://www.lgrworld.com/en/product/tripoli-havana-maculato-39/",
+          "description": "L.G.R handmade in Italy. Try-on and lens pairing at Eye Noon Optical."
+        }
+      ]
+    },
+    {
+      "id": "retrosuperfuture",
+      "name": "Retrosuperfuture",
+      "source_note": "Imagery and model names from the brand's official site at build time.",
+      "frames": [
+        {
+          "model": "49Er Optical Havana",
+          "image": "images/optical/retrosuperfuture/0.jpg",
+          "detail_url": "https://www.retrosuperfuture.com/products/ioxb",
+          "description": "Sizes: R Lens Width: 51 mm Frame Front: 133 mm Frame Side: 145 mm Product Code Size R: 634 The box contains a hard case and a cleaning cloth."
+        },
+        {
+          "model": "49Er Optical Light Havana",
+          "image": "images/optical/retrosuperfuture/1.jpg",
+          "detail_url": "https://www.retrosuperfuture.com/products/idoi",
+          "description": "Sizes: R Lens Width: 51 mm Frame Front: 133 mm Frame Side: 145 mm Product Code Size R: 624 The box contains a hard case and a cleaning cloth."
+        },
+        {
+          "model": "Aalto Optical Resin",
+          "image": "images/optical/retrosuperfuture/2.jpg",
+          "detail_url": "https://www.retrosuperfuture.com/products/igao",
+          "description": "Aalto Optical is a tall, oversized acetate optical frame, designed for an all day everyday use. The model features sturdy rims and square lenses, with a lowered nose bridge and curved upper line. Its determined frame has been chiseled on the sides for a lightweight yet sturdy fit. This version comes in a light resin colored crystal acetate . Prescription lenses not included. Sizes: R Lens Width: 52 mm Frame Front: Frame Side: 145 mm Product Code Size R: GQZ"
+        },
+        {
+          "model": "Aalto Optical Rosso",
+          "image": "images/optical/retrosuperfuture/3.jpg",
+          "detail_url": "https://www.retrosuperfuture.com/products/i1pb",
+          "description": "Designed for Fall/Winter 2021 collection, Aalto Optical is a tall, oversized acetate frame for daily use. The model features thick rims and square lenses, with a lowered nose bridge and curved upper line. Its thick design has been chiseled on the sides for a lightweight yet sturdy fit. This version comes in bright red acetate. Prescription lenses not included. Sizes: R Lens Width: 52 mm Frame Front: 146 mm Frame Side: 145 mm Product Code Size R: 3YS"
+        },
+        {
+          "model": "Aalto Optical Spotted Havana",
+          "image": "images/optical/retrosuperfuture/4.jpg",
+          "detail_url": "https://www.retrosuperfuture.com/products/ie5y",
+          "description": "Designed for Fall/Winter 2021 collection, Aalto Optical is a tall, oversized acetate frame for daily use. The model features thick rims and square lenses, with a lowered nose bridge and curved upper line. Its thick design has been chiseled on the sides for a lightweight yet sturdy fit. This version comes in warm spotted Havana acetate. Prescription lenses not included. Sizes: R Lens Width: 52 mm Frame Front: 146 mm Frame Side: 145 mm Product Code Size R: UCI"
+        },
+        {
+          "model": "Aalto Optical Violastro",
+          "image": "images/optical/retrosuperfuture/5.jpg",
+          "detail_url": "https://www.retrosuperfuture.com/products/ivzu",
+          "description": "Aalto Optical is a tall, oversized acetate optical frame, designed for an all day everyday use. The model features sturdy rims and square lenses, with a lowered nose bridge and curved upper line. Its determined frame has been chiseled on the sides for a lightweight yet sturdy fit. This version comes in a playfully serious purple crystal acetate. Prescription lenses not included. Sizes: R Lens Width: 52 mm Frame Front: Frame Side: 145 mm Product Code Size R: RB3"
+        },
+        {
+          "model": "Amata Optical Nero",
+          "image": "images/optical/retrosuperfuture/6.jpg",
+          "detail_url": "https://www.retrosuperfuture.com/products/iyva",
+          "description": "Designed for Spring/Summer 2021 collection, Amata Optical is a fearless, statement frame. A functional shape designed for daily use, the silhouette features a sharp profile, with heavy squared temples, strict geometries and thick acetate rims. This version comes in a shiny black acetate. Prescription lenses not included. The box contains a hard case and a cleaning cloth. Sizes: R Lens Width: 53 mm Frame Front: 146 mm Frame Side: 145 mm Product Code Size R: 1TL"
+        },
+        {
+          "model": "Amata Optical Rosso",
+          "image": "images/optical/retrosuperfuture/7.jpg",
+          "detail_url": "https://www.retrosuperfuture.com/products/io9j",
+          "description": "Designed for Spring/Summer 2021 collection, Amata Optical is a fearless, statement frame. A functional shape designed for daily use, the silhouette features a sharp profile, with heavy squared temples, strict geometries and thick acetate rims. This version comes in a solid red acetate. Prescription lenses not included. The box contains a hard case and a cleaning cloth. Sizes: R Lens Width: 53 mm Frame Front: Frame Side: 145 mm Product Code Size R: 4O3"
+        },
+        {
+          "model": "Amata Optical Spotted Havana",
+          "image": "images/optical/retrosuperfuture/8.jpg",
+          "detail_url": "https://www.retrosuperfuture.com/products/i0cz",
+          "description": "Designed for Spring/Summer 2021 collection, Amata Optical is a fearless, statement frame. A functional shape designed for daily use, the silhouette features a sharp profile, with heavy squared temples, strict geometries and thick acetate rims. This version comes in a vibrant Havana acetate. Prescription lenses not included. The box contains a hard case and a cleaning cloth. Sizes: R Lens Width: 53 mm Frame Front: 146 mm Frame Side: 145 mm Product Code Size R: E3C"
+        },
+        {
+          "model": "America Francis Optical Havana",
+          "image": "images/optical/retrosuperfuture/9.jpg",
+          "detail_url": "https://www.retrosuperfuture.com/products/im71",
+          "description": "Sizes: R Lens Width: 49 mm Frame Front: 138 mm Frame Side: 145 mm Product Code Size R: 2MK The box contains a hard case and a cleaning cloth."
+        },
+        {
+          "model": "America Optical Black Horn",
+          "image": "images/optical/retrosuperfuture/10.jpg",
+          "detail_url": "https://www.retrosuperfuture.com/products/ilq3",
+          "description": "Sizes: R Lens Width: 49 mm Frame Front: 138 mm Frame Side: 145 mm Product Code Size R: HSU The box contains a hard case and a cleaning cloth."
+        },
+        {
+          "model": "America Optical Blue Havana",
+          "image": "images/optical/retrosuperfuture/11.jpg",
+          "detail_url": "https://www.retrosuperfuture.com/products/iovt",
+          "description": "Designed for the FW19 collection, America Optical is an angular, wide silhouette with thick rims and sharply defined angles. A redesign of the classic RSF model, this version of America features a light, yet sturdy structure for an all-day-everyday use. This model comes with a blue Havana acetate for the frontal frame and a rich brown Havana for the temples.Prescription lenses not included. The box contains a hard case and a cleaning cloth. Sizes: R Lens Width: 52 mm Frame Front: Frame Side: 145 mm Product Code Size R: 3QA"
+        },
+        {
+          "model": "America Optical Classic Havana",
+          "image": "images/optical/retrosuperfuture/12.jpg",
+          "detail_url": "https://www.retrosuperfuture.com/products/il53",
+          "description": "Designed for the FW19 collection, America Optical is an angular, wide silhouette with thick rims and sharply defined angles. A redesign of the classic RSF model, this version of America features a light, yet sturdy structure for an all-day-everyday use. This model comes in a vibrant Havana acetate. Prescription lenses not included. The box contains a hard case and a cleaning cloth. Sizes: R Lens Width: 52 mm Frame Front: Frame Side: 145 mm Product Code Size R: ZCR"
+        },
+        {
+          "model": "America Optical Crystal",
+          "image": "images/optical/retrosuperfuture/13.jpg",
+          "detail_url": "https://www.retrosuperfuture.com/products/ifdu",
+          "description": "Designed for the FW19 collection, America Optical is an angular, wide silhouette with thick rims and sharply defined angles. A redesign of the classic RSF model, this version of America features a light, yet sturdy structure for an all-day-everyday use. This model comes with a light crystal acetate. Prescription lenses not included. The box contains a hard case and a cleaning cloth. Sizes: R Lens Width: 52 mm Frame Front: Frame Side: 145 mm Product Code Size R: HMH"
+        },
+        {
+          "model": "America Optical Light Havana",
+          "image": "images/optical/retrosuperfuture/14.jpg",
+          "detail_url": "https://www.retrosuperfuture.com/products/i8em",
+          "description": "Sizes: R / L Lens Width: 49 / 51 mm Frame Front: 138 / 139 mm Frame Side: 145 mm Product Code Size R: 625 Product Code Size L: 739 The box contains a hard case and a cleaning cloth."
+        },
+        {
+          "model": "America Optical Nero",
+          "image": "images/optical/retrosuperfuture/15.jpg",
+          "detail_url": "https://www.retrosuperfuture.com/products/ip15",
+          "description": "Designed for the FW19 collection,America Optical is an angular, wide silhouette with thick rims and sharply defined angles. A redesign of the classic RSF model, this version of America features a light, yet sturdy structure for an all-day-everyday use. Thismodel comes in a shiny black acetate. Prescription lenses not included. The box contains a hard case and a cleaning cloth. Sizes: R Lens Width: 52 mm Frame Front: Frame Side: 145 mm Product Code Size R: CCT"
+        },
+        {
+          "model": "America Optical Nero/ Havana",
+          "image": "images/optical/retrosuperfuture/16.jpg",
+          "detail_url": "https://www.retrosuperfuture.com/products/ihx6",
+          "description": "Designed for the FW19 collection, America Optical is an angular, wide silhouette with thick rims and sharply defined angles. A redesign of the classic RSF model, this version of America features a light, yet sturdy structure for an all-day-everyday use. This model comes with a shiny black front and Havana temples. Prescription lenses not included. The box contains a hard case and a cleaning cloth. Sizes: R Lens Width: 52 mm Frame Front: Frame Side: 145 mm Product Code Size R: RG5"
+        },
+        {
+          "model": "America Optical Pietra",
+          "image": "images/optical/retrosuperfuture/17.jpg",
+          "detail_url": "https://www.retrosuperfuture.com/products/ifvg",
+          "description": "Designed for the FW19 collection, America Optical is an angular, wide silhouette with thick rims and sharply defined angles. A redesign of the classic RSF model, this version of America features a light, yet sturdy structure for an all-day-everyday use. This model comes with a shiny black front and Havana temples. Prescription lenses not included. The box contains a hard case and a cleaning cloth. Sizes: R Lens Width: 52 mm Frame Front: Frame Side: 145 mm Product Code Size R: 4PV"
+        },
+        {
+          "model": "America Optical Silber",
+          "image": "images/optical/retrosuperfuture/18.jpg",
+          "detail_url": "https://www.retrosuperfuture.com/products/igo6",
+          "description": "Sizes: R Lens Width: 49 mm Frame Front: 137 mm Frame Side: 145 mm Product Code Size R: HXQ The box contains a hard case and a cleaning cloth."
+        },
+        {
+          "model": "America Optical Silber — alt finish",
+          "image": "images/optical/retrosuperfuture/19.jpg",
+          "detail_url": "https://www.retrosuperfuture.com/products/igo6#alt",
+          "description": "Sizes: R Lens Width: 49 mm Frame Front: 137 mm Frame Side: 145 mm Product Code Size R: HXQ The box contains a hard case and a cleaning cloth."
+        }
+      ]
+    },
+    {
+      "id": "yuichi-toyama",
+      "name": "YUICHI TOYAMA.",
+      "source_note": "Representative YUICHI TOYAMA. styles; placeholder imagery. See https://yuichitoyama.com/ for current collections.",
+      "frames": [
+        {
+          "model": "U-180",
+          "image": "images/optical/yuichi-toyama/U-180.jpg",
+          "detail_url": "https://yuichitoyama.com/",
+          "description": "Made in Japan. Available to try in store at Eye Noon Optical."
+        },
+        {
+          "model": "U-179",
+          "image": "images/optical/yuichi-toyama/U-179.jpg",
+          "detail_url": "https://yuichitoyama.com/",
+          "description": "Made in Japan. Available to try in store at Eye Noon Optical."
+        },
+        {
+          "model": "U-178",
+          "image": "images/optical/yuichi-toyama/U-178.jpg",
+          "detail_url": "https://yuichitoyama.com/",
+          "description": "Made in Japan. Available to try in store at Eye Noon Optical."
+        },
+        {
+          "model": "U-177",
+          "image": "images/optical/yuichi-toyama/U-177.jpg",
+          "detail_url": "https://yuichitoyama.com/",
+          "description": "Made in Japan. Available to try in store at Eye Noon Optical."
+        },
+        {
+          "model": "U-129RS",
+          "image": "images/optical/yuichi-toyama/U-129RS.jpg",
+          "detail_url": "https://yuichitoyama.com/",
+          "description": "Made in Japan. Available to try in store at Eye Noon Optical."
+        },
+        {
+          "model": "U-128RS",
+          "image": "images/optical/yuichi-toyama/U-128RS.jpg",
+          "detail_url": "https://yuichitoyama.com/",
+          "description": "Made in Japan. Available to try in store at Eye Noon Optical."
+        },
+        {
+          "model": "U-181",
+          "image": "images/optical/yuichi-toyama/U-181.jpg",
+          "detail_url": "https://yuichitoyama.com/",
+          "description": "Made in Japan. Available to try in store at Eye Noon Optical."
+        },
+        {
+          "model": "U-176",
+          "image": "images/optical/yuichi-toyama/U-176.jpg",
+          "detail_url": "https://yuichitoyama.com/",
+          "description": "Made in Japan. Available to try in store at Eye Noon Optical."
+        },
+        {
+          "model": "U-175",
+          "image": "images/optical/yuichi-toyama/U-175.jpg",
+          "detail_url": "https://yuichitoyama.com/",
+          "description": "Made in Japan. Available to try in store at Eye Noon Optical."
+        },
+        {
+          "model": "U-174",
+          "image": "images/optical/yuichi-toyama/U-174.jpg",
+          "detail_url": "https://yuichitoyama.com/",
+          "description": "Made in Japan. Available to try in store at Eye Noon Optical."
+        },
+        {
+          "model": "U-173",
+          "image": "images/optical/yuichi-toyama/U-173.jpg",
+          "detail_url": "https://yuichitoyama.com/",
+          "description": "Made in Japan. Available to try in store at Eye Noon Optical."
+        },
+        {
+          "model": "U-172",
+          "image": "images/optical/yuichi-toyama/U-172.jpg",
+          "detail_url": "https://yuichitoyama.com/",
+          "description": "Made in Japan. Available to try in store at Eye Noon Optical."
+        },
+        {
+          "model": "U-171",
+          "image": "images/optical/yuichi-toyama/U-171.jpg",
+          "detail_url": "https://yuichitoyama.com/",
+          "description": "Made in Japan. Available to try in store at Eye Noon Optical."
+        },
+        {
+          "model": "U-169",
+          "image": "images/optical/yuichi-toyama/U-169.jpg",
+          "detail_url": "https://yuichitoyama.com/",
+          "description": "Made in Japan. Available to try in store at Eye Noon Optical."
+        },
+        {
+          "model": "U-168",
+          "image": "images/optical/yuichi-toyama/U-168.jpg",
+          "detail_url": "https://yuichitoyama.com/",
+          "description": "Made in Japan. Available to try in store at Eye Noon Optical."
+        },
+        {
+          "model": "U-167",
+          "image": "images/optical/yuichi-toyama/U-167.jpg",
+          "detail_url": "https://yuichitoyama.com/",
+          "description": "Made in Japan. Available to try in store at Eye Noon Optical."
+        },
+        {
+          "model": "U-166",
+          "image": "images/optical/yuichi-toyama/U-166.jpg",
+          "detail_url": "https://yuichitoyama.com/",
+          "description": "Made in Japan. Available to try in store at Eye Noon Optical."
+        },
+        {
+          "model": "U-165",
+          "image": "images/optical/yuichi-toyama/U-165.jpg",
+          "detail_url": "https://yuichitoyama.com/",
+          "description": "Made in Japan. Available to try in store at Eye Noon Optical."
+        },
+        {
+          "model": "U-164",
+          "image": "images/optical/yuichi-toyama/U-164.jpg",
+          "detail_url": "https://yuichitoyama.com/",
+          "description": "Made in Japan. Available to try in store at Eye Noon Optical."
+        },
+        {
+          "model": "U-163",
+          "image": "images/optical/yuichi-toyama/U-163.jpg",
+          "detail_url": "https://yuichitoyama.com/",
+          "description": "Made in Japan. Available to try in store at Eye Noon Optical."
+        }
+      ]
+    },
+    {
+      "id": "akila",
+      "name": "AKILA",
+      "source_note": "Representative AKILA styles; placeholder imagery. See https://akila.la/ for current collections.",
+      "frames": [
+        {
+          "model": "Rey",
+          "image": "images/optical/akila/Rey.jpg",
+          "detail_url": "https://akila.la/products/rey-optical-2606",
+          "description": "Designed in Los Angeles. Made in Japan."
+        },
+        {
+          "model": "Atlas",
+          "image": "images/optical/akila/Atlas.jpg",
+          "detail_url": "https://akila.la/products/atlas-optical-2604",
+          "description": "Designed in Los Angeles. Made in Japan."
+        },
+        {
+          "model": "Nomos",
+          "image": "images/optical/akila/Nomos.jpg",
+          "detail_url": "https://akila.la/products/nomos-optical-2619",
+          "description": "Designed in Los Angeles. Made in Japan."
+        },
+        {
+          "model": "Atria",
+          "image": "images/optical/akila/Atria.jpg",
+          "detail_url": "https://akila.la/products/atria-optical-2530",
+          "description": "Designed in Los Angeles. Made in Japan."
+        },
+        {
+          "model": "Ceres",
+          "image": "images/optical/akila/Ceres.jpg",
+          "detail_url": "https://akila.la/products/ceres-optical-2529",
+          "description": "Designed in Los Angeles. Made in Japan."
+        },
+        {
+          "model": "Wind",
+          "image": "images/optical/akila/Wind.jpg",
+          "detail_url": "https://akila.la/products/wind-optical-2535",
+          "description": "Designed in Los Angeles. Made in Japan."
+        },
+        {
+          "model": "Alien",
+          "image": "images/optical/akila/Alien.jpg",
+          "detail_url": "https://akila.la/products/alien-optical-2532",
+          "description": "Designed in Los Angeles. Made in Japan."
+        },
+        {
+          "model": "Meraki",
+          "image": "images/optical/akila/Meraki.jpg",
+          "detail_url": "https://akila.la/products/meraki-optical-2516",
+          "description": "Designed in Los Angeles. Made in Japan."
+        },
+        {
+          "model": "Psyche",
+          "image": "images/optical/akila/Psyche.jpg",
+          "detail_url": "https://akila.la/products/psyche-optical-2429",
+          "description": "Designed in Los Angeles. Made in Japan."
+        }
+      ]
+    }
+  ]
+}

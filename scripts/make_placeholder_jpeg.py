@@ -1,0 +1,13 @@
+"""Write a tiny valid JPEG for catalog scrape placeholder images."""
+from pathlib import Path
+
+# 1x1 pixel JPEG
+JPEG_1X1 = bytes.fromhex(
+    "ffd8ffe000104a46494600010100000100010000ffdb00430001010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101ffc0000b080001000101011100021101031101ffc40015000101000000000000000000000000000008ffc4001410010000000000000000000000000000ffda0008010100003f00d2cf20ffd9"
+)
+
+ROOT = Path(__file__).resolve().parents[1]
+p = ROOT / "images" / "optical" / "_placeholder.jpg"
+p.parent.mkdir(parents=True, exist_ok=True)
+p.write_bytes(JPEG_1X1)
+print("wrote", p)

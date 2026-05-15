@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Contact Us | EYE NOON OPTICAL</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+  body { font-family: 'Manrope', sans-serif; background: #faf9f8; color: #0A0A0A; margin: 0; }
+  .glass-nav {
+    background: rgba(255, 255, 255, 0.97);
+    backdrop-filter: blur(24px);
+    border-top: 3px solid #E0115F;
+    border-bottom: 1px solid rgba(224,17,95,0.1);
+  }
+  .nav-link {
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #3D2B30;
+    text-decoration: none;
+    opacity: 0.75;
+    transition: opacity 0.15s, color 0.15s;
+    white-space: nowrap;
+  }
+  .nav-link:hover { opacity: 1; color: #E0115F; }
+  .nav-link.active { opacity: 1; color: #E0115F; border-bottom: 2px solid #E0115F; padding-bottom: 3px; }
+
+  @media (max-width: 768px) {
+    #mobile-social { display: flex !important; }
+    nav { padding: 0 16px !important; }
+    #mobile-menu-toggle { display: block !important; }
+    #nav-links { position: fixed !important; top: 72px !important; left: 0 !important; right: 0 !important; flex-direction: column !important; flex-wrap: nowrap !important; background: rgba(255, 255, 255, 0.98) !important; border-bottom: 1px solid rgba(224, 17, 95, 0.1) !important; padding: 1rem !important; gap: 0.75rem !important; margin-left: 0 !important; display: none !important; z-index: 199; max-height: calc(100vh - 72px); overflow-y: auto; }
+    #nav-links.nav-open { display: flex !important; }
+    #nav-right > div:nth-child(2), #nav-right > div:nth-child(4), #nav-right > a:nth-child(5), #nav-right > a:nth-child(6), #nav-right > a:nth-child(7) { display: none !important; }
+  }
+  @media (min-width: 641px) {
+    #mobile-menu-toggle { display: none !important; }
+  }
+  .font-display {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+  }
+  .full-bleed {
+    width: 100%;
+    margin-left: 0; margin-right: 0;
+    box-sizing: border-box;
+  }
+  #cart-count {
+    position: absolute;
+    top: -6px;
+    right: -8px;
+    min-width: 18px;
+    height: 18px;
+    padding: 0 5px;
+    border-radius: 999px;
+    background: #E0115F;
+    color: #fff;
+    font-size: 0.62rem;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+  }
+  .pink-bar { width: 4px; background: #E0115F; flex-shrink: 0; }
+  .notice-callout {
+    border-left: 4px solid #E0115F;
+    background: #fff;
+    border: 1px solid rgba(0,0,0,0.06);
+    border-left-width: 4px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.04);
+  }
+  .contact-card {
+    background: #fff;
+    border: 1px solid rgba(0,0,0,0.08);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.05);
+  }
+  .social-link {
+    font-size: 0.58rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #3D2B30;
+    opacity: 0.75;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: color 0.15s, border-color 0.15s, opacity 0.15s;
+  }
+  .social-link:hover { opacity: 1; color: #E0115F; border-bottom-color: #E0115F; }
+</style>
+</head>
+<body class="overflow-x-hidden" data-i18n-title-doc="meta.contact">
+
+<!-- TopNavBar -->
+<nav class="fixed top-0 left-0 right-0 w-full z-[200] glass-nav" style="height:72px;display:flex;align-items:center;padding:0 44px;">
+
+  <!-- Logo: large bold pink wordmark -->
+  <a href="eyenoon_updated.html" style="font-family:'Barlow Condensed',sans-serif;font-size:1.45rem;font-weight:900;letter-spacing:0.04em;text-transform:uppercase;color:#E0115F;white-space:nowrap;flex-shrink:0;text-decoration:none;">
+    EYE NOON OPTICAL
+  </a>
+
+  <!-- Hamburger button (mobile only) -->
+  <button id="mobile-menu-toggle" type="button" style="display:none;background:transparent;border:0;color:#3D2B30;cursor:pointer;font-size:1.5rem;padding:8px;margin-right:auto;margin-left:8px;z-index:201;" aria-label="Menu">☰</button>
+
+  <!-- Nav links -->
+  <div id="nav-links" style="display:flex;align-items:center;gap:clamp(16px,3vw,36px);margin-left:clamp(12px,3vw,52px);flex:1;min-width:0;">
+
+    <a class="nav-link" href="eyenoon_updated.html" data-i18n="nav.home">Home</a>
+    <a class="nav-link" href="about.html" data-i18n="nav.about">About Us</a>
+
+    <div style="display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;" role="navigation" data-i18n-aria="nav.shopAria">
+      <a class="nav-link" href="optical.html" data-i18n="nav.optical">Optical</a>
+      <span style="color:rgba(61,43,48,0.35);font-size:0.65rem;user-select:none;" aria-hidden="true">·</span>
+      <a class="nav-link" href="sunglasses.html" data-i18n="nav.sunglasses">Sunglasses</a>
+      <span style="color:rgba(61,43,48,0.35);font-size:0.65rem;user-select:none;" aria-hidden="true">·</span>
+      <a class="nav-link" href="contact-lenses.html" data-i18n="nav.contactLenses">Contact Lenses</a>
+    </div>
+
+    <a class="nav-link active" href="contact.html" data-i18n="nav.contact">Contact Us</a>
+
+  </div>
+
+  <!-- Right: cart + divider + social icons -->
+  <div id="nav-right" style="display:flex;align-items:center;gap:14px;flex-shrink:0;">
+
+    <a href="cart.html" style="position:relative;display:inline-flex;align-items:center;justify-content:center;color:#3D2B30;text-decoration:none;transition:color 0.15s;" onmouseover="this.style.color='#E0115F'" onmouseout="this.style.color='#3D2B30'" data-i18n-aria="nav.cartAria">
+      <span class="material-symbols-outlined" style="font-size:1.3rem;">shopping_bag</span>
+      <span id="cart-count" aria-live="polite"></span>
+    </a>
+
+    <div style="width:1px;height:16px;background:rgba(0,0,0,0.15);flex-shrink:0;" aria-hidden="true"></div>
+
+    <div style="display:flex;flex-direction:column;align-items:center;gap:2px;flex-shrink:0;" role="group" data-i18n-aria="lang.toggleAria">
+      <button type="button" class="lang-btn" style="font-size:0.62rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;border:0;background:transparent;cursor:pointer;color:#3D2B30;padding:2px 6px;border-radius:4px;" data-lang="en" data-i18n="lang.en">EN</button>
+      <span style="color:rgba(61,43,48,0.35);font-size:0.65rem;">|</span>
+      <button type="button" class="lang-btn" style="font-size:0.62rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;border:0;background:transparent;cursor:pointer;color:#3D2B30;padding:2px 6px;border-radius:4px;" data-lang="ko" data-i18n="lang.ko">KO</button>
+    </div>
+    <div style="width:1px;height:16px;background:rgba(0,0,0,0.15);flex-shrink:0;" aria-hidden="true"></div>
+
+    <a href="https://www.instagram.com/eyenoonoptical/" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;color:#3D2B30;opacity:0.65;transition:opacity 0.15s,color 0.15s;" onmouseover="this.style.opacity='1';this.style.color='#E0115F'" onmouseout="this.style.opacity='0.65';this.style.color='#3D2B30'" aria-label="Instagram">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+    </a>
+
+    <a href="https://www.facebook.com/eyenoonoptical" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;color:#3D2B30;opacity:0.65;transition:opacity 0.15s,color 0.15s;" onmouseover="this.style.opacity='1';this.style.color='#E0115F'" onmouseout="this.style.opacity='0.65';this.style.color='#3D2B30'" aria-label="Facebook">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+    </a>
+
+    <a href="https://www.yelp.com/biz/eye-noon-optical-los-angeles?osq=eye+noon+optical" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;color:#3D2B30;opacity:0.65;transition:opacity 0.15s,color 0.15s;" onmouseover="this.style.opacity='1';this.style.color='#E0115F'" onmouseout="this.style.opacity='0.65';this.style.color='#3D2B30'" aria-label="Yelp">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.16 12.73l-4.703 1.16a1.5 1.5 0 01-1.844-1.598 1.5 1.5 0 01.965-1.23l4.52-1.734a9.37 9.37 0 011.068 3.402zM10.54 7.4l.234-4.938A9.388 9.388 0 0112 2.25a9.37 9.37 0 013.563.703L13.22 7.267a1.5 1.5 0 01-1.371.895A1.5 1.5 0 0110.54 7.4zm-1.36 3.225L4.7 8.215A9.388 9.388 0 012.55 11.61l4.594 1.688a1.5 1.5 0 001.893-1.454 1.5 1.5 0 00-.857-1.219zm1.14 3.45l-3.61 3.328a9.4 9.4 0 002.906 2.484l2.227-4.266a1.5 1.5 0 00-.633-2.028 1.5 1.5 0 00-.89.482zm4.97 1.266l2.406 4.172a9.39 9.39 0 003.047-2.36l-3.766-3.141a1.5 1.5 0 00-1.687 2.329z"/></svg>
+    </a>
+
+  </div>
+
+</nav>
+
+<main style="padding-top:72px;">
+  <header class="max-w-6xl mx-auto px-6 sm:px-10 lg:px-12 pt-14 pb-8">
+    <p class="text-[0.58rem] uppercase tracking-[0.42em] font-bold text-[#E0115F] mb-4" data-i18n="contact.eyebrow">Contact</p>
+    <h1 class="font-display text-[clamp(2.25rem,6vw,3.75rem)] leading-[0.95] text-[#0A0A0A] mb-6" data-i18n-html="contact.h1">
+      Contact<br/><span class="text-[#E0115F]">Us</span>
+    </h1>
+    <p class="max-w-2xl text-sm sm:text-base leading-relaxed text-[#3D2B30] opacity-85" data-i18n="contact.lead">
+      Reach Eye Noon Optical by phone, email, or KakaoTalk. Visit us in Los Angeles — we sell online and in store, so please get in touch before you order if you have questions about availability.
+    </p>
+  </header>
+
+  <section class="max-w-6xl mx-auto px-6 sm:px-10 lg:px-12 pb-10 space-y-5">
+    <div class="notice-callout rounded-sm p-5 sm:p-6">
+      <p class="text-sm sm:text-base leading-relaxed text-[#3D2B30] m-0 font-semibold text-[#0A0A0A]" data-i18n="contact.rxTitle">Contact lens prescriptions</p>
+      <p class="text-sm sm:text-base leading-relaxed text-[#3D2B30] mt-3 mb-0" data-i18n="contact.rxBody">
+        If you are ordering contact lenses for the first time, you are required to send us your prescription by email. Without your prescription, your order will be cancelled automatically.
+      </p>
+      <p class="mt-4 mb-0">
+        <a href="mailto:eyenoonoptical@gmail.com?subject=Contact%20lens%20prescription" class="text-[0.65rem] font-bold uppercase tracking-[0.18em] text-[#E0115F] no-underline border-b-2 border-[#E0115F] pb-0.5 hover:opacity-90" data-i18n="contact.rxLink">Email your prescription</a>
+      </p>
+    </div>
+    <div class="notice-callout rounded-sm p-5 sm:p-6">
+      <p class="text-sm sm:text-base leading-relaxed text-[#3D2B30] m-0" data-i18n="contact.stockNote">
+        Eye Noon Optical sells through online and offline channels, so stock changes often. Please contact us before placing your order if you need to confirm availability.
+      </p>
+    </div>
+  </section>
+
+  <section class="max-w-6xl mx-auto px-6 sm:px-10 lg:px-12 pb-12">
+    <div class="grid lg:grid-cols-2 gap-8 lg:gap-10">
+      <article class="contact-card rounded-sm p-8 sm:p-10 flex gap-5">
+        <div class="pink-bar self-stretch min-h-[140px]"></div>
+        <div class="min-w-0">
+          <h2 class="font-display text-2xl sm:text-3xl text-[#0A0A0A] leading-tight mb-6" data-i18n="contact.card1h">Contact us</h2>
+          <p class="text-[0.55rem] uppercase tracking-[0.28em] text-[#E0115F] font-bold mb-2">Eye Noon Optical</p>
+          <ul class="list-none m-0 p-0 space-y-4 text-[#3D2B30] text-sm sm:text-base leading-relaxed">
+            <li>
+              <span class="block text-[0.58rem] uppercase tracking-[0.2em] opacity-50 mb-1" data-i18n="contact.tel">Tel</span>
+              <a href="tel:+12133881447" class="text-[#0A0A0A] font-semibold no-underline hover:text-[#E0115F] transition-colors">213.388.1447</a>
+            </li>
+            <li>
+              <span class="block text-[0.58rem] uppercase tracking-[0.2em] opacity-50 mb-1" data-i18n="contact.email">Email</span>
+              <a href="mailto:eyenoonoptical@gmail.com" class="text-[#0A0A0A] font-semibold no-underline hover:text-[#E0115F] transition-colors break-all">eyenoonoptical@gmail.com</a>
+            </li>
+            <li>
+              <span class="block text-[0.58rem] uppercase tracking-[0.2em] opacity-50 mb-1" data-i18n="contact.kakao">KakaoTalk ID</span>
+              <span class="text-[#0A0A0A] font-semibold">sudden</span>
+            </li>
+          </ul>
+        </div>
+      </article>
+      <article class="contact-card rounded-sm p-8 sm:p-10 flex gap-5">
+        <div class="pink-bar self-stretch min-h-[140px]"></div>
+        <div class="min-w-0">
+          <h2 class="font-display text-2xl sm:text-3xl text-[#0A0A0A] leading-tight mb-6" data-i18n="contact.card2h">Visit us</h2>
+          <p class="text-[0.55rem] uppercase tracking-[0.28em] text-[#E0115F] font-bold mb-2">Eye Noon Optical</p>
+          <ul class="list-none m-0 p-0 space-y-4 text-[#3D2B30] text-sm sm:text-base leading-relaxed">
+            <li>
+              <span class="block text-[0.58rem] uppercase tracking-[0.2em] opacity-50 mb-1" data-i18n="contact.hours">Hours</span>
+              <span class="text-[#0A0A0A]" data-i18n="contact.hoursVal">Monday – Saturday: 10:00 – 18:00</span><br/>
+              <span class="text-[#0A0A0A]" data-i18n="contact.sunClosed">Sunday: Closed</span>
+            </li>
+            <li>
+              <span class="block text-[0.58rem] uppercase tracking-[0.2em] opacity-50 mb-1" data-i18n="contact.exams">Eye exams</span>
+              <span class="text-[#0A0A0A]" data-i18n="contact.examsVal">Monday, Wednesday &amp; Saturday — by appointment only</span><br/>
+              <a href="tel:+12133881447" class="text-[#E0115F] font-semibold no-underline hover:opacity-90">213-388-1447</a>
+            </li>
+            <li>
+              <span class="block text-[0.58rem] uppercase tracking-[0.2em] opacity-50 mb-1" data-i18n="contact.addr">Address</span>
+              <a href="https://maps.app.goo.gl/y4dtLSw7w11bPSeL7" target="_blank" rel="noopener noreferrer" class="text-[#0A0A0A] font-semibold no-underline hover:text-[#E0115F] transition-colors">
+                301 S Western Ave. #103<br/>Los Angeles, CA 90020
+              </a>
+            </li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="max-w-6xl mx-auto px-6 sm:px-10 lg:px-12 pb-24">
+    <p class="text-[0.58rem] uppercase tracking-[0.22em] text-[#3D2B30] opacity-50 mb-4" data-i18n="contact.findOnline">Find us online</p>
+    <div class="flex flex-wrap gap-x-8 gap-y-3 items-center">
+      <a class="social-link" href="https://maps.app.goo.gl/y4dtLSw7w11bPSeL7" target="_blank" rel="noopener noreferrer">Google Maps</a>
+      <a class="social-link" href="https://www.yelp.com/biz/eye-noon-optical-los-angeles?osq=eye+noon+optical" target="_blank" rel="noopener noreferrer">Yelp</a>
+      <a class="social-link" href="https://www.facebook.com/eyenoonoptical" target="_blank" rel="noopener noreferrer">Facebook</a>
+      <a class="social-link" href="https://www.instagram.com/eyenoonoptical/" target="_blank" rel="noopener noreferrer">Instagram</a>
+    </div>
+  </section>
+
+</main>
+<footer class="full-bleed" style="background:#ffffff;padding:56px 48px 40px;text-align:center;border-top:1px solid rgba(224,17,95,0.25);">
+  <div id="mobile-social" style="display:none;flex-direction:row;align-items:center;justify-content:center;gap:12px;margin-bottom:28px;padding-bottom:20px;border-bottom:1px solid rgba(0,0,0,0.08);flex-wrap:wrap;">
+    <a href="https://www.instagram.com/eyenoonoptical/" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;color:#3D2B30;opacity:0.65;text-decoration:none;transition:opacity 0.15s,color 0.15s;" onmouseover="this.style.opacity='1';this.style.color='#E0115F'" onmouseout="this.style.opacity='0.65';this.style.color='#3D2B30'" aria-label="Instagram">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+    </a>
+    <a href="https://www.facebook.com/eyenoonoptical" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;color:#3D2B30;opacity:0.65;text-decoration:none;transition:opacity 0.15s,color 0.15s;" onmouseover="this.style.opacity='1';this.style.color='#E0115F'" onmouseout="this.style.opacity='0.65';this.style.color='#3D2B30'" aria-label="Facebook">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+    </a>
+    <a href="https://www.yelp.com/biz/eye-noon-optical-los-angeles?osq=eye+noon+optical" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;color:#3D2B30;opacity:0.65;text-decoration:none;transition:opacity 0.15s,color 0.15s;" onmouseover="this.style.opacity='1';this.style.color='#E0115F'" onmouseout="this.style.opacity='0.65';this.style.color='#3D2B30'" aria-label="Yelp">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.16 12.73l-4.703 1.16a1.5 1.5 0 01-1.844-1.598 1.5 1.5 0 01.965-1.23l4.52-1.734a9.37 9.37 0 011.068 3.402zM10.54 7.4l.234-4.938A9.388 9.388 0 0112 2.25a9.37 9.37 0 013.563.703L13.22 7.267a1.5 1.5 0 01-1.371.895A1.5 1.5 0 0110.54 7.4zm-1.36 3.225L4.7 8.215A9.388 9.388 0 012.55 11.61l4.594 1.688a1.5 1.5 0 001.893-1.454 1.5 1.5 0 00-.857-1.219zm1.14 3.45l-3.61 3.328a9.4 9.4 0 002.906 2.484l2.227-4.266a1.5 1.5 0 00-.633-2.028 1.5 1.5 0 00-.89.482zm4.97 1.266l2.406 4.172a9.39 9.39 0 003.047-2.36l-3.766-3.141a1.5 1.5 0 00-1.687 2.329z"/></svg>
+    </a>
+  </div>
+  <p style="font-family:'Manrope',sans-serif;font-size:0.7rem;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:rgba(0,0,0,0.6);margin:0 0 18px;line-height:2;" data-i18n-html="footer.emailLine">
+    Eye Noon Optical <span style="color:#E0115F;padding:0 10px;">/</span> TEL. 213. 388. 1447
+    <span style="color:#E0115F;padding:0 10px;">/</span>
+    E-MAIL. <a href="mailto:eyenoonoptical@gmail.com" style="color:rgba(0,0,0,0.6);text-decoration:none;">eyenoonoptical@gmail.com</a>
+  </p>
+  <p style="font-family:'Manrope',sans-serif;font-size:0.68rem;font-weight:400;letter-spacing:0.18em;text-transform:uppercase;color:rgba(0,0,0,0.4);margin:0 0 28px;" data-i18n="footer.address">301 S Western Ave. #103, Los Angeles, CA 90020</p>
+  <p style="font-family:'Manrope',sans-serif;font-size:0.62rem;font-weight:400;letter-spacing:0.14em;color:rgba(0,0,0,0.3);margin:0;" data-i18n="footer.copyright">Copyright &copy;2020 All Rights Reserved.</p>
+</footer>
+
+<script src="js/i18n.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/cart-entry-gate.js"></script>
+<script>
+(function() {
+  var toggle = document.getElementById('mobile-menu-toggle');
+  var nav = document.getElementById('nav-links');
+  if (toggle && nav) {
+    toggle.addEventListener('click', function() { nav.classList.toggle('nav-open'); });
+    nav.addEventListener('click', function(e) { if (e.target.tagName === 'A') nav.classList.remove('nav-open'); });
+  }
+})();
+</script>
+</body>
+</html>

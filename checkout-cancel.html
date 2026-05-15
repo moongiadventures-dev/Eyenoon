@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Checkout canceled | EYE NOON OPTICAL</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&family=Barlow+Condensed:wght@800&display=swap" rel="stylesheet"/>
+<style>
+  body { font-family: Manrope, sans-serif; background: #faf9f8; color: #0A0A0A; margin: 0; }
+  .font-display { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; text-transform: uppercase; }
+</style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center px-6 py-16 text-center" data-i18n-title-doc="meta.checkoutCancel">
+  <div class="flex justify-end w-full max-w-md mb-6">
+    <div class="flex flex-col items-center gap-0.5" role="group" data-i18n-aria="lang.toggleAria">
+      <button type="button" class="lang-btn border-0 bg-transparent cursor-pointer text-[0.7rem] font-bold uppercase tracking-wider text-[#3D2B30]" data-lang="en" data-i18n="lang.en">EN</button>
+      <span class="text-black/25">|</span>
+      <button type="button" class="lang-btn border-0 bg-transparent cursor-pointer text-[0.7rem] font-bold uppercase tracking-wider text-[#3D2B30]" data-lang="ko" data-i18n="lang.ko">KO</button>
+    </div>
+  </div>
+  <h1 class="font-display text-3xl text-[#0A0A0A] max-w-md" data-i18n="cancel.title">Payment canceled</h1>
+  <p class="text-sm text-black/60 max-w-md mt-4" data-i18n="cancel.body">No charge was made. Your cart is unchanged.</p>
+  <div class="flex flex-wrap gap-6 justify-center mt-10 text-xs font-bold uppercase tracking-[0.2em]">
+    <a href="checkout.html" class="text-[#E0115F] no-underline" data-i18n="cancel.tryAgain">Try checkout again</a>
+    <a href="cart.html" class="text-black/50 no-underline" data-i18n="cancel.viewCart">View cart</a>
+  </div>
+<script src="js/i18n.js"></script>
+<script src="js/cart-entry-gate.js"></script>
+</body>
+</html>

@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Contact lens product | EYE NOON OPTICAL</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Barlow+Condensed:wght@800;900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">tailwind.config = { theme: { extend: { colors: { primary: "#E0115F" } } } };</script>
+<style>
+  body { font-family: Manrope, sans-serif; background: #fff; color: #0A0A0A; margin: 0; }
+  .glass-nav { background: rgba(255,255,255,.97); backdrop-filter: blur(24px); border-top: 3px solid #E0115F; border-bottom: 1px solid rgba(224,17,95,.1); }
+  .nav-link { font-family: 'Manrope', sans-serif; font-size: 0.875rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #3D2B30; text-decoration: none; opacity: 0.75; transition: opacity 0.15s, color 0.15s; white-space: nowrap; }
+  .nav-link:hover { opacity: 1; color: #E0115F; }
+  .nav-link.active { opacity: 1; color: #E0115F; border-bottom: 2px solid #E0115F; padding-bottom: 3px; }
+
+  #cart-count { position: absolute; top: -6px; right: -8px; min-width: 18px; height: 18px; padding: 0 5px; border-radius: 999px; background: #E0115F; color: #fff; font-size: .62rem; font-weight: 700; display: inline-flex; align-items: center; justify-content: center; visibility: hidden; }
+  @media (max-width: 768px) {
+    #mobile-social { display: flex !important; }
+    nav { padding: 0 16px !important; }
+    #mobile-menu-toggle { display: block !important; }
+    #nav-links { position: fixed !important; top: 72px !important; left: 0 !important; right: 0 !important; flex-direction: column !important; flex-wrap: nowrap !important; background: rgba(255, 255, 255, 0.98) !important; border-bottom: 1px solid rgba(224, 17, 95, 0.1) !important; padding: 1rem !important; gap: 0.75rem !important; margin-left: 0 !important; display: none !important; z-index: 199; max-height: calc(100vh - 72px); overflow-y: auto; }
+    #nav-links.nav-open { display: flex !important; }
+    #nav-right > div:nth-child(2), #nav-right > div:nth-child(4), #nav-right > a:nth-child(5), #nav-right > a:nth-child(6), #nav-right > a:nth-child(7) { display: none !important; }
+  }
+  @media (min-width: 641px) {
+    #mobile-menu-toggle { display: none !important; }
+  }
+  .font-display { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; text-transform: uppercase; letter-spacing: -.01em; }
+  .full-bleed { width: 100vw; margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw); box-sizing: border-box; }
+  #lens-flow-modal input, #lens-flow-modal label span { font-family: inherit; }
+</style>
+</head>
+<body data-i18n-title-doc="meta.lensProduct">
+<!-- TopNavBar -->
+<nav class="fixed top-0 left-0 right-0 w-full z-[200] glass-nav" style="height:72px;display:flex;align-items:center;padding:0 44px;">
+
+  <!-- Logo: large bold pink wordmark -->
+  <a href="eyenoon_updated.html" style="font-family:'Barlow Condensed',sans-serif;font-size:1.45rem;font-weight:900;letter-spacing:0.04em;text-transform:uppercase;color:#E0115F;white-space:nowrap;flex-shrink:0;text-decoration:none;">
+    EYE NOON OPTICAL
+  </a>
+
+  <!-- Hamburger button (mobile only) -->
+  <button id="mobile-menu-toggle" type="button" style="display:none;background:transparent;border:0;color:#3D2B30;cursor:pointer;font-size:1.5rem;padding:8px;margin-right:auto;margin-left:8px;z-index:201;" aria-label="Menu">☰</button>
+
+  <!-- Nav links -->
+  <div id="nav-links" style="display:flex;align-items:center;gap:clamp(16px,3vw,36px);margin-left:clamp(12px,3vw,52px);flex:1;min-width:0;">
+
+    <a class="nav-link" href="eyenoon_updated.html" data-i18n="nav.home">Home</a>
+    <a class="nav-link" href="about.html" data-i18n="nav.about">About Us</a>
+
+    <div style="display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;" role="navigation" data-i18n-aria="nav.shopAria">
+      <a class="nav-link" href="optical.html" data-i18n="nav.optical">Optical</a>
+      <span style="color:rgba(61,43,48,0.35);font-size:0.65rem;user-select:none;" aria-hidden="true">·</span>
+      <a class="nav-link" href="sunglasses.html" data-i18n="nav.sunglasses">Sunglasses</a>
+      <span style="color:rgba(61,43,48,0.35);font-size:0.65rem;user-select:none;" aria-hidden="true">·</span>
+      <a class="nav-link" href="contact-lenses.html" data-i18n="nav.contactLenses">Contact Lenses</a>
+    </div>
+
+    <a class="nav-link" href="contact.html" data-i18n="nav.contact">Contact Us</a>
+
+  </div>
+
+  <!-- Right: cart + divider + social icons -->
+  <div id="nav-right" style="display:flex;align-items:center;gap:14px;flex-shrink:0;">
+
+    <a href="cart.html" style="position:relative;display:inline-flex;align-items:center;justify-content:center;color:#3D2B30;text-decoration:none;transition:color 0.15s;" onmouseover="this.style.color='#E0115F'" onmouseout="this.style.color='#3D2B30'" data-i18n-aria="nav.cartAria">
+      <span class="material-symbols-outlined" style="font-size:1.3rem;">shopping_bag</span>
+      <span id="cart-count" aria-live="polite"></span>
+    </a>
+
+    <div style="width:1px;height:16px;background:rgba(0,0,0,0.15);flex-shrink:0;" aria-hidden="true"></div>
+
+    <div style="display:flex;flex-direction:column;align-items:center;gap:2px;flex-shrink:0;" role="group" data-i18n-aria="lang.toggleAria">
+      <button type="button" class="lang-btn" style="font-size:0.62rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;border:0;background:transparent;cursor:pointer;color:#3D2B30;padding:2px 6px;border-radius:4px;" data-lang="en" data-i18n="lang.en">EN</button>
+      <span style="color:rgba(61,43,48,0.35);font-size:0.65rem;">|</span>
+      <button type="button" class="lang-btn" style="font-size:0.62rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;border:0;background:transparent;cursor:pointer;color:#3D2B30;padding:2px 6px;border-radius:4px;" data-lang="ko" data-i18n="lang.ko">KO</button>
+    </div>
+    <div style="width:1px;height:16px;background:rgba(0,0,0,0.15);flex-shrink:0;" aria-hidden="true"></div>
+
+    <a href="https://www.instagram.com/eyenoonoptical/" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;color:#3D2B30;opacity:0.65;transition:opacity 0.15s,color 0.15s;" onmouseover="this.style.opacity='1';this.style.color='#E0115F'" onmouseout="this.style.opacity='0.65';this.style.color='#3D2B30'" aria-label="Instagram">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+    </a>
+
+    <a href="https://www.facebook.com/eyenoonoptical" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;color:#3D2B30;opacity:0.65;transition:opacity 0.15s,color 0.15s;" onmouseover="this.style.opacity='1';this.style.color='#E0115F'" onmouseout="this.style.opacity='0.65';this.style.color='#3D2B30'" aria-label="Facebook">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+    </a>
+
+    <a href="https://www.yelp.com/biz/eye-noon-optical-los-angeles?osq=eye+noon+optical" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;color:#3D2B30;opacity:0.65;transition:opacity 0.15s,color 0.15s;" onmouseover="this.style.opacity='1';this.style.color='#E0115F'" onmouseout="this.style.opacity='0.65';this.style.color='#3D2B30'" aria-label="Yelp">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.16 12.73l-4.703 1.16a1.5 1.5 0 01-1.844-1.598 1.5 1.5 0 01.965-1.23l4.52-1.734a9.37 9.37 0 011.068 3.402zM10.54 7.4l.234-4.938A9.388 9.388 0 0112 2.25a9.37 9.37 0 013.563.703L13.22 7.267a1.5 1.5 0 01-1.371.895A1.5 1.5 0 0110.54 7.4zm-1.36 3.225L4.7 8.215A9.388 9.388 0 012.55 11.61l4.594 1.688a1.5 1.5 0 001.893-1.454 1.5 1.5 0 00-.857-1.219zm1.14 3.45l-3.61 3.328a9.4 9.4 0 002.906 2.484l2.227-4.266a1.5 1.5 0 00-.633-2.028 1.5 1.5 0 00-.89.482zm4.97 1.266l2.406 4.172a9.39 9.39 0 003.047-2.36l-3.766-3.141a1.5 1.5 0 00-1.687 2.329z"/></svg>
+    </a>
+
+  </div>
+
+</nav>
+
+<main class="max-w-3xl mx-auto px-6 pt-24 pb-20">
+  <p id="err" class="hidden text-red-600 text-sm" data-i18n="product.notFound">Product not found.</p>
+  <div id="root" class="hidden">
+    <a href="contact-lenses.html" class="text-xs uppercase tracking-[0.2em] text-primary font-semibold no-underline" data-i18n="product.back">&larr; All contact lenses</a>
+    <div class="mt-8 grid sm:grid-cols-2 gap-10 items-start">
+      <div class="aspect-square bg-[#f5f5f5] flex items-center justify-center p-6">
+        <img id="p-img" src="" alt="" class="max-w-full max-h-full object-contain"/>
+      </div>
+      <div>
+        <p id="p-cat" class="text-[0.55rem] uppercase tracking-[0.28em] text-primary font-bold mb-2"></p>
+        <h1 id="p-title" class="font-display text-3xl sm:text-4xl leading-tight text-[#0A0A0A] mt-0 mb-4"></h1>
+        <p id="p-price" class="text-xl font-semibold text-[#3D2B30] mb-6"></p>
+        <p class="text-sm text-[#3D2B30] opacity-80 leading-relaxed mb-6" data-i18n="product.blurb">
+          Sold as a prescription supply pack. We will ask whether you are already a patient with us on file. New patients can upload a prescription and their details here; they will carry through to checkout. Existing patients go straight to the cart, then complete payment at checkout.
+        </p>
+        <div class="flex flex-wrap items-end gap-4 mb-6">
+          <label class="block">
+            <span class="text-[0.65rem] uppercase tracking-widest text-[#3D2B30] opacity-60" data-i18n="product.qty">Quantity</span>
+            <input type="number" id="p-qty" min="1" value="1" class="mt-1 block w-24 border border-black/15 px-3 py-2 text-sm"/>
+          </label>
+        </div>
+        <button type="button" id="p-add" class="bg-primary text-white border-0 px-8 py-3 text-[0.65rem] font-bold uppercase tracking-[0.2em] cursor-pointer hover:opacity-90" data-i18n="product.addToCart">
+          Add to cart
+        </button>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- Add to cart: new vs existing patient -->
+<div id="lens-flow-modal" class="hidden fixed inset-0 z-[300] p-4 sm:p-6 items-center justify-center" aria-hidden="true" role="presentation">
+  <div id="lens-flow-backdrop" class="absolute inset-0 z-0 bg-black/55" aria-hidden="true"></div>
+  <div class="relative z-[1] w-full max-w-md bg-white shadow-2xl border border-black/10 p-6 sm:p-8 max-h-[90vh] overflow-y-auto">
+
+    <div id="lens-step-q" role="dialog" aria-modal="true" aria-labelledby="lens-q-title">
+      <h2 id="lens-q-title" class="font-display text-xl sm:text-2xl text-[#0A0A0A] m-0 mb-4 leading-tight" data-i18n="product.lensQTitle">Before we add this to your cart</h2>
+      <p class="text-sm text-[#3D2B30]/90 leading-relaxed m-0 mb-8" data-i18n="product.lensQBody">
+        Are you an existing customer of Eye Noon Optical? If yes, have you previously received an eye prescription from us?
+      </p>
+      <div class="flex flex-col sm:flex-row gap-3 mb-4">
+        <button type="button" id="lens-q-yes" class="flex-1 bg-primary text-white border-0 px-4 py-3 text-[0.65rem] font-bold uppercase tracking-[0.16em] cursor-pointer hover:opacity-90" data-i18n="product.yes">Yes</button>
+        <button type="button" id="lens-q-no" class="flex-1 border border-black/15 bg-white text-[#0A0A0A] px-4 py-3 text-[0.65rem] font-bold uppercase tracking-[0.16em] cursor-pointer hover:bg-black/5" data-i18n="product.no">No</button>
+      </div>
+      <button type="button" id="lens-flow-cancel" class="w-full text-[0.62rem] font-semibold uppercase tracking-[0.2em] text-[#3D2B30]/60 bg-transparent border-0 cursor-pointer hover:text-primary py-2" data-i18n="product.cancel">Cancel</button>
+    </div>
+
+    <div id="lens-step-form" class="hidden" role="dialog" aria-modal="true" aria-labelledby="lens-form-title">
+      <h2 id="lens-form-title" class="font-display text-2xl sm:text-3xl text-[#0A0A0A] m-0 mb-2">Contact Lenses Prescription</h2>
+      <p class="text-sm text-[#3D2B30]/80 leading-relaxed m-0 mb-6">Upload your prescription and your details. This will be included with your order at checkout.</p>
+      <form id="rx-form" class="space-y-4">
+        <div>
+          <label for="rx-file" class="block text-[0.65rem] uppercase tracking-widest text-[#3D2B30]/70 mb-1">Prescription file</label>
+          <input type="file" id="rx-file" name="rxFile" required accept=".pdf,.jpg,.jpeg,.png,application/pdf,image/jpeg,image/png"
+            class="block w-full text-sm text-black/80 file:mr-4 file:border-0 file:bg-primary file:text-white file:px-3 file:py-2 file:text-[0.62rem] file:font-bold file:uppercase"/>
+          <p class="text-[0.65rem] text-[#3D2B30]/55 mt-1.5 m-0">PDF, JPG, or PNG (max 12&nbsp;MB).</p>
+        </div>
+        <div>
+          <label for="rx-name" class="block text-[0.65rem] uppercase tracking-widest text-[#3D2B30]/70 mb-1">Full name</label>
+          <input type="text" id="rx-name" name="name" required autocomplete="name" class="w-full border border-black/15 px-3 py-2.5 text-sm"/>
+        </div>
+        <div>
+          <label for="rx-dob" class="block text-[0.65rem] uppercase tracking-widest text-[#3D2B30]/70 mb-1">Date of birth</label>
+          <input type="date" id="rx-dob" name="birthday" required class="w-full border border-black/15 px-3 py-2.5 text-sm"/>
+        </div>
+        <div>
+          <label for="rx-phone" class="block text-[0.65rem] uppercase tracking-widest text-[#3D2B30]/70 mb-1">Phone</label>
+          <input type="tel" id="rx-phone" name="phone" required autocomplete="tel" placeholder="213.388.1447" class="w-full border border-black/15 px-3 py-2.5 text-sm"/>
+        </div>
+        <div>
+          <label for="rx-email" class="block text-[0.65rem] uppercase tracking-widest text-[#3D2B30]/70 mb-1">Email</label>
+          <input type="email" id="rx-email" name="email" required autocomplete="email" class="w-full border border-black/15 px-3 py-2.5 text-sm"/>
+        </div>
+        <p id="rx-form-err" class="hidden text-sm text-red-600 m-0" role="alert"></p>
+        <div class="flex flex-col-reverse sm:flex-row sm:justify-between gap-3 pt-2">
+          <button type="button" id="lens-form-back" class="border border-black/15 bg-white text-[#0A0A0A] px-5 py-2.5 text-[0.65rem] font-bold uppercase tracking-[0.18em] cursor-pointer hover:bg-black/5">Back</button>
+          <button type="submit" id="rx-send" class="bg-primary text-white border-0 px-5 py-2.5 text-[0.65rem] font-bold uppercase tracking-[0.18em] cursor-pointer hover:opacity-90">Save &amp; add to cart</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<footer class="full-bleed bg-white py-12 px-8 text-center border-t border-primary/25">
+  <div id="mobile-social" style="display:none;flex-direction:row;align-items:center;justify-content:center;gap:12px;margin-bottom:28px;padding-bottom:20px;border-bottom:1px solid rgba(0,0,0,0.08);flex-wrap:wrap;">
+    <a href="https://www.instagram.com/eyenoonoptical/" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;color:#3D2B30;opacity:0.65;text-decoration:none;transition:opacity 0.15s,color 0.15s;" onmouseover="this.style.opacity='1';this.style.color='#E0115F'" onmouseout="this.style.opacity='0.65';this.style.color='#3D2B30'" aria-label="Instagram">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+    </a>
+    <a href="https://www.facebook.com/eyenoonoptical" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;color:#3D2B30;opacity:0.65;text-decoration:none;transition:opacity 0.15s,color 0.15s;" onmouseover="this.style.opacity='1';this.style.color='#E0115F'" onmouseout="this.style.opacity='0.65';this.style.color='#3D2B30'" aria-label="Facebook">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+    </a>
+    <a href="https://www.yelp.com/biz/eye-noon-optical-los-angeles?osq=eye+noon+optical" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;color:#3D2B30;opacity:0.65;text-decoration:none;transition:opacity 0.15s,color 0.15s;" onmouseover="this.style.opacity='1';this.style.color='#E0115F'" onmouseout="this.style.opacity='0.65';this.style.color='#3D2B30'" aria-label="Yelp">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.16 12.73l-4.703 1.16a1.5 1.5 0 01-1.844-1.598 1.5 1.5 0 01.965-1.23l4.52-1.734a9.37 9.37 0 011.068 3.402zM10.54 7.4l.234-4.938A9.388 9.388 0 0112 2.25a9.37 9.37 0 013.563.703L13.22 7.267a1.5 1.5 0 01-1.371.895A1.5 1.5 0 0110.54 7.4zm-1.36 3.225L4.7 8.215A9.388 9.388 0 012.55 11.61l4.594 1.688a1.5 1.5 0 001.893-1.454 1.5 1.5 0 00-.857-1.219zm1.14 3.45l-3.61 3.328a9.4 9.4 0 002.906 2.484l2.227-4.266a1.5 1.5 0 00-.633-2.028 1.5 1.5 0 00-.89.482zm4.97 1.266l2.406 4.172a9.39 9.39 0 003.047-2.36l-3.766-3.141a1.5 1.5 0 00-1.687 2.329z"/></svg>
+    </a>
+  </div>
+  <p class="text-[0.7rem] font-semibold tracking-[0.22em] uppercase text-black/60 m-0 mb-4" data-i18n-html="footer.emailLine">
+    Eye Noon Optical <span class="text-primary px-2">/</span> TEL. 213. 388. 1447
+    <span class="text-primary px-2">/</span>
+    E-MAIL. <a href="mailto:eyenoonoptical@gmail.com" class="text-black/60 no-underline hover:text-primary">eyenoonoptical@gmail.com</a>
+  </p>
+  <p class="text-[0.68rem] tracking-[0.18em] uppercase text-black/40 m-0 mb-6" data-i18n="footer.address">301 S Western Ave. #103, Los Angeles, CA 90020</p>
+  <p class="text-[0.62rem] tracking-[0.14em] text-black/30 m-0" data-i18n="footer.copyright">Copyright &copy;2020 All Rights Reserved.</p>
+</footer>
+
+<script src="js/i18n.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/cart-entry-gate.js"></script>
+<script>
+(function () {
+  var params = new URLSearchParams(location.search);
+  var slug = params.get("slug");
+  var err = document.getElementById("err");
+  var root = document.getElementById("root");
+
+  function T(key) {
+    return window.EyeNoonI18n ? window.EyeNoonI18n.t(key) : key;
+  }
+
+  function catLabel(c) {
+    if (c === "daily") return T("lenses.filterDaily");
+    if (c === "planned") return T("lenses.filterPlanned");
+    if (c === "color") return T("lenses.filterColor");
+    return T("nav.contactLenses");
+  }
+
+  fetch("data/contact-lenses.json")
+    .then(function (r) {
+      return r.json();
+    })
+    .then(function (products) {
+      var p = products.filter(function (x) {
+        return x.slug === slug;
+      })[0];
+      if (!p) {
+        err.classList.remove("hidden");
+        return;
+      }
+      document.getElementById("p-img").src = "images/contact-lenses/" + p.img + ".jpg";
+      document.getElementById("p-img").alt = p.name;
+      document.getElementById("p-cat").textContent = catLabel(p.cat);
+      document.getElementById("p-title").textContent = p.name.replace(/&amp;/g, "&");
+      document.getElementById("p-price").textContent = "$" + Number(p.price).toFixed(2);
+      root.classList.remove("hidden");
+
+      var flowModal = document.getElementById("lens-flow-modal");
+      var stepQ = document.getElementById("lens-step-q");
+      var stepForm = document.getElementById("lens-step-form");
+      var rxForm = document.getElementById("rx-form");
+      var rxErr = document.getElementById("rx-form-err");
+      var pendingQty = 1;
+      var MAX_RX_BYTES = 12 * 1024 * 1024;
+
+      function openFlowModal() {
+        pendingQty = parseInt(document.getElementById("p-qty").value, 10) || 1;
+        rxForm.reset();
+        rxErr.classList.add("hidden");
+        rxErr.textContent = "";
+        stepQ.classList.remove("hidden");
+        stepForm.classList.add("hidden");
+        flowModal.classList.remove("hidden");
+        flowModal.classList.add("flex");
+        flowModal.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+        document.getElementById("lens-q-yes").focus();
+      }
+
+      function closeFlowModal() {
+        flowModal.classList.add("hidden");
+        flowModal.classList.remove("flex");
+        flowModal.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+        stepQ.classList.remove("hidden");
+        stepForm.classList.add("hidden");
+      }
+
+      function showNewPatientForm() {
+        stepQ.classList.add("hidden");
+        stepForm.classList.remove("hidden");
+        document.getElementById("rx-file").focus();
+      }
+
+      function showQuestionStep() {
+        stepForm.classList.add("hidden");
+        stepQ.classList.remove("hidden");
+        document.getElementById("lens-q-yes").focus();
+      }
+
+      document.addEventListener("keydown", function (ev) {
+        if (ev.key !== "Escape") return;
+        if (!flowModal.classList.contains("hidden")) closeFlowModal();
+      });
+
+      function performAddToCart() {
+        window.EyeNoonCart.addItem({
+          slug: p.slug,
+          name: p.name.replace(/&amp;/g, "&"),
+          price: p.price,
+          img: "images/contact-lenses/" + p.img + ".jpg",
+          qty: pendingQty,
+          kind: "contact_lens",
+        });
+        closeFlowModal();
+        window.location.href = "cart.html";
+      }
+
+      document.getElementById("p-add").onclick = openFlowModal;
+      document.getElementById("lens-flow-backdrop").onclick = closeFlowModal;
+      document.getElementById("lens-flow-cancel").onclick = closeFlowModal;
+
+      document.getElementById("lens-q-yes").onclick = function () {
+        window.EyeNoonCart.setLensOrderContext({ existingCustomer: true });
+        performAddToCart();
+      };
+
+      document.getElementById("lens-q-no").onclick = showNewPatientForm;
+
+      document.getElementById("lens-form-back").onclick = showQuestionStep;
+
+      rxForm.addEventListener("submit", function (ev) {
+        ev.preventDefault();
+        rxErr.classList.add("hidden");
+        rxErr.textContent = "";
+        if (!rxForm.checkValidity()) {
+          rxForm.reportValidity();
+          return;
+        }
+        var fileEl = document.getElementById("rx-file");
+        var file = fileEl.files[0];
+        if (!file) {
+          rxErr.textContent = "Please choose a prescription file.";
+          rxErr.classList.remove("hidden");
+          return;
+        }
+        if (file.size > MAX_RX_BYTES) {
+          rxErr.textContent = "That file is too large (max 12 MB).";
+          rxErr.classList.remove("hidden");
+          return;
+        }
+        var sendBtn = document.getElementById("rx-send");
+        sendBtn.disabled = true;
+        var reader = new FileReader();
+        reader.onerror = function () {
+          rxErr.textContent = "Could not read that file. Try another.";
+          rxErr.classList.remove("hidden");
+          sendBtn.disabled = false;
+        };
+        reader.onload = function () {
+          var dataUrl = reader.result;
+          var comma = String(dataUrl).indexOf(",");
+          var base64 = comma >= 0 ? dataUrl.slice(comma + 1) : "";
+          try {
+            window.EyeNoonCart.setLensOrderContext({
+              existingCustomer: false,
+              name: document.getElementById("rx-name").value.trim(),
+              dateOfBirth: document.getElementById("rx-dob").value,
+              phone: document.getElementById("rx-phone").value.trim(),
+              email: document.getElementById("rx-email").value.trim(),
+              prescriptionUpload: {
+                fileName: file.name,
+                mimeType: file.type || "application/octet-stream",
+                base64: base64,
+              },
+            });
+          } catch (e) {
+            rxErr.textContent = "Could not save your prescription in the browser (file may be too large). Upload the same file at checkout.";
+            rxErr.classList.remove("hidden");
+            sendBtn.disabled = false;
+            return;
+          }
+          performAddToCart();
+          sendBtn.disabled = false;
+        };
+        reader.readAsDataURL(file);
+      });
+    })
+    .catch(function () {
+      err.textContent = "Could not load catalog.";
+      err.classList.remove("hidden");
+    });
+})();
+</script>
+<script>
+(function() {
+  var toggle = document.getElementById('mobile-menu-toggle');
+  var nav = document.getElementById('nav-links');
+  if (toggle && nav) {
+    toggle.addEventListener('click', function() {
+      nav.classList.toggle('nav-open');
+    });
+    nav.addEventListener('click', function(e) {
+      if (e.target.tagName === 'A') nav.classList.remove('nav-open');
+    });
+  }
+})();
+</script>
+</body>
+</html>

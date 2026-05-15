@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Cart | EYE NOON OPTICAL</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&family=Barlow+Condensed:wght@800&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+  body { font-family: Manrope, sans-serif; background: #fff; color: #0A0A0A; margin: 0; }
+  .glass-nav { background: rgba(255,255,255,.97); backdrop-filter: blur(24px); border-top: 3px solid #E0115F; border-bottom: 1px solid rgba(224,17,95,.1); }
+  .nav-link { font-family: 'Manrope', sans-serif; font-size: 0.875rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #3D2B30; text-decoration: none; opacity: 0.75; transition: opacity 0.15s, color 0.15s; white-space: nowrap; }
+  .nav-link:hover { opacity: 1; color: #E0115F; }
+  .nav-link.active { opacity: 1; color: #E0115F; border-bottom: 2px solid #E0115F; padding-bottom: 3px; }
+
+  @media (max-width: 768px) {
+    #mobile-social { display: flex !important; }
+    nav { padding: 0 16px !important; }
+    #mobile-menu-toggle { display: block !important; }
+    #nav-links { position: fixed !important; top: 72px !important; left: 0 !important; right: 0 !important; flex-direction: column !important; flex-wrap: nowrap !important; background: rgba(255, 255, 255, 0.98) !important; border-bottom: 1px solid rgba(224, 17, 95, 0.1) !important; padding: 1rem !important; gap: 0.75rem !important; margin-left: 0 !important; display: none !important; z-index: 199; max-height: calc(100vh - 72px); overflow-y: auto; }
+    #nav-links.nav-open { display: flex !important; }
+    #nav-right > div:nth-child(2), #nav-right > div:nth-child(4), #nav-right > a:nth-child(5), #nav-right > a:nth-child(6), #nav-right > a:nth-child(7) { display: none !important; }
+  }
+  @media (min-width: 641px) {
+    #mobile-menu-toggle { display: none !important; }
+  }
+  .font-display { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; text-transform: uppercase; }
+  #cart-count { position: absolute; top: -6px; right: -8px; min-width: 18px; height: 18px; padding: 0 5px; border-radius: 999px; background: #E0115F; color: #fff; font-size: .62rem; font-weight: 700; display: inline-flex; align-items: center; justify-content: center; visibility: hidden; }
+  .full-bleed { width: 100%; margin-left: 0; box-sizing: border-box; }
+</style>
+</head>
+<body data-i18n-title-doc="meta.cart">
+<!-- TopNavBar -->
+<nav class="fixed top-0 left-0 right-0 w-full z-[200] glass-nav" style="height:72px;display:flex;align-items:center;padding:0 44px;">
+
+  <!-- Logo: large bold pink wordmark -->
+  <a href="eyenoon_updated.html" style="font-family:'Barlow Condensed',sans-serif;font-size:1.45rem;font-weight:900;letter-spacing:0.04em;text-transform:uppercase;color:#E0115F;white-space:nowrap;flex-shrink:0;text-decoration:none;">
+    EYE NOON OPTICAL
+  </a>
+
+  <!-- Hamburger button (mobile only) -->
+  <button id="mobile-menu-toggle" type="button" style="display:none;background:transparent;border:0;color:#3D2B30;cursor:pointer;font-size:1.5rem;padding:8px;margin-right:auto;margin-left:8px;z-index:201;" aria-label="Menu">☰</button>
+
+  <!-- Nav links -->
+  <div id="nav-links" style="display:flex;align-items:center;gap:clamp(16px,3vw,36px);margin-left:clamp(12px,3vw,52px);flex:1;min-width:0;">
+
+    <a class="nav-link" href="eyenoon_updated.html" data-i18n="nav.home">Home</a>
+    <a class="nav-link" href="about.html" data-i18n="nav.about">About Us</a>
+
+    <div style="display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;" role="navigation" data-i18n-aria="nav.shopAria">
+      <a class="nav-link" href="optical.html" data-i18n="nav.optical">Optical</a>
+      <span style="color:rgba(61,43,48,0.35);font-size:0.65rem;user-select:none;" aria-hidden="true">·</span>
+      <a class="nav-link" href="sunglasses.html" data-i18n="nav.sunglasses">Sunglasses</a>
+      <span style="color:rgba(61,43,48,0.35);font-size:0.65rem;user-select:none;" aria-hidden="true">·</span>
+      <a class="nav-link" href="contact-lenses.html" data-i18n="nav.contactLenses">Contact Lenses</a>
+    </div>
+
+    <a class="nav-link" href="contact.html" data-i18n="nav.contact">Contact Us</a>
+
+  </div>
+
+  <!-- Right: cart + divider + social icons -->
+  <div id="nav-right" style="display:flex;align-items:center;gap:14px;flex-shrink:0;">
+
+    <a href="cart.html" style="position:relative;display:inline-flex;align-items:center;justify-content:center;color:#3D2B30;text-decoration:none;transition:color 0.15s;" onmouseover="this.style.color='#E0115F'" onmouseout="this.style.color='#3D2B30'" data-i18n-aria="nav.cartAria">
+      <span class="material-symbols-outlined" style="font-size:1.3rem;">shopping_bag</span>
+      <span id="cart-count" aria-live="polite"></span>
+    </a>
+
+    <div style="width:1px;height:16px;background:rgba(0,0,0,0.15);flex-shrink:0;" aria-hidden="true"></div>
+
+    <div style="display:flex;flex-direction:column;align-items:center;gap:2px;flex-shrink:0;" role="group" data-i18n-aria="lang.toggleAria">
+      <button type="button" class="lang-btn" style="font-size:0.62rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;border:0;background:transparent;cursor:pointer;color:#3D2B30;padding:2px 6px;border-radius:4px;" data-lang="en" data-i18n="lang.en">EN</button>
+      <span style="color:rgba(61,43,48,0.35);font-size:0.65rem;">|</span>
+      <button type="button" class="lang-btn" style="font-size:0.62rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;border:0;background:transparent;cursor:pointer;color:#3D2B30;padding:2px 6px;border-radius:4px;" data-lang="ko" data-i18n="lang.ko">KO</button>
+    </div>
+    <div style="width:1px;height:16px;background:rgba(0,0,0,0.15);flex-shrink:0;" aria-hidden="true"></div>
+
+    <a href="https://www.instagram.com/eyenoonoptical/" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;color:#3D2B30;opacity:0.65;transition:opacity 0.15s,color 0.15s;" onmouseover="this.style.opacity='1';this.style.color='#E0115F'" onmouseout="this.style.opacity='0.65';this.style.color='#3D2B30'" aria-label="Instagram">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+    </a>
+
+    <a href="https://www.facebook.com/eyenoonoptical" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;color:#3D2B30;opacity:0.65;transition:opacity 0.15s,color 0.15s;" onmouseover="this.style.opacity='1';this.style.color='#E0115F'" onmouseout="this.style.opacity='0.65';this.style.color='#3D2B30'" aria-label="Facebook">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+    </a>
+
+    <a href="https://www.yelp.com/biz/eye-noon-optical-los-angeles?osq=eye+noon+optical" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;color:#3D2B30;opacity:0.65;transition:opacity 0.15s,color 0.15s;" onmouseover="this.style.opacity='1';this.style.color='#E0115F'" onmouseout="this.style.opacity='0.65';this.style.color='#3D2B30'" aria-label="Yelp">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.16 12.73l-4.703 1.16a1.5 1.5 0 01-1.844-1.598 1.5 1.5 0 01.965-1.23l4.52-1.734a9.37 9.37 0 011.068 3.402zM10.54 7.4l.234-4.938A9.388 9.388 0 0112 2.25a9.37 9.37 0 013.563.703L13.22 7.267a1.5 1.5 0 01-1.371.895A1.5 1.5 0 0110.54 7.4zm-1.36 3.225L4.7 8.215A9.388 9.388 0 012.55 11.61l4.594 1.688a1.5 1.5 0 001.893-1.454 1.5 1.5 0 00-.857-1.219zm1.14 3.45l-3.61 3.328a9.4 9.4 0 002.906 2.484l2.227-4.266a1.5 1.5 0 00-.633-2.028 1.5 1.5 0 00-.89.482zm4.97 1.266l2.406 4.172a9.39 9.39 0 003.047-2.36l-3.766-3.141a1.5 1.5 0 00-1.687 2.329z"/></svg>
+    </a>
+
+  </div>
+
+</nav>
+
+<main class="max-w-2xl mx-auto px-6 pt-24 pb-16">
+  <h1 class="font-display text-[#0A0A0A] mb-2" style="font-size:clamp(1.875rem,5vw,2.25rem);" data-i18n="cart.title">Cart</h1>
+  <p class="text-sm text-black/60 mb-8" data-i18n="cart.lead">Review items. On checkout, upload your prescription and pay with PayPal or credit / debit card (phone or in store)—or call us to place your order.</p>
+  <div id="empty" class="hidden text-sm text-black/50 py-12" data-i18n-html="cart.empty">Your cart is empty. <a href="contact-lenses.html" class="text-[#E0115F]">Browse contact lenses</a></div>
+  <ul id="lines" class="list-none p-0 m-0 space-y-6"></ul>
+  <div id="tot" class="hidden mt-10 pt-8 border-t border-black/10">
+    <p class="text-lg font-semibold"><span data-i18n="cart.subtotal">Subtotal:</span> <span id="sub"></span></p>
+    <p class="text-xs sm:text-sm font-medium italic text-[hotpink] mt-4 mb-1 max-w-xl leading-relaxed" role="note" data-i18n="cart.rxCancel">
+      * If the prescription is invalid, we will cancel the order.
+    </p>
+    <p class="text-xs uppercase tracking-widest text-black/45 mt-4" data-i18n="cart.taxShip">Taxes/shipping may be adjusted when we confirm your order.</p>
+    <div class="flex flex-col sm:flex-row gap-4 mt-6">
+      <a href="checkout.html" class="inline-block text-center bg-[#E0115F] text-white px-6 py-3 text-xs font-bold uppercase tracking-widest no-underline hover:opacity-95" data-i18n="cart.checkoutBtn">Checkout with Rx &amp; payment</a>
+      <a href="tel:+12133881447" class="inline-block text-center border border-black/20 text-[#0A0A0A] px-6 py-3 text-xs font-bold uppercase tracking-widest no-underline hover:border-[#E0115F] hover:text-[#E0115F]" data-i18n="cart.callBtn">Call to order</a>
+    </div>
+  </div>
+</main>
+
+<footer class="full-bleed bg-white py-10 px-6 text-center text-[0.65rem] tracking-widest uppercase text-black/40">
+  <div id="mobile-social" style="display:none;flex-direction:row;align-items:center;justify-content:center;gap:12px;margin-bottom:28px;padding-bottom:20px;border-bottom:1px solid rgba(0,0,0,0.08);flex-wrap:wrap;">
+    <a href="https://www.instagram.com/eyenoonoptical/" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;color:#3D2B30;opacity:0.65;text-decoration:none;transition:opacity 0.15s,color 0.15s;" onmouseover="this.style.opacity='1';this.style.color='#E0115F'" onmouseout="this.style.opacity='0.65';this.style.color='#3D2B30'" aria-label="Instagram">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+    </a>
+    <a href="https://www.facebook.com/eyenoonoptical" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;color:#3D2B30;opacity:0.65;text-decoration:none;transition:opacity 0.15s,color 0.15s;" onmouseover="this.style.opacity='1';this.style.color='#E0115F'" onmouseout="this.style.opacity='0.65';this.style.color='#3D2B30'" aria-label="Facebook">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+    </a>
+    <a href="https://www.yelp.com/biz/eye-noon-optical-los-angeles?osq=eye+noon+optical" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;color:#3D2B30;opacity:0.65;text-decoration:none;transition:opacity 0.15s,color 0.15s;" onmouseover="this.style.opacity='1';this.style.color='#E0115F'" onmouseout="this.style.opacity='0.65';this.style.color='#3D2B30'" aria-label="Yelp">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.16 12.73l-4.703 1.16a1.5 1.5 0 01-1.844-1.598 1.5 1.5 0 01.965-1.23l4.52-1.734a9.37 9.37 0 011.068 3.402zM10.54 7.4l.234-4.938A9.388 9.388 0 0112 2.25a9.37 9.37 0 013.563.703L13.22 7.267a1.5 1.5 0 01-1.371.895A1.5 1.5 0 0110.54 7.4zm-1.36 3.225L4.7 8.215A9.388 9.388 0 012.55 11.61l4.594 1.688a1.5 1.5 0 001.893-1.454 1.5 1.5 0 00-.857-1.219zm1.14 3.45l-3.61 3.328a9.4 9.4 0 002.906 2.484l2.227-4.266a1.5 1.5 0 00-.633-2.028 1.5 1.5 0 00-.89.482zm4.97 1.266l2.406 4.172a9.39 9.39 0 003.047-2.36l-3.766-3.141a1.5 1.5 0 00-1.687 2.329z"/></svg>
+    </a>
+  </div>
+  <div data-i18n="cart.footer">Eye Noon Optical · Los Angeles</div>
+</footer>
+
+<script src="js/i18n.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/cart-entry-gate.js"></script>
+<script>
+(function () {
+  function money(n) {
+    return "$" + n.toFixed(2);
+  }
+  function T(k) {
+    return window.EyeNoonI18n && window.EyeNoonI18n.t ? window.EyeNoonI18n.t(k) : "";
+  }
+  function render() {
+    var lines = window.EyeNoonCart.load();
+    var ul = document.getElementById("lines");
+    var empty = document.getElementById("empty");
+    var tot = document.getElementById("tot");
+    ul.innerHTML = "";
+    if (!lines.length) {
+      empty.classList.remove("hidden");
+      tot.classList.add("hidden");
+      return;
+    }
+    empty.classList.add("hidden");
+    tot.classList.remove("hidden");
+    document.getElementById("sub").textContent = money(window.EyeNoonCart.totalPrice());
+    lines.forEach(function (l) {
+      var li = document.createElement("li");
+      li.className = "flex gap-4 items-start border-b border-black/8 pb-6";
+      li.innerHTML =
+        '<img src="' +
+        l.img +
+        '" width="72" height="72" class="object-contain bg-[#f5f5f5] shrink-0" alt=""/>' +
+        '<div class="flex-1 min-w-0">' +
+        '<p class="font-semibold text-sm m-0">' +
+        l.name.replace(/&amp;/g, "&") +
+        "</p>" +
+        '<p class="text-xs text-black/50 mt-1">' +
+        money(l.price) +
+        " × " +
+        l.qty +
+        "</p>" +
+        '<button type="button" class="text-xs text-[#E0115F] bg-transparent border-0 underline cursor-pointer mt-2 p-0" data-slug="' +
+        l.slug +
+        '">' +
+        T("cart.remove") +
+        "</button></div>";
+      li.querySelector("button").onclick = function () {
+        window.EyeNoonCart.remove(l.slug);
+        render();
+      };
+      ul.appendChild(li);
+    });
+  }
+  document.addEventListener("eyenoon-cart-changed", render);
+  window.addEventListener("eyenoon-lang-change", render);
+  render();
+  /* Back/forward cache: re-read storage so the list matches after browser Back from checkout */
+  window.addEventListener("pageshow", function () {
+    render();
+  });
+})();
+</script>
+<script>
+(function() {
+  var toggle = document.getElementById('mobile-menu-toggle');
+  var nav = document.getElementById('nav-links');
+  if (toggle && nav) {
+    toggle.addEventListener('click', function() { nav.classList.toggle('nav-open'); });
+    nav.addEventListener('click', function(e) { if (e.target.tagName === 'A') nav.classList.remove('nav-open'); });
+  }
+})();
+</script>
+</body>
+</html>
