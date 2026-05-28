@@ -1568,6 +1568,23 @@
   calcMax();
   window.addEventListener('resize', calcMax);
 
+  /* ── Mobile: skip scroll-driven scale animation; render final state statically ── */
+  if (window.matchMedia('(max-width: 640px)').matches) {
+    section.style.height = '100vh';
+    circle.style.transform = 'translate(-50%,-50%) scale(' + maxScale + ')';
+    bloom.style.transform  = 'translate(-50%, calc(-50% - 32vh)) scale(1)';
+    content.style.opacity = '1';
+    content.style.pointerEvents = 'auto';
+    about.style.opacity = '1';
+    cta.style.opacity = '1';
+    if (phone && phoneWrap) {
+      phone.style.opacity = '1';
+      phone.style.pointerEvents = 'auto';
+      phoneWrap.classList.add('phone-sticker-live');
+    }
+    return;
+  }
+
   function easeOut(t) { return 1 - Math.pow(1 - t, 3); }
   function easeInOut(t) { return t < 0.5 ? 2*t*t : 1 - Math.pow(-2*t+2,2)/2; }
   function clamp(v, a, b) { return v < a ? a : v > b ? b : v; }
