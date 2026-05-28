@@ -49,6 +49,14 @@
             border-top: 3px solid #E0115F;
             border-bottom: 1px solid rgba(224,17,95,0.1);
         }
+        /* Mobile: drop backdrop-filter (causes jitter/shake on fixed nav during scroll) */
+        @media (max-width: 640px) {
+            .glass-nav {
+                background: #ffffff !important;
+                backdrop-filter: none !important;
+                -webkit-backdrop-filter: none !important;
+            }
+        }
 
         #cart-count {
             position: absolute;
@@ -988,11 +996,33 @@
 <main style="padding-top:72px;">
 <!-- Hero Section: Virtual Museum Theme -->
 <section class="full-bleed relative min-h-screen flex flex-col justify-center items-center overflow-hidden">
-<!-- Hero Video Background -->
-<video id="hero-video" autoplay loop muted playsinline
+<!-- Hero Video Background (desktop only; mobile skips load for performance) -->
+<video id="hero-video" loop muted playsinline preload="none"
   style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;">
   <source src="0402.mp4" type="video/mp4">
 </video>
+<script>
+(function(){
+  var hv = document.getElementById('hero-video');
+  if (!hv) return;
+  var isMobile = window.matchMedia && window.matchMedia('(max-width: 640px)').matches;
+  if (isMobile) {
+    var s = hv.querySelector('source');
+    if (s) s.remove();
+    hv.style.display = 'none';
+    var sec = hv.closest('section');
+    if (sec) sec.style.background = '#1a1a1a';
+    var btn = document.getElementById('hero-mute-btn');
+    if (btn) btn.style.display = 'none';
+  } else {
+    hv.setAttribute('autoplay', '');
+    hv.setAttribute('preload', 'auto');
+    hv.load();
+    var p = hv.play();
+    if (p && typeof p.catch === 'function') p.catch(function(){});
+  }
+})();
+</script>
 <!-- Dark overlay so text stays readable -->
 <div style="position:absolute;inset:0;background:rgba(0,0,0,0.35);z-index:1;"></div>
 <div id="hero-text" class="relative z-10 text-center px-6" style="transition:opacity 1.2s ease;">
