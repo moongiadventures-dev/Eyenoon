@@ -996,8 +996,12 @@
 <main style="padding-top:72px;">
 <!-- Hero Section: Virtual Museum Theme -->
 <section class="full-bleed relative min-h-screen flex flex-col justify-center items-center overflow-hidden">
-<!-- Hero Video Background (desktop only; mobile skips load for performance) -->
-<video id="hero-video" loop muted playsinline preload="none"
+<!-- Hero Video Background (desktop only; mobile script below strips source) -->
+<script>
+  // Run BEFORE the video tag is parsed so mobile never starts downloading.
+  window.__eyenoonHeroIsMobile = window.matchMedia && window.matchMedia('(max-width: 640px)').matches;
+</script>
+<video id="hero-video" autoplay loop muted playsinline preload="auto"
   style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;">
   <source src="0402.webm" type="video/webm">
   <source src="0402-compressed.mp4" type="video/mp4">
@@ -1006,21 +1010,17 @@
 (function(){
   var hv = document.getElementById('hero-video');
   if (!hv) return;
-  var isMobile = window.matchMedia && window.matchMedia('(max-width: 640px)').matches;
-  if (isMobile) {
-    var s = hv.querySelector('source');
-    if (s) s.remove();
+  if (window.__eyenoonHeroIsMobile) {
+    hv.removeAttribute('autoplay');
+    hv.pause();
+    Array.prototype.slice.call(hv.querySelectorAll('source')).forEach(function(s){ s.remove(); });
+    hv.removeAttribute('src');
+    hv.load();
     hv.style.display = 'none';
     var sec = hv.closest('section');
     if (sec) sec.style.background = '#1a1a1a';
     var btn = document.getElementById('hero-mute-btn');
     if (btn) btn.style.display = 'none';
-  } else {
-    hv.setAttribute('autoplay', '');
-    hv.setAttribute('preload', 'auto');
-    hv.load();
-    var p = hv.play();
-    if (p && typeof p.catch === 'function') p.catch(function(){});
   }
 })();
 </script>

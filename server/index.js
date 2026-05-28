@@ -42,8 +42,13 @@ const PAYPAL_CLIENT_ID = process.env.PAYPAL_CLIENT_ID || "";
 const PAYPAL_CLIENT_SECRET = process.env.PAYPAL_CLIENT_SECRET || "";
 const PAYPAL_MODE = (process.env.PAYPAL_MODE || process.env.PAYPAL_ENV || "sandbox").toLowerCase();
 
+const RESEND_API_KEY = process.env.RESEND_API_KEY || "";
+const FROM_EMAIL = process.env.FROM_EMAIL || "Eye Noon Optical <onboarding@resend.dev>";
+const BCC_EMAIL = process.env.BCC_EMAIL || ""; // optional store-side copy
+
 const stripeEnabled = Boolean(STRIPE_SECRET_KEY);
 const paypalEnabled = Boolean(PAYPAL_CLIENT_ID && PAYPAL_CLIENT_SECRET);
+const resendEnabled = Boolean(RESEND_API_KEY);
 
 const stripe = stripeEnabled ? new Stripe(STRIPE_SECRET_KEY) : null;
 
@@ -190,6 +195,208 @@ function orderResponse(order) {
 }
 
 /* ----------------------------------------------------------------------------
+ * Email receipts (Resend)
+ * ------------------------------------------------------------------------- */
+function escapeHtml(s) {
+  return String(s == null ? "" : s)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
+function money(n) {
+  const v = Number(n) || 0;
+  return "$" + v.toFixed(2);
+}
+
+function buildReceiptHtml(order) {
+  const cust = order.customer || {};
+  const ship = order.shipping || {};
+  const items = (order.lines || []).map((l) =>
+    `<tr>
+      <td style="padding:12px 0;border-bottom:1px solid #eee;color:#3D2B30;font-size:14px;">
+        ${escapeHtml(l.name)}<br/>
+        <span style="color:#888;font-size:12px;">Qty ${l.qty} × ${money(l.unitPrice)}</span>
+      </td>
+      <td style="padding:12px 0;border-bottom:1px solid #eee;color:#3D2B30;font-size:14px;text-align:right;white-space:nowrap;">
+        ${money(l.lineTotal)}
+      </td>
+    </tr>`
+  ).join("");
+
+  const addrLines = [
+    cust.name,
+    ship.addressLine1,
+    ship.addressLine2,
+    [ship.city, ship.state, ship.zip].filter(Boolean).join(", "),
+  ].filter(Boolean).map(escapeHtml).join("<br/>");
+
+  const paidVia = order.paidVia === "paypal" ? "PayPal" : (order.paidVia === "stripe" ? "Card (Stripe)" : "—");
+  const paidAt = order.paidAt ? new Date(order.paidAt).toLocaleString("en-US", { dateStyle: "medium", timeStyle: "short" }) : "";
+
+  return `<!doctype html>
+<html><body style="margin:0;padding:0;background:#fafafa;font-family:Helvetica,Arial,sans-serif;color:#3D2B30;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#fafafa;padding:32px 16px;">
+    <tr><td align="center">
+      <table role="presentation" width="560" cellpadding="0" cellspacing="0" style="max-width:560px;background:#ffffff;border:1px solid #eee;">
+        <tr><td style="padding:32px 32px 8px;border-top:3px solid #E0115F;">
+          <div style="font-family:Helvetica,Arial,sans-serif;font-weight:900;letter-spacing:0.06em;text-transform:uppercase;color:#E0115F;font-size:18px;">EYE NOON OPTICAL</div>
+          <div style="color:#888;font-size:12px;margin-top:4px;letter-spacing:0.08em;text-transform:uppercase;">Order receipt</div>
+        </td></tr>
+
+        <tr><td style="padding:24px 32px 8px;">
+          <p style="margin:0 0 16px;font-size:14px;line-height:1.6;color:#3D2B30;">
+            Hi ${escapeHtml(cust.name || "there")},<br/>
+            Thanks for your order. We received your payment and we'll be in touch about next steps for your prescription.
+          </p>
+        </td></tr>
+
+        <tr><td style="padding:8px 32px;">
+          <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="font-size:13px;color:#3D2B30;">
+            <tr>
+              <td style="padding:4px 0;color:#888;">Order #</td>
+              <td style="padding:4px 0;text-align:right;font-weight:700;">${escapeHtml(order.orderId)}</td>
+            </tr>
+            <tr>
+              <td style="padding:4px 0;color:#888;">Paid on</td>
+              <td style="padding:4px 0;text-align:right;">${escapeHtml(paidAt)}</td>
+            </tr>
+            <tr>
+              <td style="padding:4px 0;color:#888;">Payment method</td>
+              <td style="padding:4px 0;text-align:right;">${escapeHtml(paidVia)}</td>
+            </tr>
+          </table>
+        </td></tr>
+
+        <tr><td style="padding:16px 32px 0;">
+          <div style="font-size:11px;color:#888;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:8px;">Items</div>
+          <table role="presentation" width="100%" cellpadding="0" cellspacing="0">${items}</table>
+        </td></tr>
+
+        <tr><td style="padding:16px 32px 0;">
+          <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="font-size:13px;color:#3D2B30;">
+            <tr>
+              <td style="padding:4px 0;color:#888;">Subtotal</td>
+              <td style="padding:4px 0;text-align:right;">${money(order.subtotal)}</td>
+            </tr>
+            <tr>
+              <td style="padding:4px 0;color:#888;">${escapeHtml(order.taxLabel || "Sales tax")}</td>
+              <td style="padding:4px 0;text-align:right;">${money(order.estimatedTax)}</td>
+            </tr>
+            <tr>
+              <td style="padding:4px 0;color:#888;">${escapeHtml(order.deliveryLabel || "Delivery")}</td>
+              <td style="padding:4px 0;text-align:right;">${order.delivery > 0 ? money(order.delivery) : "Free"}</td>
+            </tr>
+            <tr>
+              <td style="padding:12px 0 4px;border-top:1px solid #eee;font-weight:700;font-size:14px;">Total paid</td>
+              <td style="padding:12px 0 4px;border-top:1px solid #eee;text-align:right;font-weight:700;font-size:14px;color:#E0115F;">${money(order.total)}</td>
+            </tr>
+          </table>
+        </td></tr>
+
+        <tr><td style="padding:24px 32px 0;">
+          <div style="font-size:11px;color:#888;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:8px;">Ship to</div>
+          <div style="font-size:13px;line-height:1.6;color:#3D2B30;">${addrLines || "—"}</div>
+        </td></tr>
+
+        <tr><td style="padding:16px 32px 0;">
+          <div style="font-size:11px;color:#888;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:8px;">Prescription</div>
+          <div style="font-size:13px;line-height:1.6;color:#3D2B30;">${escapeHtml(order.prescriptionLabel || "—")}</div>
+        </td></tr>
+
+        <tr><td style="padding:32px 32px 32px;">
+          <p style="margin:0;font-size:12px;color:#888;line-height:1.6;">
+            Questions? Reply to this email or visit <a href="https://eyenoonoptical.com" style="color:#E0115F;text-decoration:none;">eyenoonoptical.com</a>.
+          </p>
+        </td></tr>
+      </table>
+    </td></tr>
+  </table>
+</body></html>`;
+}
+
+function buildReceiptText(order) {
+  const cust = order.customer || {};
+  const ship = order.shipping || {};
+  const lines = (order.lines || []).map((l) =>
+    `- ${l.name} (qty ${l.qty} x ${money(l.unitPrice)}) = ${money(l.lineTotal)}`
+  ).join("\n");
+  const addr = [
+    cust.name,
+    ship.addressLine1,
+    ship.addressLine2,
+    [ship.city, ship.state, ship.zip].filter(Boolean).join(", "),
+  ].filter(Boolean).join("\n");
+  return [
+    `EYE NOON OPTICAL — Order receipt`,
+    ``,
+    `Hi ${cust.name || "there"},`,
+    `Thanks for your order. We received your payment and we'll be in touch about next steps.`,
+    ``,
+    `Order #: ${order.orderId}`,
+    `Paid on: ${order.paidAt || ""}`,
+    `Payment method: ${order.paidVia === "paypal" ? "PayPal" : (order.paidVia === "stripe" ? "Card (Stripe)" : "—")}`,
+    ``,
+    `Items:`,
+    lines || "(none)",
+    ``,
+    `Subtotal: ${money(order.subtotal)}`,
+    `${order.taxLabel || "Sales tax"}: ${money(order.estimatedTax)}`,
+    `${order.deliveryLabel || "Delivery"}: ${order.delivery > 0 ? money(order.delivery) : "Free"}`,
+    `Total paid: ${money(order.total)}`,
+    ``,
+    `Ship to:`,
+    addr || "(none)",
+    ``,
+    `Prescription: ${order.prescriptionLabel || "—"}`,
+    ``,
+    `Questions? Reply to this email or visit eyenoonoptical.com.`,
+  ].join("\n");
+}
+
+async function sendOrderReceipt(order) {
+  if (!resendEnabled) {
+    console.log("[receipt] skipped (RESEND_API_KEY not set)");
+    return;
+  }
+  if (!order || !order.customer || !order.customer.email) {
+    console.log("[receipt] skipped (no customer email)");
+    return;
+  }
+  if (order.receiptEmailSent) return;
+  try {
+    const body = {
+      from: FROM_EMAIL,
+      to: [order.customer.email],
+      subject: "Eye Noon Optical — Order " + order.orderId,
+      html: buildReceiptHtml(order),
+      text: buildReceiptText(order),
+    };
+    if (BCC_EMAIL) body.bcc = [BCC_EMAIL];
+
+    const res = await fetch("https://api.resend.com/emails", {
+      method: "POST",
+      headers: {
+        Authorization: "Bearer " + RESEND_API_KEY,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(body),
+    });
+    if (!res.ok) {
+      const txt = await res.text().catch(() => "");
+      console.error("[resend] send failed", res.status, txt);
+      return;
+    }
+    order.receiptEmailSent = true;
+    console.log("[receipt] sent for", order.orderId, "to", order.customer.email);
+  } catch (e) {
+    console.error("[resend] error", e);
+  }
+}
+
+/* ----------------------------------------------------------------------------
  * Middleware
  * ------------------------------------------------------------------------- */
 app.use(cors({ origin: ALLOWED_ORIGIN, credentials: false }));
@@ -218,6 +425,7 @@ app.post(
         order.status = "paid";
         order.paidVia = "stripe";
         order.paidAt = new Date().toISOString();
+        sendOrderReceipt(order).catch((e) => console.error("[receipt]", e));
       }
       console.log("[stripe] checkout.session.completed", orderId);
     }
@@ -342,6 +550,7 @@ app.get("/api/stripe/complete", async (req, res) => {
       order.status = "paid";
       order.paidVia = "stripe";
       order.paidAt = new Date().toISOString();
+      sendOrderReceipt(order).catch((e) => console.error("[receipt]", e));
     }
     res.json(orderResponse(order));
   } catch (e) {
@@ -410,6 +619,7 @@ app.get("/api/paypal/capture", async (req, res) => {
       order.status = "paid";
       order.paidVia = "paypal";
       order.paidAt = new Date().toISOString();
+      sendOrderReceipt(order).catch((e) => console.error("[receipt]", e));
     }
     res.json(orderResponse(order));
   } catch (e) {
@@ -430,4 +640,5 @@ app.listen(PORT, () => {
     "  PayPal      :",
     paypalEnabled ? "enabled (" + PAYPAL_MODE + ")" : "DISABLED (no PayPal credentials)"
   );
+  console.log("  Resend      :", resendEnabled ? "enabled (from " + FROM_EMAIL + ")" : "DISABLED (no RESEND_API_KEY)");
 });
