@@ -1,5 +1,5 @@
 /**
- * Eye Noon — English (default) / Korean UI strings.
+ * Eye:Noon — English (default) / Korean UI strings.
  * Preference: localStorage key eyenoon_lang ("en" | "ko")
  */
 (function () {
@@ -26,7 +26,7 @@
         copyright: "Copyright ©2020 Eye:Noon Optical. All Rights Reserved.",
       },
       meta: {
-        home: "EYE NOON | THE OPTICAL EDITORIAL",
+        home: "EYE:NOON | THE OPTICAL EDITORIAL",
         about: "About Us | EYE:NOON OPTICAL",
         contact: "Contact Us | EYE:NOON OPTICAL",
         optical: "Optical | EYE:NOON OPTICAL",
@@ -209,7 +209,7 @@
         onlyLenses: "This checkout is only for contact lenses. Remove other items or call the store.",
         rxInstructionsCart:
           "You already uploaded a prescription when you added lenses to your cart. It will be attached to this order.",
-        rxSidebarOnFile: "Prescription: on file with Eye Noon",
+        rxSidebarOnFile: "Prescription: on file with Eye:Noon",
         rxSidebarCart: "Prescription: attached from cart",
         rxSidebarUpload: "Prescription: upload below before submitting",
         rxSidebarAttachedName: "Prescription: attached ({name})",

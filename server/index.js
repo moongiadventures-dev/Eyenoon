@@ -632,7 +632,7 @@ app.get("/api/paypal/capture", async (req, res) => {
  * Start
  * ------------------------------------------------------------------------- */
 app.listen(PORT, () => {
-  console.log("Eye Noon checkout API listening on :" + PORT);
+  console.log("Eye:Noon checkout API listening on :" + PORT);
   console.log("  site URL    :", PUBLIC_SITE_URL);
   console.log("  CORS origin :", ALLOWED_ORIGIN);
   console.log("  Stripe      :", stripeEnabled ? "enabled" : "DISABLED (no STRIPE_SECRET_KEY)");

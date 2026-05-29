@@ -1,4 +1,4 @@
-/* Eye Noon — cart (localStorage + session mirror); lens order context. Persists for the same browser & origin (same URL host/port). */
+/* Eye:Noon — cart (localStorage + session mirror); lens order context. Persists for the same browser & origin (same URL host/port). */
 (function () {
   var KEY = "eyenoon_cart_v1";
   var ORDER_CTX_KEY = "eyenoon_lens_order_ctx_v1";

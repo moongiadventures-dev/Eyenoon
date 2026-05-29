@@ -3,7 +3,7 @@
 <html class="light" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>EYE NOON | THE OPTICAL EDITORIAL</title>
+<title>EYE:NOON | THE OPTICAL EDITORIAL</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;500;700;800&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&display=swap" rel="stylesheet"/>
@@ -692,7 +692,7 @@
             }
         }
 
-        /* ── EYE NOON Circle Reveal Section ── */
+        /* ── EYE:NOON Circle Reveal Section ── */
         #eyenoon-reveal {
             position: relative;
             z-index: 13;
@@ -1005,11 +1005,11 @@
 <div style="position:absolute;inset:0;background:rgba(0,0,0,0.35);z-index:1;"></div>
 <div id="hero-text" class="relative z-10 text-center px-6" style="transition:opacity 1.2s ease;">
 <p class="font-manrope uppercase tracking-[0.4em] text-primary mb-4 text-sm font-bold hero-label-reveal tw-sub tw-visible" style="opacity:1;" data-i18n="home.heroLabel">Inaugural Exhibition</p>
-<h1 class="font-mango-grotesque leading-[0.85] uppercase tracking-tighter tw-title mb-8" style="color:#FFFFFF;font-size:clamp(3rem,10vw,7rem);" data-tw-final='EYE NOON'>EYE NOON</h1>
+<h1 class="font-mango-grotesque leading-[0.85] uppercase tracking-tighter tw-title mb-8" style="color:#FFFFFF;font-size:clamp(3rem,10vw,7rem);" data-tw-final='EYE:NOON'>EYE:NOON</h1>
 <h2 class="font-mango-grotesque leading-[1.1] uppercase tracking-tight tw-sub" style="opacity:0;color:#FFFFFF;font-size:clamp(1.25rem,4vw,2rem);" data-i18n="home.heroSubtitle">The Visionary Curator</h2>
 </div>
 <!-- Mute / Unmute Button -->
-<button id="hero-mute-btn" onclick="(function(){var v=document.getElementById('hero-video');var btn=document.getElementById('hero-mute-btn');v.muted=!v.muted;btn.innerHTML=v.muted?'<span class=\'material-symbols-outlined\'>volume_off</span>':'<span class=\'material-symbols-outlined\'>volume_up</span>';})()"
+<button id="hero-mute-btn" aria-label="Toggle sound" onclick="window.heroToggleMute && window.heroToggleMute()"
   style="position:absolute;bottom:56px;right:24px;z-index:20;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.3);backdrop-filter:blur(8px);color:#fff;width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background 0.2s;">
   <span class="material-symbols-outlined">volume_up</span>
 </button>
@@ -1506,7 +1506,7 @@
 <h3 class="font-mango-grotesque uppercase leading-none tracking-tight tw-title" style="font-size:clamp(2rem,6vw,5rem);" data-tw-final="Curator's Intent: <br/><span class='text-primary'>Optical Philosophy</span>">Curator's Intent: <br/><span class="text-primary">Optical Philosophy</span></h3>
 <div class="max-w-md tw-sub">
 <p class="font-manrope text-lg leading-relaxed text-on-surface-variant mb-6">
-                        Eye Noon is not a shop; it is a repository of ocular artifacts. We believe that eyewear is the most intimate form of architecture—a structure that redefines how you perceive the world and how the world perceives you.
+                        Eye:Noon is not a shop; it is a repository of ocular artifacts. We believe that eyewear is the most intimate form of architecture—a structure that redefines how you perceive the world and how the world perceives you.
                     </p>
 <p class="font-manrope text-lg leading-relaxed text-on-surface-variant">
                         Each frame in our museum is selected for its structural integrity, historical resonance, and the precise distortion of reality it provides. We curate precision for the visionary.
@@ -1515,7 +1515,7 @@
 </div>
 </section>
 <!-- =====================================================
-     EYE NOON CIRCLE REVEAL — replaces "Current Exhibit: NOON-01"
+     EYE:NOON CIRCLE REVEAL — replaces "Current Exhibit: NOON-01"
      ===================================================== -->
 <section id="eyenoon-reveal" class="full-bleed" style="height:420vh;position:relative;">
   <div class="reveal-sticky">
@@ -1526,9 +1526,9 @@
       <div id="reveal-circle"></div>
     </div>
 
-    <!-- EYE NOON: starts small in circle position, blooms large, shrinks to heading -->
+    <!-- EYE:NOON: starts small in circle position, blooms large, shrinks to heading -->
     <div id="reveal-heading-bloom">
-      <h2>EYE NOON</h2>
+      <h2>EYE:NOON</h2>
     </div>
 
     <!-- Content below the settled heading: about + CTA -->
@@ -1829,9 +1829,10 @@
 })();
 
 /* ── Hero video: sound ON by default ──
-   Browsers block unmuted autoplay for visitors with no prior engagement, so:
-   try to play with sound; if blocked, keep the video moving muted and unmute
-   on the visitor's first interaction. The mute button stays in sync. */
+   Browsers block unmuted autoplay without a user gesture — mobile most strictly
+   (iOS Safari also honors the hardware silent switch for inline video, which no
+   script can override). So: try to play with sound; if blocked, play muted and
+   unmute on the visitor's first real tap. The mute button stays in sync. */
 (function () {
   var v   = document.getElementById('hero-video');
   var btn = document.getElementById('hero-mute-btn');
@@ -1843,26 +1844,48 @@
       ? '<span class="material-symbols-outlined">volume_off</span>'
       : '<span class="material-symbols-outlined">volume_up</span>';
   }
-
-  function armUnmuteOnInteraction() {
-    var events = ['pointerdown', 'keydown', 'touchstart', 'scroll'];
-    function unmute() {
-      v.muted = false;
-      v.play().catch(function () {});
-      syncIcon();
-      events.forEach(function (e) { window.removeEventListener(e, unmute); });
-    }
-    events.forEach(function (e) { window.addEventListener(e, unmute, { passive: true }); });
+  function tryPlay() {
+    var pr = v.play();
+    if (pr && typeof pr.catch === 'function') pr.catch(function () {});
   }
+
+  /* Gestures iOS accepts as audio-enabling. Capture phase so we see the tap
+     even if inner handlers stop propagation. */
+  var gestures = ['click', 'touchend', 'pointerup', 'keydown'];
+  function disarm() {
+    gestures.forEach(function (e) { document.removeEventListener(e, onGesture, true); });
+  }
+  function onGesture(ev) {
+    /* Taps on the mute button are handled by its own toggle — don't fight it. */
+    if (btn && ev.target && (ev.target === btn || btn.contains(ev.target))) {
+      disarm();
+      return;
+    }
+    v.muted = false;
+    tryPlay();
+    syncIcon();
+    disarm();
+  }
+  function armUnmuteOnInteraction() {
+    gestures.forEach(function (e) { document.addEventListener(e, onGesture, true); });
+  }
+
+  /* Manual toggle invoked by the on-screen button's onclick. */
+  window.heroToggleMute = function () {
+    v.muted = !v.muted;
+    if (!v.muted) tryPlay();
+    syncIcon();
+    disarm(); /* visitor has taken control — stop auto-unmuting */
+  };
 
   /* Attempt unmuted autoplay. */
   v.muted = false;
   var p = v.play();
   if (p && typeof p.catch === 'function') {
     p.catch(function () {
-      /* Blocked — fall back to muted autoplay, then unmute on first gesture. */
+      /* Blocked — fall back to muted autoplay, then unmute on first tap. */
       v.muted = true;
-      v.play().catch(function () {});
+      tryPlay();
       syncIcon();
       armUnmuteOnInteraction();
     });
@@ -1973,7 +1996,7 @@
     /* p: 0→1 linear — matches scroll distance to circle entrance (short range = faster scrub) */
     var p = getScrubP();
 
-    /* Same scroll progress as reveal script: p>0 = EYE NOON zoom phase starts → fade film out */
+    /* Same scroll progress as reveal script: p>0 = EYE:NOON zoom phase starts → fade film out */
     var revealP = getRevealP();
     var zoomFade = revealP <= ZOOM_FADE_START ? 1 : clamp(1 - (revealP - ZOOM_FADE_START) / (ZOOM_FADE_END - ZOOM_FADE_START), 0, 1);
 
