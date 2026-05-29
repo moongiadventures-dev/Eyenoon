@@ -695,6 +695,73 @@
           "description": "Designed in Los Angeles. Made in Japan."
         }
       ]
+    },
+    {
+      "id": "lindberg",
+      "name": "LINDBERG",
+      "source_note": "Imagery and model names from the brand's official site.",
+      "frames": [
+        {
+          "model": "Air Titanium Rim — Nicholas",
+          "image": "images/optical/lindberg/rim-nicholas.png",
+          "detail_url": "https://lindberg.com/en/collections/rim",
+          "description": "Rimless titanium frame with a slim acetate inner rim for depth. Screwless, hingeless and feather-light, fully adjustable to the wearer."
+        },
+        {
+          "model": "Air Titanium Rim — Morten",
+          "image": "images/optical/lindberg/rim-morten.png",
+          "detail_url": "https://lindberg.com/en/collections/rim",
+          "description": "Air Titanium Rim model with a clean profile — titanium rims paired with an acetate inner contour; no screws or welds, hand-assembled and ultralight."
+        },
+        {
+          "model": "Air Titanium Rim — Esben",
+          "image": "images/optical/lindberg/rim-esben.png",
+          "detail_url": "https://lindberg.com/en/collections/rim",
+          "description": "A refined Air Titanium Rim design combining a rimless titanium build with a discreet acetate inner rim. Minimalist, durable and exceptionally light."
+        },
+        {
+          "model": "Air Titanium 356",
+          "image": "images/optical/lindberg/air-356.png",
+          "detail_url": "https://lindberg.com/en/collections/air",
+          "description": "From Air Titanium, the original rimless titanium eyewear — built with no screws, rivets or welds, hand-assembled and weighing only a few grams."
+        },
+        {
+          "model": "Strip Titanium 9704",
+          "image": "images/optical/lindberg/strip-9704.png",
+          "detail_url": "https://lindberg.com/en/collections/strip-titanium",
+          "description": "Strip Titanium half-rim frame; a fine titanium upper bar gives the lenses an almost floating look for an ultralight, minimalist expression."
+        },
+        {
+          "model": "Strip Titanium 9760",
+          "image": "images/optical/lindberg/strip-9760.png",
+          "detail_url": "https://lindberg.com/en/collections/strip-titanium",
+          "description": "Half-rimmed titanium frame from the Strip collection with a distinct upper bar and clean, lightweight silhouette."
+        },
+        {
+          "model": "Strip Titanium 7406",
+          "image": "images/optical/lindberg/strip-7406.png",
+          "detail_url": "https://lindberg.com/en/collections/strip-titanium",
+          "description": "Strip Titanium model with a slim upper bar and rimless lower edge — lightweight titanium with LINDBERG's signature adjustability."
+        },
+        {
+          "model": "Acetanium 1046",
+          "image": "images/optical/lindberg/acetanium-1046.png",
+          "detail_url": "https://lindberg.com/en/collections/acetanium",
+          "description": "Acetate brought together with a titanium core, pairing the warmth and colour of acetate with titanium's strength and a slim, adjustable bridge."
+        },
+        {
+          "model": "Acetanium 1040",
+          "image": "images/optical/lindberg/acetanium-1040.png",
+          "detail_url": "https://lindberg.com/en/collections/acetanium",
+          "description": "Lightweight acetate with concealed titanium reinforcement for a slimmer, more comfortable acetate frame."
+        },
+        {
+          "model": "Acetanium 1268",
+          "image": "images/optical/lindberg/acetanium-1268.png",
+          "detail_url": "https://lindberg.com/en/collections/acetanium",
+          "description": "Sculpted acetate with an ingenious titanium bridge core for a light, elegant and fully adjustable fit."
+        }
+      ]
     }
   ]
 }
