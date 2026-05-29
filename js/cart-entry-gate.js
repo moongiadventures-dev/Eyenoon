@@ -80,7 +80,7 @@
     var parts = [
       "YOU ARE REQUIRED TO SEND US YOUR PRESCRIPTION by e-mail, if you are ordering contact lenses for the first time. Without your prescription, your order will automatically be cancelled. (Not applied for returning customers.)",
       "YOU MIGHT BE ASKED TO VERIFY YOUR IDENTITY when you are ordering over $500. We do not share your information with third parties.",
-      "Eye Noon Optical sells products simultaneously through online and offline shops, therefore, the stock list for our products constantly fluctuates and it is subject to change at any given time. Please contact us ahead of placing your order.",
+      "Eye:Noon Optical sells products simultaneously through online and offline shops, therefore, the stock list for our products constantly fluctuates and it is subject to change at any given time. Please contact us ahead of placing your order.",
     ];
     for (var i = 0; i < parts.length; i++) {
       var p = document.createElement("p");

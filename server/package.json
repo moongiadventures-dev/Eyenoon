@@ -1,7 +1,7 @@
 {
   "name": "eyenoon-checkout-api",
   "version": "1.0.0",
-  "description": "Eye Noon Optical — order + Stripe + PayPal checkout API",
+  "description": "Eye:Noon Optical — order + Stripe + PayPal checkout API",
   "type": "commonjs",
   "private": true,
   "scripts": {

@@ -1,5 +1,5 @@
 /**
- * Eye Noon Optical — checkout API
+ * Eye:Noon Optical — checkout API
  *
  * Endpoints (this surface is what the existing checkout.html actually calls):
  *   GET  /health
@@ -43,7 +43,7 @@ const PAYPAL_CLIENT_SECRET = process.env.PAYPAL_CLIENT_SECRET || "";
 const PAYPAL_MODE = (process.env.PAYPAL_MODE || process.env.PAYPAL_ENV || "sandbox").toLowerCase();
 
 const RESEND_API_KEY = process.env.RESEND_API_KEY || "";
-const FROM_EMAIL = process.env.FROM_EMAIL || "Eye Noon Optical <onboarding@resend.dev>";
+const FROM_EMAIL = process.env.FROM_EMAIL || "Eye:Noon Optical <onboarding@resend.dev>";
 const BCC_EMAIL = process.env.BCC_EMAIL || ""; // optional store-side copy
 
 const stripeEnabled = Boolean(STRIPE_SECRET_KEY);
@@ -242,7 +242,7 @@ function buildReceiptHtml(order) {
     <tr><td align="center">
       <table role="presentation" width="560" cellpadding="0" cellspacing="0" style="max-width:560px;background:#ffffff;border:1px solid #eee;">
         <tr><td style="padding:32px 32px 8px;border-top:3px solid #E0115F;">
-          <div style="font-family:Helvetica,Arial,sans-serif;font-weight:900;letter-spacing:0.06em;text-transform:uppercase;color:#E0115F;font-size:18px;">EYE NOON OPTICAL</div>
+          <div style="font-family:Helvetica,Arial,sans-serif;font-weight:900;letter-spacing:0.06em;text-transform:uppercase;color:#E0115F;font-size:18px;">EYE:NOON OPTICAL</div>
           <div style="color:#888;font-size:12px;margin-top:4px;letter-spacing:0.08em;text-transform:uppercase;">Order receipt</div>
         </td></tr>
 
@@ -330,7 +330,7 @@ function buildReceiptText(order) {
     [ship.city, ship.state, ship.zip].filter(Boolean).join(", "),
   ].filter(Boolean).join("\n");
   return [
-    `EYE NOON OPTICAL — Order receipt`,
+    `EYE:NOON OPTICAL — Order receipt`,
     ``,
     `Hi ${cust.name || "there"},`,
     `Thanks for your order. We received your payment and we'll be in touch about next steps.`,
@@ -370,7 +370,7 @@ async function sendOrderReceipt(order) {
     const body = {
       from: FROM_EMAIL,
       to: [order.customer.email],
-      subject: "Eye Noon Optical — Order " + order.orderId,
+      subject: "Eye:Noon Optical — Order " + order.orderId,
       html: buildReceiptHtml(order),
       text: buildReceiptText(order),
     };
@@ -514,7 +514,7 @@ app.post("/api/stripe/create-checkout-session", async (req, res) => {
         {
           price_data: {
             currency: CURRENCY,
-            product_data: { name: "Eye Noon Optical — order " + order.orderId },
+            product_data: { name: "Eye:Noon Optical — order " + order.orderId },
             unit_amount: Math.round(order.total * 100),
           },
           quantity: 1,
@@ -573,7 +573,7 @@ app.post("/api/paypal/create-order", async (req, res) => {
       purchase_units: [
         {
           custom_id: order.orderId,
-          description: "Eye Noon Optical — order " + order.orderId,
+          description: "Eye:Noon Optical — order " + order.orderId,
           amount: {
             currency_code: CURRENCY.toUpperCase(),
             value: order.total.toFixed(2),
@@ -581,7 +581,7 @@ app.post("/api/paypal/create-order", async (req, res) => {
         },
       ],
       application_context: {
-        brand_name: "Eye Noon Optical",
+        brand_name: "Eye:Noon Optical",
         user_action: "PAY_NOW",
         return_url:
           PUBLIC_SITE_URL +

@@ -937,7 +937,7 @@
 
   <!-- Logo: large bold pink wordmark -->
   <a href="/" style="font-family:'Barlow Condensed',sans-serif;font-size:1.45rem;font-weight:900;letter-spacing:0.04em;text-transform:uppercase;color:#E0115F;white-space:nowrap;flex-shrink:0;text-decoration:none;">
-    EYE NOON OPTICAL
+    EYE:NOON OPTICAL
   </a>
 
   <!-- Hamburger button (mobile only) -->
@@ -997,10 +997,9 @@
 <!-- Hero Section: Virtual Museum Theme -->
 <section class="full-bleed relative min-h-screen flex flex-col justify-center items-center overflow-hidden">
 <!-- Hero Video Background -->
-<video id="hero-video" autoplay loop muted playsinline preload="auto"
+<video id="hero-video" autoplay loop playsinline preload="auto"
   style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;">
-  <source src="0402.webm" type="video/webm">
-  <source src="0402-compressed.mp4" type="video/mp4">
+  <source src="0402-hero.mp4" type="video/mp4">
 </video>
 <!-- Dark overlay so text stays readable -->
 <div style="position:absolute;inset:0;background:rgba(0,0,0,0.35);z-index:1;"></div>
@@ -1012,7 +1011,7 @@
 <!-- Mute / Unmute Button -->
 <button id="hero-mute-btn" onclick="(function(){var v=document.getElementById('hero-video');var btn=document.getElementById('hero-mute-btn');v.muted=!v.muted;btn.innerHTML=v.muted?'<span class=\'material-symbols-outlined\'>volume_off</span>':'<span class=\'material-symbols-outlined\'>volume_up</span>';})()"
   style="position:absolute;bottom:56px;right:24px;z-index:20;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.3);backdrop-filter:blur(8px);color:#fff;width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background 0.2s;">
-  <span class="material-symbols-outlined">volume_off</span>
+  <span class="material-symbols-outlined">volume_up</span>
 </button>
 <!-- Scroll Indicator -->
 <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center" style="z-index:10;">
@@ -1535,7 +1534,7 @@
     <!-- Content below the settled heading: about + CTA -->
     <div id="reveal-content" style="justify-content:flex-start;padding-top:27vh;">
       <p id="reveal-about">
-        Eye Noon Optical is a trendsetting boutique offering high-end designer eyewear—CUTLER AND GROSS, LINDA FARROW, L.G.R, and more—paired with ZEISS precision lenses and exceptional personalized service, in-store and online.
+        Eye:Noon Optical is a trendsetting boutique offering high-end designer eyewear—CUTLER AND GROSS, LINDA FARROW, L.G.R, and more—paired with ZEISS precision lenses and exceptional personalized service, in-store and online.
       </p>
 
       <p id="reveal-cta">DON'T WAIT — CALL NOW TO SCHEDULE AN EYE EXAM.</p>
@@ -1680,7 +1679,7 @@
   </div>
   <!-- Top line: brand / tel / email -->
   <p style="font-family:'Manrope',sans-serif;font-size:0.7rem;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:rgba(0,0,0,0.6);margin:0 0 18px;line-height:2;" data-i18n-html="footer.emailLine">
-    Eye Noon Optical
+    Eye:Noon Optical
     <span style="color:#E0115F;padding:0 10px;">/</span>
     TEL. 213. 388. 1447
     <span style="color:#E0115F;padding:0 10px;">/</span>
@@ -1827,6 +1826,48 @@
       text.style.pointerEvents = '';
     }
   });
+})();
+
+/* ── Hero video: sound ON by default ──
+   Browsers block unmuted autoplay for visitors with no prior engagement, so:
+   try to play with sound; if blocked, keep the video moving muted and unmute
+   on the visitor's first interaction. The mute button stays in sync. */
+(function () {
+  var v   = document.getElementById('hero-video');
+  var btn = document.getElementById('hero-mute-btn');
+  if (!v) return;
+
+  function syncIcon() {
+    if (!btn) return;
+    btn.innerHTML = v.muted
+      ? '<span class="material-symbols-outlined">volume_off</span>'
+      : '<span class="material-symbols-outlined">volume_up</span>';
+  }
+
+  function armUnmuteOnInteraction() {
+    var events = ['pointerdown', 'keydown', 'touchstart', 'scroll'];
+    function unmute() {
+      v.muted = false;
+      v.play().catch(function () {});
+      syncIcon();
+      events.forEach(function (e) { window.removeEventListener(e, unmute); });
+    }
+    events.forEach(function (e) { window.addEventListener(e, unmute, { passive: true }); });
+  }
+
+  /* Attempt unmuted autoplay. */
+  v.muted = false;
+  var p = v.play();
+  if (p && typeof p.catch === 'function') {
+    p.catch(function () {
+      /* Blocked — fall back to muted autoplay, then unmute on first gesture. */
+      v.muted = true;
+      v.play().catch(function () {});
+      syncIcon();
+      armUnmuteOnInteraction();
+    });
+  }
+  syncIcon();
 })();
 </script>
 <script>
