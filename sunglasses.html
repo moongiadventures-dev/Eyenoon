@@ -272,7 +272,6 @@
         <h2 id="modal-title" class="font-display text-2xl sm:text-3xl text-[#0A0A0A] mt-0 mb-4"></h2>
         <p class="text-xs text-[#3D2B30] opacity-70 mb-3" data-i18n="sunglasses.modalNotOnline">Not available for purchase on this website.</p>
         <p id="modal-desc" class="text-sm leading-relaxed text-[#3D2B30] opacity-85 m-0 mb-6"></p>
-        <a id="modal-more" href="#" target="_blank" rel="noopener noreferrer" class="inline-block text-[0.65rem] font-bold uppercase tracking-[0.2em] text-[#E0115F] border-b-2 border-[#E0115F] pb-1 no-underline" data-i18n="sunglasses.modalViewBrand">View on brand website</a>
       </div>
     </div>
   </div>
@@ -314,9 +313,6 @@
     document.getElementById("modal-brand").textContent = brand.name;
     document.getElementById("modal-title").textContent = frame.model;
     document.getElementById("modal-desc").textContent = frame.description || "Designer sunglasses.";
-    var m = document.getElementById("modal-more");
-    m.href = frame.detail_url || "#";
-    m.style.display = frame.detail_url ? "inline-block" : "none";
     modal.classList.add("is-open");
     document.body.style.overflow = "hidden";
   }
