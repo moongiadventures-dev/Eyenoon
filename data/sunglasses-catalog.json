@@ -730,30 +730,6 @@
           "image": "images/sunglasses/lindberg/sun-8593.png",
           "detail_url": "https://lindberg.com/en/collections/sun-titanium",
           "description": "Rimless titanium design with premium tinted lenses; screwless and ultralight."
-        },
-        {
-          "model": "Sun Titanium 8914",
-          "image": "images/sunglasses/lindberg/sun-8914.jpg",
-          "detail_url": "https://lindberg.com/en/collections/sun-titanium",
-          "description": "Refined titanium frame with high-quality sun lenses, hand-finished for comfort and durability."
-        },
-        {
-          "model": "Sun — Caroline 407",
-          "image": "images/sunglasses/lindberg/sun-407-caroline.png",
-          "detail_url": "https://lindberg.com/en/collections/sun-titanium",
-          "description": "A feminine titanium sunglass silhouette with stone-toned accents and UV-protective sun lenses."
-        },
-        {
-          "model": "Sun 2505",
-          "image": "images/sunglasses/lindberg/sun-2505.png",
-          "detail_url": "https://lindberg.com/en/collections/sun-titanium",
-          "description": "Lightweight titanium sunglass with premium UV-protective lenses and an adjustable fit."
-        },
-        {
-          "model": "Sun — Jackson",
-          "image": "images/sunglasses/lindberg/sun-jackson.jpg",
-          "detail_url": "https://lindberg.com/en/collections/sun-titanium",
-          "description": "A titanium sunglass with a bold, contemporary silhouette and premium UV-protective sun lenses; screwless and lightweight."
         }
       ]
     }
