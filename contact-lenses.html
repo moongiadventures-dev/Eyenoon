@@ -370,6 +370,16 @@ tailwind.config = {
     })
     .then(function (data) {
       PRODUCTS = data;
+      var urlCat = new URLSearchParams(location.search).get("cat");
+      var chips = document.querySelectorAll("#filter-bar .filter-chip");
+      var known = false;
+      chips.forEach(function (b) { if (b.getAttribute("data-cat") === urlCat) known = true; });
+      if (urlCat && known) {
+        current = urlCat;
+        chips.forEach(function (b) {
+          b.classList.toggle("is-on", b.getAttribute("data-cat") === urlCat);
+        });
+      }
       render();
     })
     .catch(function () {
