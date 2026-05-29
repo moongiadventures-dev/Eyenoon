@@ -82,11 +82,16 @@
     background: #fff;
     color: #0A0A0A;
     cursor: pointer;
-    transition: border-color 0.15s, color 0.15s, background 0.15s;
+    transition: border-color 0.15s, color 0.15s, background 0.15s, box-shadow 0.15s;
     white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
   }
+  .brand-tab-logo { height: 20px; width: auto; max-width: 130px; object-fit: contain; display: block; }
   .brand-tab:hover { border-color: #E0115F; color: #E0115F; }
-  .brand-tab.is-on { background: #E0115F; border-color: #E0115F; color: #fff; }
+  .brand-tab.is-on { background: #FDECF3; border-color: #E0115F; box-shadow: inset 0 0 0 1px #E0115F; color: #E0115F; }
   .frame-card {
     border: 1px solid rgba(0,0,0,0.08);
     background: #fff;
@@ -395,7 +400,20 @@
       var t = document.createElement("button");
       t.type = "button";
       t.className = "brand-tab" + (i === brandIdx ? " is-on" : "");
-      t.textContent = b.name;
+      t.innerHTML =
+        '<img class="brand-tab-logo" src="images/brand-logos/' + b.id + '.svg" alt="' + b.name + '">' +
+        '<span class="brand-tab-name" style="display:none">' + b.name + '</span>';
+      (function (logo, nm, id) {
+        logo.addEventListener("error", function () {
+          if (logo.getAttribute("data-ext") !== "png") {
+            logo.setAttribute("data-ext", "png");
+            logo.src = "images/brand-logos/" + id + ".png";
+            return;
+          }
+          logo.remove();
+          nm.style.display = "";
+        });
+      })(t.querySelector(".brand-tab-logo"), t.querySelector(".brand-tab-name"), b.id);
       t.addEventListener("click", function () {
         brandIdx = i;
         renderTabs();
