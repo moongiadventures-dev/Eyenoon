@@ -1580,7 +1580,7 @@
   if (window.matchMedia('(max-width: 640px)').matches) {
     section.style.height = '100vh';
     circle.style.transform = 'translate(-50%,-50%) scale(' + maxScale + ')';
-    bloom.style.transform  = 'translate(-50%, calc(-50% - 32vh)) scale(1)';
+    bloom.style.transform  = 'translate(-50%, calc(-50% - 32vh + 10px)) scale(1)';
     content.style.opacity = '1';
     content.style.pointerEvents = 'auto';
     about.style.opacity = '1';
@@ -1627,7 +1627,7 @@
       /* Move upward: 0 → -32vh as it shrinks */
       bloomY  = -easeOut(t2) * 32;
     }
-    bloom.style.transform = 'translate(-50%, calc(-50% + ' + bloomY + 'vh)) scale(' + bloomSc + ')';
+    bloom.style.transform = 'translate(-50%, calc(-50% + ' + bloomY + 'vh + 10px)) scale(' + bloomSc + ')';
 
     /* ── Content wrapper fades in: p 0.46 → 0.58 ── */
     var tCon = clamp((p - 0.46) / 0.12, 0, 1);
