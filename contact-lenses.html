@@ -276,7 +276,8 @@ tailwind.config = {
     <div class="flex flex-wrap gap-3 items-center" id="filter-bar" role="tablist" data-i18n-aria="lenses.filterAria">
       <button type="button" class="filter-chip is-on" data-cat="all" data-i18n="lenses.filterAll">All</button>
       <button type="button" class="filter-chip" data-cat="daily" data-i18n="lenses.filterDaily">Daily · 3 mo supply</button>
-      <button type="button" class="filter-chip" data-cat="planned" data-i18n="lenses.filterPlanned">Planned replacement · 6 mo</button>
+      <button type="button" class="filter-chip" data-cat="biweekly" data-i18n="lenses.filterBiweekly">Bi-weekly · 6 mo supply</button>
+      <button type="button" class="filter-chip" data-cat="monthly" data-i18n="lenses.filterMonthly">Monthly · 6 mo supply</button>
       <button type="button" class="filter-chip" data-cat="color" data-i18n="lenses.filterColor">Color</button>
     </div>
   </section>
@@ -327,7 +328,8 @@ tailwind.config = {
 
   function eyebrow(cat) {
     if (cat === "daily") return T("lenses.filterDaily");
-    if (cat === "planned") return T("lenses.filterPlanned");
+    if (cat === "biweekly") return T("lenses.filterBiweekly");
+    if (cat === "monthly") return T("lenses.filterMonthly");
     if (cat === "color") return T("lenses.filterColor");
     return "";
   }
