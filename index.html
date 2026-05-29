@@ -1849,9 +1849,11 @@
     if (pr && typeof pr.catch === 'function') pr.catch(function () {});
   }
 
-  /* Gestures iOS accepts as audio-enabling. Capture phase so we see the tap
-     even if inner handlers stop propagation. */
-  var gestures = ['click', 'touchend', 'pointerup', 'keydown'];
+  /* Only a real tap ('click') or key — NOT touchend/pointerup, which also fire
+     at the end of a scroll swipe and would unmute mid-scroll (an unmuted video
+     scrolling off-screen gets paused by iOS). 'click' fires for taps, not scrolls.
+     Capture phase so we see it even if inner handlers stop propagation. */
+  var gestures = ['click', 'keydown'];
   function disarm() {
     gestures.forEach(function (e) { document.removeEventListener(e, onGesture, true); });
   }
