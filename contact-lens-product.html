@@ -111,6 +111,12 @@
         <p class="text-sm text-[#3D2B30] opacity-80 leading-relaxed mb-6" data-i18n="product.blurb">
           Sold as a prescription supply pack. We will ask whether you are already a patient with us on file. New patients can upload a prescription and their details here; they will carry through to checkout. Existing patients go straight to the cart, then complete payment at checkout.
         </p>
+        <div id="p-colors" class="mb-6 hidden">
+          <p class="text-[0.65rem] uppercase tracking-widest text-[#3D2B30] opacity-60 mb-2" data-i18n="product.color">Color</p>
+          <div id="p-color-swatches" class="flex flex-wrap gap-2"></div>
+          <p id="p-color-sel" class="text-xs font-semibold text-[#0A0A0A] mt-2"></p>
+          <p id="p-color-hint" class="hidden text-xs text-[#E0115F] mt-2" data-i18n="product.chooseColor">Please choose a color.</p>
+        </div>
         <div class="flex flex-wrap items-end gap-4 mb-6">
           <label class="block">
             <span class="text-[0.65rem] uppercase tracking-widest text-[#3D2B30] opacity-60" data-i18n="product.qty">Quantity</span>
@@ -240,6 +246,36 @@
       document.getElementById("p-price").textContent = "$" + Number(p.price).toFixed(2);
       root.classList.remove("hidden");
 
+      var selectedColor = null;
+      var colorsWrap = document.getElementById("p-colors");
+      var swatchWrap = document.getElementById("p-color-swatches");
+      var colorSel = document.getElementById("p-color-sel");
+      var colorHint = document.getElementById("p-color-hint");
+      var hasColors = Array.isArray(p.colors) && p.colors.length > 0;
+      if (hasColors) {
+        colorsWrap.classList.remove("hidden");
+        p.colors.forEach(function (c) {
+          var b = document.createElement("button");
+          b.type = "button";
+          b.title = c.name;
+          b.setAttribute("aria-label", c.name);
+          b.style.cssText = "width:30px;height:30px;border-radius:9999px;border:2px solid rgba(0,0,0,0.18);cursor:pointer;padding:0;background:" + c.hex + ";";
+          b.addEventListener("click", function () {
+            selectedColor = c;
+            colorSel.textContent = c.name;
+            colorHint.classList.add("hidden");
+            Array.prototype.forEach.call(swatchWrap.children, function (x) {
+              x.style.outline = "";
+              x.style.borderColor = "rgba(0,0,0,0.18)";
+            });
+            b.style.outline = "2px solid #E0115F";
+            b.style.outlineOffset = "1px";
+            b.style.borderColor = "#fff";
+          });
+          swatchWrap.appendChild(b);
+        });
+      }
+
       var flowModal = document.getElementById("lens-flow-modal");
       var stepQ = document.getElementById("lens-step-q");
       var stepForm = document.getElementById("lens-step-form");
@@ -289,9 +325,15 @@
       });
 
       function performAddToCart() {
+        var lineSlug = p.slug;
+        var lineName = p.name.replace(/&amp;/g, "&");
+        if (selectedColor) {
+          lineSlug = p.slug + "::" + selectedColor.name.toLowerCase().replace(/[^a-z0-9]+/g, "-");
+          lineName = lineName + " — " + selectedColor.name;
+        }
         window.EyeNoonCart.addItem({
-          slug: p.slug,
-          name: p.name.replace(/&amp;/g, "&"),
+          slug: lineSlug,
+          name: lineName,
           price: p.price,
           img: "images/contact-lenses/" + p.img + ".jpg",
           qty: pendingQty,
@@ -301,7 +343,14 @@
         window.location.href = "cart.html";
       }
 
-      document.getElementById("p-add").onclick = openFlowModal;
+      document.getElementById("p-add").onclick = function () {
+        if (hasColors && !selectedColor) {
+          colorHint.classList.remove("hidden");
+          colorsWrap.scrollIntoView({ behavior: "smooth", block: "center" });
+          return;
+        }
+        openFlowModal();
+      };
       document.getElementById("lens-flow-backdrop").onclick = closeFlowModal;
       document.getElementById("lens-flow-cancel").onclick = closeFlowModal;
 

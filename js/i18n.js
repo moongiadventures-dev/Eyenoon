@@ -254,6 +254,8 @@
         blurb:
           "Sold as a prescription supply pack. We will ask whether you are already a patient with us on file. New patients can upload a prescription and their details here; they will carry through to checkout. Existing patients go straight to the cart, then complete payment at checkout.",
         qty: "Quantity",
+        color: "Color",
+        chooseColor: "Please choose a color.",
         addToCart: "Add to cart",
         lensQTitle: "Before we add this to your cart",
         lensQBody: "Are you an existing customer of Eye:Noon Optical? If yes, have you previously received an eye prescription from us?",
@@ -522,6 +524,8 @@
         blurb:
           "처방 공급 단위로 판매됩니다. 기존 고객 여부와 처방 유무를 확인합니다. 신규 고객은 여기서 처방전과 정보를 올리면 결제까지 이어집니다. 기존 고객은 장바구니로 이동한 뒤 결제를 완료합니다.",
         qty: "수량",
+        color: "색상",
+        chooseColor: "색상을 선택해 주세요.",
         addToCart: "장바구니에 담기",
         lensQTitle: "장바구니에 담기 전에",
         lensQBody: "아이눈 안경원 기존 고객이신가요? 예라면 이전에 저희에게서 시력 처방을 받으신 적이 있나요?",

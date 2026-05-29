@@ -221,41 +221,217 @@
     "price": 360,
     "cat": "color",
     "img": "daily-acuvue-1-day-define-3-months-1",
-    "slug": "daily-acuvue-1-day-define-3-months-1"
+    "slug": "daily-acuvue-1-day-define-3-months-1",
+    "colors": [
+      {
+        "name": "Natural Shine",
+        "hex": "#2b2b2b"
+      },
+      {
+        "name": "Accent Style",
+        "hex": "#3a2e28"
+      },
+      {
+        "name": "Vivid Style",
+        "hex": "#1a1a1a"
+      },
+      {
+        "name": "Radiant Sweet",
+        "hex": "#6b4a30"
+      },
+      {
+        "name": "Radiant Chic",
+        "hex": "#4a3a30"
+      }
+    ]
   },
   {
     "name": "[Daily] Alcon Dailies Colors (3 Months)",
     "price": 250,
     "cat": "color",
     "img": "daily-alcon-dailies-colors-3-months",
-    "slug": "daily-alcon-dailies-colors-3-months"
+    "slug": "daily-alcon-dailies-colors-3-months",
+    "colors": [
+      {
+        "name": "Mystic Blue",
+        "hex": "#3b6fa0"
+      },
+      {
+        "name": "Mystic Gray",
+        "hex": "#6e7378"
+      },
+      {
+        "name": "Mystic Green",
+        "hex": "#5f7d5a"
+      },
+      {
+        "name": "Mystic Hazel",
+        "hex": "#8a6a40"
+      }
+    ]
   },
   {
     "name": "[Daily] Eyedia Clearcolor 1-day (3 Month)",
     "price": 330,
     "cat": "color",
     "img": "daily-eyedia-clearcolor-1-day-3-month",
-    "slug": "daily-eyedia-clearcolor-1-day-3-month"
+    "slug": "daily-eyedia-clearcolor-1-day-3-month",
+    "colors": [
+      {
+        "name": "Black",
+        "hex": "#1a1a1a"
+      },
+      {
+        "name": "Gray",
+        "hex": "#6e7378"
+      },
+      {
+        "name": "Hazel",
+        "hex": "#8a6a40"
+      },
+      {
+        "name": "Blue",
+        "hex": "#3b6fa0"
+      },
+      {
+        "name": "Green",
+        "hex": "#5f7d5a"
+      }
+    ]
   },
   {
     "name": "[Monthly] Eyedia Clearcolor (6 Months)",
     "price": 150,
     "cat": "color",
     "img": "monthly-eyedia-clearcolor-6-months-1",
-    "slug": "monthly-eyedia-clearcolor-6-months-1"
+    "slug": "monthly-eyedia-clearcolor-6-months-1",
+    "colors": [
+      {
+        "name": "Black",
+        "hex": "#1a1a1a"
+      },
+      {
+        "name": "Gray",
+        "hex": "#6e7378"
+      },
+      {
+        "name": "Brown",
+        "hex": "#5b3a1e"
+      },
+      {
+        "name": "Hazel",
+        "hex": "#8a6a40"
+      },
+      {
+        "name": "Green",
+        "hex": "#5f7d5a"
+      },
+      {
+        "name": "Blue",
+        "hex": "#3b6fa0"
+      }
+    ]
   },
   {
     "name": "[Monthly] Alcon Air Optix Colors (6 Months)",
     "price": 310,
     "cat": "color",
     "img": "monthly-alcon-air-optix-colors-6-months",
-    "slug": "monthly-alcon-air-optix-colors-6-months"
+    "slug": "monthly-alcon-air-optix-colors-6-months",
+    "colors": [
+      {
+        "name": "Gray",
+        "hex": "#7d8186"
+      },
+      {
+        "name": "Sterling Gray",
+        "hex": "#8c8f93"
+      },
+      {
+        "name": "Amethyst",
+        "hex": "#7a5a8a"
+      },
+      {
+        "name": "Gemstone Green",
+        "hex": "#3f6f5a"
+      },
+      {
+        "name": "Green",
+        "hex": "#5f7d5a"
+      },
+      {
+        "name": "Pure Hazel",
+        "hex": "#9a7748"
+      },
+      {
+        "name": "Honey",
+        "hex": "#b08948"
+      },
+      {
+        "name": "Brown",
+        "hex": "#5b3a1e"
+      },
+      {
+        "name": "Brilliant Blue",
+        "hex": "#2f7fb5"
+      },
+      {
+        "name": "Blue",
+        "hex": "#3b6fa0"
+      },
+      {
+        "name": "True Sapphire",
+        "hex": "#27508a"
+      },
+      {
+        "name": "Turquoise",
+        "hex": "#2fa3a3"
+      }
+    ]
   },
   {
-    "name": "[Monthly] Eyedia ClearColor (6 Months)",
+    "name": "[Monthly] Clearlab Clearcolor Artist (6 Months)",
     "price": 150,
     "cat": "color",
     "img": "monthly-eyedia-clearcolor-6-months",
-    "slug": "monthly-eyedia-clearcolor-6-months"
+    "slug": "monthly-eyedia-clearcolor-6-months",
+    "colors": [
+      {
+        "name": "Violet Rose",
+        "hex": "#9a6a8a"
+      },
+      {
+        "name": "Green Envy",
+        "hex": "#4f7d5a"
+      },
+      {
+        "name": "Sky Blue",
+        "hex": "#5a9fd0"
+      },
+      {
+        "name": "Brown Chestnut",
+        "hex": "#5b3a22"
+      },
+      {
+        "name": "Blue Rain",
+        "hex": "#3b6fa0"
+      },
+      {
+        "name": "Platinum Gray",
+        "hex": "#9a9da1"
+      },
+      {
+        "name": "Misty Gray",
+        "hex": "#7d8186"
+      },
+      {
+        "name": "Hazel Autumn",
+        "hex": "#8a6a40"
+      },
+      {
+        "name": "Tosca",
+        "hex": "#2f9a9a"
+      }
+    ]
   }
 ]
