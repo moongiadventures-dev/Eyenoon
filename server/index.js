@@ -1,5 +1,5 @@
 /**
- * Eye:Noon Optical — checkout API
+ * EYE:NOON Optical — checkout API
  *
  * Endpoints (this surface is what the existing checkout.html actually calls):
  *   GET  /health
@@ -43,7 +43,7 @@ const PAYPAL_CLIENT_SECRET = process.env.PAYPAL_CLIENT_SECRET || "";
 const PAYPAL_MODE = (process.env.PAYPAL_MODE || process.env.PAYPAL_ENV || "sandbox").toLowerCase();
 
 const RESEND_API_KEY = process.env.RESEND_API_KEY || "";
-const FROM_EMAIL = process.env.FROM_EMAIL || "Eye:Noon Optical <onboarding@resend.dev>";
+const FROM_EMAIL = process.env.FROM_EMAIL || "EYE:NOON Optical <onboarding@resend.dev>";
 const BCC_EMAIL = process.env.BCC_EMAIL || ""; // optional store-side copy
 
 const stripeEnabled = Boolean(STRIPE_SECRET_KEY);
@@ -370,7 +370,7 @@ async function sendOrderReceipt(order) {
     const body = {
       from: FROM_EMAIL,
       to: [order.customer.email],
-      subject: "Eye:Noon Optical — Order " + order.orderId,
+      subject: "EYE:NOON Optical — Order " + order.orderId,
       html: buildReceiptHtml(order),
       text: buildReceiptText(order),
     };
@@ -514,7 +514,7 @@ app.post("/api/stripe/create-checkout-session", async (req, res) => {
         {
           price_data: {
             currency: CURRENCY,
-            product_data: { name: "Eye:Noon Optical — order " + order.orderId },
+            product_data: { name: "EYE:NOON Optical — order " + order.orderId },
             unit_amount: Math.round(order.total * 100),
           },
           quantity: 1,
@@ -573,7 +573,7 @@ app.post("/api/paypal/create-order", async (req, res) => {
       purchase_units: [
         {
           custom_id: order.orderId,
-          description: "Eye:Noon Optical — order " + order.orderId,
+          description: "EYE:NOON Optical — order " + order.orderId,
           amount: {
             currency_code: CURRENCY.toUpperCase(),
             value: order.total.toFixed(2),
@@ -581,7 +581,7 @@ app.post("/api/paypal/create-order", async (req, res) => {
         },
       ],
       application_context: {
-        brand_name: "Eye:Noon Optical",
+        brand_name: "EYE:NOON Optical",
         user_action: "PAY_NOW",
         return_url:
           PUBLIC_SITE_URL +
@@ -632,7 +632,7 @@ app.get("/api/paypal/capture", async (req, res) => {
  * Start
  * ------------------------------------------------------------------------- */
 app.listen(PORT, () => {
-  console.log("Eye:Noon checkout API listening on :" + PORT);
+  console.log("EYE:NOON checkout API listening on :" + PORT);
   console.log("  site URL    :", PUBLIC_SITE_URL);
   console.log("  CORS origin :", ALLOWED_ORIGIN);
   console.log("  Stripe      :", stripeEnabled ? "enabled" : "DISABLED (no STRIPE_SECRET_KEY)");

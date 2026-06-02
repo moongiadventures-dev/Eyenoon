@@ -1,5 +1,5 @@
 /**
- * Eye:Noon — English (default) / Korean UI strings.
+ * EYE:NOON — English (default) / Korean UI strings.
  * Preference: localStorage key eyenoon_lang ("en" | "ko")
  */
 (function () {
@@ -19,11 +19,11 @@
         cartAria: "Shopping cart",
       },
       footer: {
-        line: 'Eye:Noon Optical <span class="text-[#E0115F] px-2">/</span> TEL. 213. 388. 1447 <span class="text-[#E0115F] px-2">/</span> <a href="mailto:eyenoonoptical@gmail.com" class="text-inherit no-underline">eyenoonoptical@gmail.com</a>',
+        line: 'EYE:NOON Optical <span class="text-[#E0115F] px-2">/</span> TEL. 213. 388. 1447 <span class="text-[#E0115F] px-2">/</span> <a href="mailto:eyenoonoptical@gmail.com" class="text-inherit no-underline">eyenoonoptical@gmail.com</a>',
         emailLine:
-          'Eye:Noon Optical <span style="color:#E0115F;padding:0 10px;">/</span> TEL. 213. 388. 1447 <span style="color:#E0115F;padding:0 10px;">/</span> E-MAIL. <a href="mailto:eyenoonoptical@gmail.com" style="color:rgba(0,0,0,0.6);text-decoration:none;">eyenoonoptical@gmail.com</a>',
+          'EYE:NOON Optical <span style="color:#E0115F;padding:0 10px;">/</span> TEL. 213. 388. 1447 <span style="color:#E0115F;padding:0 10px;">/</span> E-MAIL. <a href="mailto:eyenoonoptical@gmail.com" style="color:rgba(0,0,0,0.6);text-decoration:none;">eyenoonoptical@gmail.com</a>',
         address: "301 S Western Ave. #103, Los Angeles, CA 90020",
-        copyright: "Copyright ©2020 Eye:Noon Optical. All Rights Reserved.",
+        copyright: "Copyright ©2020 EYE:NOON Optical. All Rights Reserved.",
       },
       meta: {
         home: "EYE:NOON | THE OPTICAL EDITORIAL",
@@ -49,7 +49,7 @@
       about: {
         eyebrow: "About",
         h1: 'The optical<br/><span class="text-[#E0115F]">editorial</span>',
-        p1: "Eye:Noon Optical is a trendsetting optical boutique offering a refined eyewear experience both online and at our Los Angeles storefront.",
+        p1: "EYE:NOON Optical is a trendsetting optical boutique offering a refined eyewear experience both online and at our Los Angeles storefront.",
         p2: "Built by innovators and forward-thinkers, our mission is to continuously elevate the eyewear shopping experience through quality, craftsmanship, and exceptional, personalized service.",
         brandsH: "Our brands",
         brandsP:
@@ -61,13 +61,13 @@
         eyebrow: "Contact",
         h1: 'Contact<br/><span class="text-[#E0115F]">Us</span>',
         lead:
-          "Reach Eye:Noon Optical by phone or email. Visit us in Los Angeles — we sell online and in store, so please get in touch before you order if you have questions about availability.",
+          "Reach EYE:NOON Optical by phone or email. Visit us in Los Angeles — we sell online and in store, so please get in touch before you order if you have questions about availability.",
         rxTitle: "Contact lens prescriptions",
         rxBody:
           "If you are ordering contact lenses for the first time, you are required to send us your prescription by email. Without your prescription, your order will be cancelled automatically.",
         rxLink: "Email your prescription",
         stockNote:
-          "Eye:Noon Optical sells through online and offline channels, so stock changes often. Please contact us before placing your order if you need to confirm availability.",
+          "EYE:NOON Optical sells through online and offline channels, so stock changes often. Please contact us before placing your order if you need to confirm availability.",
         card1h: "Contact us",
         card2h: "Visit us",
         tel: "Tel",
@@ -76,7 +76,7 @@
         hoursVal: "Monday – Saturday: 10:00 – 18:00",
         sunClosed: "Sunday: Closed",
         exams: "Eye exams",
-        examsVal: "Monday, Wednesday, Friday & Saturday — by appointment only",
+        examsVal: "Monday, Wednesday, Friday & Saturday",
         addr: "Address",
         findOnline: "Find us online",
       },
@@ -129,7 +129,7 @@
         checkoutBtn: "Checkout with Rx & payment",
         callBtn: "Call to order",
         remove: "Remove",
-        footer: "Eye:Noon Optical · Los Angeles",
+        footer: "EYE:NOON Optical · Los Angeles",
       },
       checkout: {
         backCart: "← Back to cart",
@@ -210,7 +210,7 @@
         onlyLenses: "This checkout is only for contact lenses. Remove other items or call the store.",
         rxInstructionsCart:
           "You already uploaded a prescription when you added lenses to your cart. It will be attached to this order.",
-        rxSidebarOnFile: "Prescription: on file with Eye:Noon",
+        rxSidebarOnFile: "Prescription: on file with EYE:NOON",
         rxSidebarCart: "Prescription: attached from cart",
         rxSidebarUpload: "Prescription: upload below before submitting",
         rxSidebarAttachedName: "Prescription: attached ({name})",
@@ -258,7 +258,7 @@
         chooseColor: "Please choose a color.",
         addToCart: "Add to cart",
         lensQTitle: "Before we add this to your cart",
-        lensQBody: "Are you an existing customer of Eye:Noon Optical? If yes, have you previously received an eye prescription from us?",
+        lensQBody: "Are you an existing customer of EYE:NOON Optical? If yes, have you previously received an eye prescription from us?",
         yes: "Yes",
         no: "No",
         cancel: "Cancel",
@@ -295,7 +295,7 @@
         emailLine:
           '아이눈 안경원 <span style="color:#E0115F;padding:0 10px;">/</span> 전화 213. 388. 1447 <span style="color:#E0115F;padding:0 10px;">/</span> 이메일 <a href="mailto:eyenoonoptical@gmail.com" style="color:rgba(0,0,0,0.6);text-decoration:none;">eyenoonoptical@gmail.com</a>',
         address: "301 S Western Ave. #103, Los Angeles, CA 90020",
-        copyright: "Copyright ©2020 Eye:Noon Optical. All Rights Reserved.",
+        copyright: "Copyright ©2020 EYE:NOON Optical. All Rights Reserved.",
       },
       meta: {
         home: "아이눈 안경원 | THE OPTICAL EDITORIAL",
@@ -321,7 +321,7 @@
       about: {
         eyebrow: "소개",
         h1: '안경을 담는<br/><span class="text-[#E0115F]">에디토리얼</span>',
-        p1: "아이눈 안경원(Eye:Noon Optical)은 로스앤젤레스 매장과 온라인에서 세련된 안경 쇼핑 경험을 제공하는 트렌드 안경 부티크입니다.",
+        p1: "아이눈 안경원(EYE:NOON Optical)은 로스앤젤레스 매장과 온라인에서 세련된 안경 쇼핑 경험을 제공하는 트렌드 안경 부티크입니다.",
         p2: "혁신과 장인 정신을 바탕으로 품질과 맞춤 서비스로 안경 쇼핑 경험을 끊임없이 높이는 것이 우리의 목표입니다.",
         brandsH: "브랜드",
         brandsP:
@@ -348,7 +348,7 @@
         hoursVal: "월–토: 10:00 – 18:00",
         sunClosed: "일요일: 휴무",
         exams: "안과 검진",
-        examsVal: "월·수·금·토 — 예약 필수",
+        examsVal: "월·수·금·토",
         addr: "주소",
         findOnline: "온라인에서 찾기",
       },
