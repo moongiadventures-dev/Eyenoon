@@ -359,13 +359,13 @@ function buildReceiptText(order) {
 async function sendOrderReceipt(order) {
   if (!resendEnabled) {
     console.log("[receipt] skipped (RESEND_API_KEY not set)");
-    return;
+    return { ok: false, reason: "RESEND_API_KEY is not set" };
   }
   if (!order || !order.customer || !order.customer.email) {
     console.log("[receipt] skipped (no customer email)");
-    return;
+    return { ok: false, reason: "order has no customer email" };
   }
-  if (order.receiptEmailSent) return;
+  if (order.receiptEmailSent) return { ok: true, reason: "already sent" };
   try {
     const body = {
       from: FROM_EMAIL,
@@ -387,12 +387,14 @@ async function sendOrderReceipt(order) {
     if (!res.ok) {
       const txt = await res.text().catch(() => "");
       console.error("[resend] send failed", res.status, txt);
-      return;
+      return { ok: false, status: res.status, reason: txt || "Resend rejected the request" };
     }
     order.receiptEmailSent = true;
     console.log("[receipt] sent for", order.orderId, "to", order.customer.email);
+    return { ok: true, to: order.customer.email, bcc: BCC_EMAIL || null };
   } catch (e) {
     console.error("[resend] error", e);
+    return { ok: false, reason: String((e && e.message) || e) };
   }
 }
 
@@ -440,6 +442,62 @@ app.use(express.json({ limit: "1mb" }));
  * ------------------------------------------------------------------------- */
 app.get("/health", (req, res) => {
   res.json({ ok: true, time: new Date().toISOString() });
+});
+
+/**
+ * Send a sample receipt without taking a payment, so email configuration can be
+ * verified after any change to the domain, the API key, or FROM_EMAIL.
+ *
+ * It only ever mails BCC_EMAIL — the store's own address — so it cannot be used
+ * to send mail to anyone else, and it is rate limited to one send per minute.
+ */
+let lastTestReceiptAt = 0;
+
+app.get("/api/test-receipt", async (req, res) => {
+  if (!BCC_EMAIL) {
+    return res.status(400).json({
+      ok: false,
+      reason: "BCC_EMAIL is not set, so there is no safe address to send the test to.",
+    });
+  }
+  const now = Date.now();
+  const waited = now - lastTestReceiptAt;
+  if (waited < 60000) {
+    return res.status(429).json({
+      ok: false,
+      reason: "Please wait " + Math.ceil((60000 - waited) / 1000) + " more seconds.",
+    });
+  }
+  lastTestReceiptAt = now;
+
+  const lines = [
+    { slug: "test-a", name: "Acuvue Oasys Max 1 Day (3 Months)", kind: "contact_lens", qty: 1, unitPrice: 270, lineTotal: 270 },
+    { slug: "test-b", name: "CooperVision Biofinity Toric (6 Months)", kind: "contact_lens", qty: 2, unitPrice: 45, lineTotal: 90 },
+  ];
+  const order = {
+    orderId: "EN-TEST-" + now.toString(36).toUpperCase(),
+    status: "paid",
+    createdAt: new Date().toISOString(),
+    paidAt: new Date().toISOString(),
+    paidVia: "stripe",
+    lines,
+    ...priceOrder(lines, "CA", "90005"),
+    existingCustomer: true,
+    prescriptionLabel: "Prescription on file at the store",
+    prescriptionFile: null,
+    customer: { name: "Test Order (not a real customer)", dateOfBirth: "", email: BCC_EMAIL, phone: "213-388-1447" },
+    shipping: { addressLine1: "1234 Test St", addressLine2: "", city: "Los Angeles", state: "CA", zip: "90005" },
+  };
+
+  const result = await sendOrderReceipt(order);
+  console.log("[test-receipt]", order.orderId, JSON.stringify(result));
+  res.status(result && result.ok ? 200 : 502).json({
+    ...result,
+    orderId: order.orderId,
+    from: FROM_EMAIL,
+    sentTo: BCC_EMAIL,
+    total: order.total,
+  });
 });
 
 app.get("/api/payment-options", (req, res) => {
