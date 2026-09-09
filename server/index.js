@@ -500,6 +500,83 @@ app.post("/api/submit-order", upload.single("prescription"), (req, res) => {
   }
 });
 
+/* ----------------------------------------------------------------------------
+ * Stripe line items
+ *
+ * Stripe is the only durable record of an order (the in-memory store above dies
+ * with the process), so the Checkout session carries the products themselves
+ * rather than one lump sum. Date of birth and the prescription stay off Stripe:
+ * that is health data and does not belong with a payment processor.
+ * ------------------------------------------------------------------------- */
+const STRIPE_NAME_MAX = 250;
+const STRIPE_METADATA_MAX = 500;
+
+function clip(value, max) {
+  const v = String(value == null ? "" : value).trim();
+  if (!v) return "";
+  return v.length > max ? v.slice(0, max - 1) + "…" : v;
+}
+
+const cents = (n) => Math.round((Number(n) || 0) * 100);
+
+function formatShipping(s) {
+  if (!s) return "";
+  const cityState = [s.city, s.state].filter(Boolean).join(", ");
+  return [s.addressLine1, s.addressLine2, cityState, s.zip].filter(Boolean).join(" · ");
+}
+
+function stripeProductLine(name, amount) {
+  return {
+    price_data: {
+      currency: CURRENCY,
+      product_data: { name: clip(name, STRIPE_NAME_MAX) },
+      unit_amount: amount,
+    },
+    quantity: 1,
+  };
+}
+
+/**
+ * One Stripe line per product, plus tax and shipping as their own lines.
+ * Returns null when the parts do not add up to order.total, so the caller falls
+ * back to the single aggregate line instead of charging a different amount.
+ */
+function stripeLineItems(order) {
+  const items = [];
+  let sum = 0;
+
+  for (const line of order.lines || []) {
+    const unit = cents(line.unitPrice);
+    const qty = Math.round(Number(line.qty) || 0);
+    if (unit <= 0 || qty <= 0) return null;
+    const item = stripeProductLine(line.name || line.slug || "Item", unit);
+    item.quantity = qty;
+    items.push(item);
+    sum += unit * qty;
+  }
+  if (!items.length) return null;
+
+  const tax = cents(order.estimatedTax);
+  if (tax > 0) {
+    items.push(stripeProductLine(order.taxLabel || "Est. sales tax", tax));
+    sum += tax;
+  }
+
+  const delivery = cents(order.delivery);
+  if (delivery > 0) {
+    items.push(stripeProductLine(order.deliveryLabel || "Delivery / shipping", delivery));
+    sum += delivery;
+  }
+
+  return sum === cents(order.total) ? items : null;
+}
+
+function orderItemSummary(order) {
+  return (order.lines || [])
+    .map((l) => (l.name || l.slug || "Item") + " x" + l.qty)
+    .join("; ");
+}
+
 /* ---- Stripe ---- */
 app.post("/api/stripe/create-checkout-session", async (req, res) => {
   if (!stripe) return res.status(503).json({ error: "Card checkout is not available." });
@@ -507,10 +584,11 @@ app.post("/api/stripe/create-checkout-session", async (req, res) => {
     const order = orders.get(req.body && req.body.orderId);
     if (!order) return res.status(404).json({ error: "Unknown order." });
 
+    const customer = order.customer || {};
     const session = await stripe.checkout.sessions.create({
       mode: "payment",
       payment_method_types: ["card"],
-      line_items: [
+      line_items: stripeLineItems(order) || [
         {
           price_data: {
             currency: CURRENCY,
@@ -520,7 +598,19 @@ app.post("/api/stripe/create-checkout-session", async (req, res) => {
           quantity: 1,
         },
       ],
-      metadata: { orderId: order.orderId },
+      metadata: {
+        orderId: order.orderId,
+        customerName: clip(customer.name, STRIPE_METADATA_MAX),
+        customerPhone: clip(customer.phone, STRIPE_METADATA_MAX),
+        shippingAddress: clip(formatShipping(order.shipping), STRIPE_METADATA_MAX),
+        items: clip(orderItemSummary(order), STRIPE_METADATA_MAX),
+      },
+      payment_intent_data: {
+        description: clip(
+          "EYE:NOON order " + order.orderId + (customer.name ? " — " + customer.name : ""),
+          350
+        ),
+      },
       customer_email: order.customer.email || undefined,
       success_url:
         PUBLIC_SITE_URL +
