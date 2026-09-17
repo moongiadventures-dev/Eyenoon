@@ -88,26 +88,11 @@ const upload = multer({
 /* ----------------------------------------------------------------------------
  * Pricing — ported from js/checkout-tax-delivery.js so client + server agree.
  * ------------------------------------------------------------------------- */
-const CA_COMBINED_SALES_TAX = 0.095;
-const SHIPPING_CA_NON_LOCAL = 8.99;
-const SHIPPING_US_NON_CA = 12.99;
+/** Flat shipping fee per order. Mirror any change in js/checkout-tax-delivery.js. */
+const SHIPPING_FLAT = 15;
 
 const round2 = (n) => Math.round((Number(n) || 0) * 100) / 100;
 
-function parseZip5(z) {
-  const s = String(z || "").replace(/\D/g, "");
-  return s.length >= 5 ? s.slice(0, 5) : "";
-}
-function isCaliforniaZip5(zip5) {
-  if (zip5.length !== 5) return false;
-  const n = parseInt(zip5, 10);
-  return n >= 90001 && n <= 96162;
-}
-function isLocalDeliveryZip(zip5) {
-  if (zip5.length !== 5) return false;
-  const n = parseInt(zip5, 10);
-  return n >= 90001 && n <= 91799;
-}
 
 /** Normalise the cart the browser posted into trusted line items. */
 function normalizeLines(rawCart) {
@@ -134,40 +119,20 @@ function normalizeLines(rawCart) {
     .filter((l) => l.unitPrice > 0 && l.qty > 0);
 }
 
-function priceOrder(lines, state, zipRaw) {
+function priceOrder(lines) {
   const subtotal = round2(lines.reduce((s, l) => s + l.lineTotal, 0));
-  const st = String(state || "").trim().toUpperCase();
-  const zip5 = parseZip5(zipRaw);
-  const addressComplete = st.length === 2 && zip5.length === 5;
-
-  let estimatedTax = 0;
-  let taxLabel = "Est. sales tax";
-  if (st === "CA") {
-    estimatedTax = round2(subtotal * CA_COMBINED_SALES_TAX);
-    taxLabel = "Est. sales tax (CA " + (CA_COMBINED_SALES_TAX * 100).toFixed(1) + "%)";
-  } else if (st.length === 2) {
-    taxLabel = "Sales tax (if applicable)";
-  }
-
-  let delivery = 0;
-  let deliveryLabel = "Delivery / shipping";
-  if (addressComplete) {
-    if (st === "CA") {
-      if (isCaliforniaZip5(zip5) && isLocalDeliveryZip(zip5)) {
-        delivery = 0;
-        deliveryLabel = "Delivery (local)";
-      } else {
-        delivery = SHIPPING_CA_NON_LOCAL;
-        deliveryLabel = "Shipping (CA)";
-      }
-    } else {
-      delivery = SHIPPING_US_NON_CA;
-      deliveryLabel = "Shipping (US)";
-    }
-  }
-
-  const total = round2(subtotal + estimatedTax + delivery);
-  return { subtotal, estimatedTax, taxLabel, delivery, deliveryLabel, total };
+  const delivery = SHIPPING_FLAT;
+  const total = round2(subtotal + delivery);
+  // estimatedTax stays in the shape at zero so receipts, Stripe line items and
+  // the saved order record all keep the fields they had before.
+  return {
+    subtotal,
+    estimatedTax: 0,
+    taxLabel: "Sales tax",
+    delivery,
+    deliveryLabel: "Shipping (flat rate)",
+    total,
+  };
 }
 
 /** The pricing payload checkout.html expects back from submit/complete/capture. */
@@ -281,10 +246,10 @@ function buildReceiptHtml(order) {
               <td style="padding:4px 0;color:#888;">Subtotal</td>
               <td style="padding:4px 0;text-align:right;">${money(order.subtotal)}</td>
             </tr>
-            <tr>
+            ${Number(order.estimatedTax) > 0 ? `<tr>
               <td style="padding:4px 0;color:#888;">${escapeHtml(order.taxLabel || "Sales tax")}</td>
               <td style="padding:4px 0;text-align:right;">${money(order.estimatedTax)}</td>
-            </tr>
+            </tr>` : ""}
             <tr>
               <td style="padding:4px 0;color:#888;">${escapeHtml(order.deliveryLabel || "Delivery")}</td>
               <td style="padding:4px 0;text-align:right;">${order.delivery > 0 ? money(order.delivery) : "Free"}</td>
@@ -343,7 +308,9 @@ function buildReceiptText(order) {
     lines || "(none)",
     ``,
     `Subtotal: ${money(order.subtotal)}`,
-    `${order.taxLabel || "Sales tax"}: ${money(order.estimatedTax)}`,
+    ...(Number(order.estimatedTax) > 0
+      ? [`${order.taxLabel || "Sales tax"}: ${money(order.estimatedTax)}`]
+      : []),
     `${order.deliveryLabel || "Delivery"}: ${order.delivery > 0 ? money(order.delivery) : "Free"}`,
     `Total paid: ${money(order.total)}`,
     ``,
@@ -481,7 +448,7 @@ app.get("/api/test-receipt", async (req, res) => {
     paidAt: new Date().toISOString(),
     paidVia: "stripe",
     lines,
-    ...priceOrder(lines, "CA", "90005"),
+    ...priceOrder(lines),
     existingCustomer: true,
     prescriptionLabel: "Prescription on file at the store",
     prescriptionFile: null,
@@ -513,7 +480,7 @@ app.post("/api/submit-order", upload.single("prescription"), (req, res) => {
     }
 
     const existingCustomer = String(body.existingCustomer) === "true";
-    const pricing = priceOrder(lines, body.state, body.zip);
+    const pricing = priceOrder(lines);
 
     let prescriptionLabel = "";
     if (existingCustomer) {

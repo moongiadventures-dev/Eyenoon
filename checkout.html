@@ -68,7 +68,7 @@
           </label>
 
           <p class="text-[0.65rem] uppercase tracking-widest text-white/45 mb-3 mt-6" data-i18n="checkout.shipBlock">Shipping address</p>
-          <p class="text-xs text-white/40 mb-4 leading-relaxed" data-i18n="checkout.shipHelp">We use your ZIP to estimate sales tax and shipping. Final amounts may be adjusted when we confirm your order.</p>
+          <p class="text-xs text-white/40 mb-4 leading-relaxed" data-i18n="checkout.shipHelp">We use your address to ship your order. Shipping is a flat $15 per order.</p>
           <label class="block mb-4">
             <span class="text-[0.65rem] uppercase tracking-widest text-white/45" data-i18n="checkout.street">Street address</span>
             <input type="text" name="addressLine1" id="addressLine1" required autocomplete="address-line1"
@@ -129,8 +129,8 @@
               <span data-i18n="checkout.subtotal">Subtotal</span>
               <span id="summary-subtotal" class="font-semibold text-white tabular-nums"></span>
             </div>
-            <div class="flex justify-between gap-4 text-white/70">
-              <span id="summary-tax-label" class="text-white/55">Est. sales tax</span>
+            <div id="summary-tax-row" class="hidden justify-between gap-4 text-white/70">
+              <span id="summary-tax-label" class="text-white/55">Sales tax</span>
               <span id="summary-tax" class="font-semibold text-white tabular-nums">—</span>
             </div>
             <div class="flex justify-between gap-4 text-white/70">
@@ -143,7 +143,7 @@
             <span class="font-display text-lg text-white" data-i18n="checkout.total">Total</span>
             <span id="summary-grand-total" class="text-2xl font-bold text-white tabular-nums"></span>
           </div>
-          <p class="text-[0.65rem] text-white/40 mt-3 leading-relaxed" data-i18n="checkout.taxEstNote">Tax and shipping are estimates. We may adjust when we confirm your order.</p>
+          <p class="text-[0.65rem] text-white/40 mt-3 leading-relaxed" data-i18n="checkout.taxEstNote">Shipping is a flat $15 per order.</p>
 
           <button type="submit" id="pay" class="w-full mt-6 bg-[#E0115F] text-white border-0 py-4 text-xs font-bold uppercase tracking-[0.2em] cursor-pointer rounded-lg hover:opacity-95 disabled:opacity-45 disabled:cursor-not-allowed transition-opacity" data-i18n="checkout.submit">
             Submit order
@@ -443,7 +443,7 @@
     var zipEl = document.getElementById("zip");
     var state = stateEl ? stateEl.value : "";
     var zip = zipEl ? zipEl.value : "";
-    var est = TD.estimate(sub, state, zip);
+    var est = TD.estimate(sub);
     var subEl = document.getElementById("summary-subtotal");
     var taxEl = document.getElementById("summary-tax");
     var taxLab = document.getElementById("summary-tax-label");
@@ -452,11 +452,16 @@
     var grandEl = document.getElementById("summary-grand-total");
     var hint = document.getElementById("summary-shipping-hint");
     if (subEl) subEl.textContent = money(est.subtotal);
+    var taxRow = document.getElementById("summary-tax-row");
+    if (taxRow) {
+      taxRow.classList.toggle("hidden", !(est.estimatedTax > 0));
+      taxRow.classList.toggle("flex", est.estimatedTax > 0);
+    }
     if (taxLab) taxLab.textContent = est.taxLabel;
     if (taxEl) taxEl.textContent = money(est.estimatedTax);
     if (delLab) delLab.textContent = est.deliveryLabel;
-    if (delEl) delEl.textContent = est.incompleteShipping ? "—" : money(est.delivery);
-    if (hint) hint.classList.toggle("hidden", !est.incompleteShipping);
+    if (delEl) delEl.textContent = money(est.delivery);
+    if (hint) hint.classList.add("hidden");
     if (grandEl) grandEl.textContent = money(est.grandTotal);
   }
 

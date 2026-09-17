@@ -1,10 +1,13 @@
 /**
- * Estimates CA sales tax and US shipping from address (configurable).
+ * Order pricing shown at checkout.
+ *
+ * Shipping is a flat fee on every order and no sales tax is charged, so totals
+ * no longer depend on the delivery address. Keep SHIPPING_FLAT in sync with the
+ * same constant in server/index.js - the server recomputes the total and
+ * refuses the payment if the two disagree.
  */
 (function (global) {
-  var CA_COMBINED_SALES_TAX = 0.095;
-  var SHIPPING_CA_NON_LOCAL = 8.99;
-  var SHIPPING_US_NON_CA = 12.99;
+  var SHIPPING_FLAT = 15;
 
   function round2(n) {
     return Math.round((Number(n) || 0) * 100) / 100;
@@ -16,70 +19,28 @@
     return "";
   }
 
-  function isCaliforniaZip5(zip5) {
-    if (!zip5 || zip5.length !== 5) return false;
-    var n = parseInt(zip5, 10);
-    return n >= 90001 && n <= 96162;
-  }
 
   /** SoCal — free delivery zone (edit to match your policy). */
-  function isLocalDeliveryZip(zip5) {
-    if (!zip5 || zip5.length !== 5) return false;
-    var n = parseInt(zip5, 10);
-    return n >= 90001 && n <= 91799;
-  }
 
   /**
    * @param {number} subtotal
    * @param {string} state — 2-letter US state
    * @param {string} zipRaw
    */
-  function estimate(subtotal, state, zipRaw) {
+  function estimate(subtotal) {
     var sub = round2(subtotal);
-    var st = String(state || "")
-      .trim()
-      .toUpperCase();
-    var zip5 = parseZip5(zipRaw);
-    var hasState = st.length === 2;
-    var hasZip = zip5.length === 5;
-    var addressComplete = hasState && hasZip;
-
-    var estimatedTax = 0;
-    var taxLabel = "Est. sales tax";
-    if (st === "CA") {
-      estimatedTax = round2(sub * CA_COMBINED_SALES_TAX);
-      taxLabel = "Est. sales tax (CA " + (CA_COMBINED_SALES_TAX * 100).toFixed(1) + "%)";
-    } else if (hasState) {
-      taxLabel = "Sales tax (if applicable)";
-    }
-
-    var delivery = 0;
-    var deliveryLabel = "Delivery / shipping";
-    if (addressComplete) {
-      if (st === "CA") {
-        if (isCaliforniaZip5(zip5) && isLocalDeliveryZip(zip5)) {
-          delivery = 0;
-          deliveryLabel = "Delivery (local)";
-        } else {
-          delivery = SHIPPING_CA_NON_LOCAL;
-          deliveryLabel = "Shipping (CA)";
-        }
-      } else {
-        delivery = SHIPPING_US_NON_CA;
-        deliveryLabel = "Shipping (US)";
-      }
-    }
-
-    var grandTotal = round2(sub + estimatedTax + delivery);
+    var delivery = SHIPPING_FLAT;
+    var grandTotal = round2(sub + delivery);
 
     return {
       subtotal: sub,
-      estimatedTax: estimatedTax,
-      taxLabel: taxLabel,
+      // Kept at zero so every consumer of this shape keeps working.
+      estimatedTax: 0,
+      taxLabel: "Sales tax",
       delivery: delivery,
-      deliveryLabel: deliveryLabel,
+      deliveryLabel: "Shipping (flat rate)",
       grandTotal: grandTotal,
-      incompleteShipping: !addressComplete,
+      incompleteShipping: false,
     };
   }
 
