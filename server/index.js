@@ -214,7 +214,7 @@ function buildReceiptHtml(order) {
         <tr><td style="padding:24px 32px 8px;">
           <p style="margin:0 0 16px;font-size:14px;line-height:1.6;color:#3D2B30;">
             Hi ${escapeHtml(cust.name || "there")},<br/>
-            Thanks for your order. We received your payment and we'll be in touch about next steps for your prescription.
+            Thanks for your order. We'll be in touch about your shipping estimate and tracking.
           </p>
         </td></tr>
 
@@ -266,11 +266,6 @@ function buildReceiptHtml(order) {
           <div style="font-size:13px;line-height:1.6;color:#3D2B30;">${addrLines || "—"}</div>
         </td></tr>
 
-        <tr><td style="padding:16px 32px 0;">
-          <div style="font-size:11px;color:#888;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:8px;">Prescription</div>
-          <div style="font-size:13px;line-height:1.6;color:#3D2B30;">${escapeHtml(order.prescriptionLabel || "—")}</div>
-        </td></tr>
-
         <tr><td style="padding:32px 32px 32px;">
           <p style="margin:0;font-size:12px;color:#888;line-height:1.6;">
             Questions? Reply to this email or visit <a href="https://eyenoonoptical.com" style="color:#E0115F;text-decoration:none;">eyenoonoptical.com</a>.
@@ -298,7 +293,7 @@ function buildReceiptText(order) {
     `EYE:NOON OPTICAL — Order receipt`,
     ``,
     `Hi ${cust.name || "there"},`,
-    `Thanks for your order. We received your payment and we'll be in touch about next steps.`,
+    `Thanks for your order. We'll be in touch about your shipping estimate and tracking.`,
     ``,
     `Order #: ${order.orderId}`,
     `Paid on: ${order.paidAt || ""}`,
@@ -316,8 +311,6 @@ function buildReceiptText(order) {
     ``,
     `Ship to:`,
     addr || "(none)",
-    ``,
-    `Prescription: ${order.prescriptionLabel || "—"}`,
     ``,
     `Questions? Reply to this email or visit eyenoonoptical.com.`,
   ].join("\n");
