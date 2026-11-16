@@ -692,7 +692,9 @@ function createBookingRouter() {
 }
 
 function bookingStatusLine() {
+  if (useGoogle && !BOOKING_SECRET) return "OFF — Google Calendar set but BOOKING_SECRET missing";
   if (useGoogle) return "Google Calendar (" + CALENDAR_ID + ")";
+  if (!BOOKING_ENABLED) return "OFF (page shows 'call us') — set GOOGLE_CALENDAR_ID + service account + BOOKING_SECRET";
   return "LOCAL DEV FILE (" + path.basename(DEV_FILE) + ") — set GOOGLE_CALENDAR_ID + service account for real calendar";
 }
 
