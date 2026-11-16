@@ -941,6 +941,21 @@
             }
         }
     </script>
+<style id="nav-fit">
+  /* Nav fit: the 7 links + right cluster need ~1370px. Tighten spacing on
+     laptop widths, and switch to the hamburger menu below 1100px
+     (also fixes 641–768px, where links were hidden with no toggle). */
+  @media (max-width: 1400px) {
+    #nav-links { gap: 18px !important; margin-left: 24px !important; }
+    #nav-links .nav-link { letter-spacing: 0.07em !important; font-size: 0.78rem !important; }
+  }
+  @media (max-width: 1100px) {
+    #mobile-menu-toggle { display: block !important; }
+    #nav-links { position: fixed !important; top: 72px !important; left: 0 !important; right: 0 !important; flex-direction: column !important; flex-wrap: nowrap !important; background: rgba(255,255,255,0.98) !important; border-bottom: 1px solid rgba(224,17,95,0.1) !important; padding: 1rem !important; gap: 0.75rem !important; margin-left: 0 !important; display: none !important; z-index: 199; max-height: calc(100vh - 72px); overflow-y: auto; }
+    #nav-links.nav-open { display: flex !important; }
+    #nav-links .nav-link { font-size: 0.875rem !important; letter-spacing: 0.14em !important; }
+  }
+</style>
 </head>
 <body class="bg-surface selection:bg-surface-container-highest selection:text-on-surface overflow-x-hidden" data-i18n-title-doc="meta.home">
 <!-- TopNavBar -->
@@ -963,6 +978,8 @@
     <a class="nav-link" href="optical.html" data-i18n="nav.optical">Optical</a>
     <a class="nav-link" href="sunglasses.html" data-i18n="nav.sunglasses">Sunglasses</a>
     <a class="nav-link" href="contact-lenses.html" data-i18n="nav.contactLenses">Contact Lenses</a>
+
+    <a class="nav-link" href="book.html" data-i18n="nav.book">Book Exam</a>
 
     <a class="nav-link" href="contact.html" data-i18n="nav.contact">Contact Us</a>
 
@@ -1426,6 +1443,9 @@
         <img class="brand-marquee-logo" src="images/brand-logos/normalized/akila.png" alt="Akila">
         <img class="brand-marquee-logo" src="images/brand-logos/normalized/yuichi-toyama.png" alt="Yuichi Toyama">
         <img class="brand-marquee-logo" src="images/brand-logos/normalized/lindberg.png" alt="Lindberg">
+        <img class="brand-marquee-logo" src="images/brand-logos/normalized/cartier.png" alt="Cartier">
+        <img class="brand-marquee-logo" src="images/brand-logos/normalized/bottega-veneta.png" alt="Bottega Veneta">
+        <img class="brand-marquee-logo" src="images/brand-logos/normalized/gucci.png" alt="Gucci">
       </div>
       <div class="brand-marquee-group" aria-hidden="true">
         <img class="brand-marquee-logo" src="images/brand-logos/normalized/cutler-gross.png" alt="">
@@ -1434,6 +1454,9 @@
         <img class="brand-marquee-logo" src="images/brand-logos/normalized/akila.png" alt="">
         <img class="brand-marquee-logo" src="images/brand-logos/normalized/yuichi-toyama.png" alt="">
         <img class="brand-marquee-logo" src="images/brand-logos/normalized/lindberg.png" alt="">
+        <img class="brand-marquee-logo" src="images/brand-logos/normalized/cartier.png" alt="">
+        <img class="brand-marquee-logo" src="images/brand-logos/normalized/bottega-veneta.png" alt="">
+        <img class="brand-marquee-logo" src="images/brand-logos/normalized/gucci.png" alt="">
       </div>
     </div>
   </div>
@@ -1521,7 +1544,7 @@
     <!-- Content below the settled heading: about + CTA -->
     <div id="reveal-content" style="justify-content:flex-start;padding-top:27vh;">
       <p id="reveal-about">
-        EYE:NOON Optical is a trendsetting boutique offering high-end designer eyewear—CUTLER AND GROSS, LINDA FARROW, L.G.R, and more—paired with ZEISS precision lenses and exceptional personalized service, in-store and online.
+        EYE:NOON Optical is a trendsetting boutique offering high-end designer eyewear—CUTLER AND GROSS, LINDA FARROW, L.G.R, CARTIER, BOTTEGA VENETA, GUCCI, and more—paired with ZEISS precision lenses and exceptional personalized service, in-store and online.
       </p>
 
       <p id="reveal-cta">DON'T WAIT — CALL NOW TO SCHEDULE AN EYE EXAM.</p>

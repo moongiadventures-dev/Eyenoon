@@ -28,3 +28,7 @@ images/**/*.orig.*
 _pv_*
 _preview_*
 
+
+# --- Booking dev ledger (local only) ---
+server/.bookings-dev.json
+server/*service-account*.json

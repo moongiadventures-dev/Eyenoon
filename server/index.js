@@ -10,6 +10,7 @@
  *   POST /api/paypal/create-order               ({ orderId })
  *   GET  /api/paypal/capture?token=...&eyenoon_order=...
  *   POST /api/stripe/webhook                    (Stripe-signed raw body)
+ *   /api/booking/*                              (eye-exam booking → Google Calendar, see booking.js)
  *
  * The server — not the browser — computes tax/delivery/total, so the amount
  * charged can't be tampered with client-side.
@@ -24,6 +25,7 @@ const cors = require("cors");
 const multer = require("multer");
 const Stripe = require("stripe");
 const paypal = require("@paypal/checkout-server-sdk");
+const { createBookingRouter, bookingStatusLine } = require("./booking");
 
 const app = express();
 app.set("trust proxy", 1);
@@ -460,6 +462,8 @@ app.get("/api/test-receipt", async (req, res) => {
   });
 });
 
+app.use("/api/booking", createBookingRouter());
+
 app.get("/api/payment-options", (req, res) => {
   res.json({ stripe: stripeEnabled, paypal: paypalEnabled });
 });
@@ -748,5 +752,6 @@ app.listen(PORT, () => {
     "  PayPal      :",
     paypalEnabled ? "enabled (" + PAYPAL_MODE + ")" : "DISABLED (no PayPal credentials)"
   );
+  console.log("  Booking     :", bookingStatusLine());
   console.log("  Resend      :", resendEnabled ? "enabled (from " + FROM_EMAIL + ")" : "DISABLED (no RESEND_API_KEY)");
 });

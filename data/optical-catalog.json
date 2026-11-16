@@ -762,6 +762,195 @@
           "description": "Sculpted acetate with an ingenious titanium bridge core for a light, elegant and fully adjustable fit."
         }
       ]
+    },
+    {
+      "id": "cartier",
+      "name": "Cartier",
+      "source_note": "Model names and imagery from MR PORTER's Cartier Eyewear listing at build time (cartier.com does not sell optical frames).",
+      "frames": [
+        {
+          "model": "Santos de Cartier Gold-Tone Titanium Glasses",
+          "image": "images/optical/cartier/Santos-de-Cartier-Gold-Tone-Titanium-Glasses.jpg",
+          "detail_url": "https://www.mrporter.com/en-us/mens/product/cartier-eyewear/accessories/glasses/santos-de-cartier-gold-tone-titanium-glasses/46376663163187887",
+          "description": "A rimless Santos de Cartier frame in lightweight titanium, letting the signature gold-tone screw hardware take centre stage on slim temples."
+        },
+        {
+          "model": "Santos de Cartier Aviator-Style Silver-Tone Glasses",
+          "image": "images/optical/cartier/Santos-de-Cartier-Aviator-Style-Silver-Tone-Glasses.jpg",
+          "detail_url": "https://www.mrporter.com/en-us/mens/product/cartier-eyewear/accessories/glasses/santos-de-cartier-aviator-style-silver-tone-glasses/46376663163187923",
+          "description": "The Santos design codes on an aviator-inspired optical frame — silver-tone metal with a double bridge and gold-tone accents."
+        },
+        {
+          "model": "Motifs de Cartier D-Frame Titanium Glasses",
+          "image": "images/optical/cartier/Motifs-de-Cartier-D-Frame-Titanium-Glasses.jpg",
+          "detail_url": "https://www.mrporter.com/en-us/mens/product/cartier-eyewear/accessories/glasses/motifs-de-cartier-d-frame-gold-and-silver-tone-titanium-glasses/46376663163187899",
+          "description": "Rimless D-shaped lenses on silver-tone titanium, finished with Cartier's elongated C hinge in gold tone."
+        },
+        {
+          "model": "Rectangle-Frame Gold-Tone Optical Glasses",
+          "image": "images/optical/cartier/Rectangle-Frame-Gold-Tone-Optical-Glasses.jpg",
+          "detail_url": "https://www.mrporter.com/en-us/mens/product/cartier-eyewear/accessories/glasses/rectangle-frame-gold-tone-optical-glasses/46376663162956192",
+          "description": "Discreet, featherlight rimless glasses made in France from gold-tone metal, with laser-cut rectangular lenses."
+        },
+        {
+          "model": "Signature C Acetate and Gold-Tone Glasses",
+          "image": "images/optical/cartier/Signature-C-Acetate-and-Gold-Tone-Glasses.jpg",
+          "detail_url": "https://www.mrporter.com/en-us/mens/product/cartier-eyewear/accessories/glasses/signature-c-acetate-and-gold-tone-glasses/46376663163032933",
+          "description": "A versatile rimless frame with black acetate temple tips and Signature C hardware at the hinges."
+        }
+      ]
+    },
+    {
+      "id": "bottega-veneta",
+      "name": "Bottega Veneta",
+      "source_note": "Imagery and model names from the brand's official site at build time.",
+      "frames": [
+        {
+          "model": "Sophia Ribbon Aviator Eyeglasses BV1495O",
+          "image": "images/optical/bottega-veneta/Sophia-Ribbon-Aviator-Eyeglasses-BV1495O.jpg",
+          "detail_url": "https://www.bottegaveneta.com/en-us/sophia-ribbon-aviator-eyeglasses-black-transparent-A00AJBV2Q301423.html",
+          "description": "Aviator eyeglasses in recycled acetate with a rounded, organic front and temples, finished with the gold-tone ribbon detail."
+        },
+        {
+          "model": "Dizzy Cat Eye Eyeglasses BV1354O",
+          "image": "images/optical/bottega-veneta/Dizzy-Cat-Eye-Eyeglasses-BV1354O.jpg",
+          "detail_url": "https://www.bottegaveneta.com/en-us/dizzy-cat-eye-eyeglasses-black-transparent-832950V2Q301423.html",
+          "description": "Cat-eye eyeglasses in recycled acetate with gold-finished hardware that recalls the Intrecciato weave. Standard fit and suitable for progressive lenses."
+        },
+        {
+          "model": "Intrecciato Panthos Eyeglasses BV1518OA",
+          "image": "images/optical/bottega-veneta/Intrecciato-Panthos-Eyeglasses-BV1518OA.jpg",
+          "detail_url": "https://www.bottegaveneta.com/en-us/intrecciato-panthos-eyeglasses-black-transparent-A00AIXV2Q301423.html",
+          "description": "Panthos eyeglasses in recycled acetate with a gold-finished core wire showing the Intrecciato pattern and matching gold details on front and temples."
+        },
+        {
+          "model": "Mitre Aviator Eyeglasses BV1491O",
+          "image": "images/optical/bottega-veneta/Mitre-Aviator-Eyeglasses-BV1491O.jpg",
+          "detail_url": "https://www.bottegaveneta.com/en-us/mitre-aviator-eyeglasses-black-transparent-A00AJCV2Q301423.html",
+          "description": "Acetate aviator eyeglasses in recycled material with a gold-finished ribbon accent at the temples."
+        },
+        {
+          "model": "Mitre Square Eyeglasses BV1324O",
+          "image": "images/optical/bottega-veneta/Mitre-Square-Eyeglasses-BV1324O.jpg",
+          "detail_url": "https://www.bottegaveneta.com/en-us/mitre-square-eyeglasses-green-transparent-799402V2Q303312.html",
+          "description": "Square eyeglasses made in Japan from partly recycled acetate. Standard fit and suitable for progressive lenses."
+        },
+        {
+          "model": "Classic Cat Eye Eyeglasses BV1503O",
+          "image": "images/optical/bottega-veneta/Classic-Cat-Eye-Eyeglasses-BV1503O.jpg",
+          "detail_url": "https://www.bottegaveneta.com/en-us/classic-cat-eye-eyeglasses-black-transparent-A00AIIV2Q301423.html",
+          "description": "Cat-eye eyeglasses in recycled acetate with the gold-finished ribbon detail on the temples."
+        },
+        {
+          "model": "Classic Panthos Eyeglasses BV1312O",
+          "image": "images/optical/bottega-veneta/Classic-Panthos-Eyeglasses-BV1312O.jpg",
+          "detail_url": "https://www.bottegaveneta.com/en-us/classic-panthos-eyeglasses-havana-transparent-799397V2Q301511.html",
+          "description": "Panthos eyeglasses in partly recycled acetate with a smart fit, suitable for progressive lenses."
+        },
+        {
+          "model": "Classic Rectangular Eyeglasses BV1371O",
+          "image": "images/optical/bottega-veneta/Classic-Rectangular-Eyeglasses-BV1371O.jpg",
+          "detail_url": "https://www.bottegaveneta.com/en-us/classic-rectangular-eyeglasses-black-transparent-832947V2Q301295.html",
+          "description": "Rectangular eyeglasses that pair a recycled-acetate front with gold-finished metal temples. Suitable for progressive lenses."
+        },
+        {
+          "model": "Classic Rectangular Eyeglasses BV1314O",
+          "image": "images/optical/bottega-veneta/Classic-Rectangular-Eyeglasses-BV1314O.jpg",
+          "detail_url": "https://www.bottegaveneta.com/en-us/classic-rectangular-eyeglasses-light-blue-transparent-799401V2Q309755.html",
+          "description": "Rectangular eyeglasses in partly recycled acetate, here in light blue, with a smart fit that works with progressive lenses."
+        },
+        {
+          "model": "Classic Cat Eye Eyeglasses BV1313O",
+          "image": "images/optical/bottega-veneta/Classic-Cat-Eye-Eyeglasses-BV1313O.jpg",
+          "detail_url": "https://www.bottegaveneta.com/en-us/classic-cat-eye-eyeglasses-black-transparent-799398V2Q301423.html",
+          "description": "A classic cat-eye optical frame in partly recycled acetate with a standard fit, suitable for progressive lenses."
+        },
+        {
+          "model": "Classic Recycled Acetate Cat Eye Eyeglasses BV1259O",
+          "image": "images/optical/bottega-veneta/Classic-Recycled-Acetate-Cat-Eye-Eyeglasses-BV1259O.jpg",
+          "detail_url": "https://www.bottegaveneta.com/en-us/classic-recycled-acetate-cat-eye-eyeglasses-black-transparent-770654V2Q301423.html",
+          "description": "A simple cat-eye optical frame in recycled acetate with a standard fit, suitable for progressive lenses."
+        }
+      ]
+    },
+    {
+      "id": "gucci",
+      "name": "Gucci",
+      "source_note": "Model names and imagery from SmartBuyGlasses' Gucci eyeglasses listing at build time.",
+      "frames": [
+        {
+          "model": "Oversized Square Eyeglasses GG1318O",
+          "image": "images/optical/gucci/Oversized-Square-Eyeglasses-GG1318O.jpg",
+          "detail_url": "https://www.smartbuyglasses.com/designer-eyeglasses/Gucci/Gucci-GG1318O-001-626752.html",
+          "description": "An oversized square frame in thick black eco-acetate with gently rounded corners. The full rim and broad temples make it a confident everyday statement."
+        },
+        {
+          "model": "Square Eyeglasses GG1721O",
+          "image": "images/optical/gucci/Square-Eyeglasses-GG1721O.jpg",
+          "detail_url": "https://www.smartbuyglasses.com/designer-eyeglasses/Gucci/Gucci-GG1721O-003-685898.html",
+          "description": "A squared frame in layered transparent acetate, green on the outside with a lilac inner rim. The two-tone build gives it depth and colour from every angle."
+        },
+        {
+          "model": "Cat-Eye Eyeglasses GG1424O",
+          "image": "images/optical/gucci/Cat-Eye-Eyeglasses-GG1424O.jpg",
+          "detail_url": "https://www.smartbuyglasses.com/designer-eyeglasses/Gucci/Gucci-GG1424O-005-644993.html",
+          "description": "A bold black acetate frame with lifted upper corners and a flat brow, a soft and wearable take on the cat-eye."
+        },
+        {
+          "model": "Cat-Eye Eyeglasses GG1530O",
+          "image": "images/optical/gucci/Cat-Eye-Eyeglasses-GG1530O.jpg",
+          "detail_url": "https://www.smartbuyglasses.com/designer-eyeglasses/Gucci/Gucci-GG1530O-001-655483.html",
+          "description": "A sharply angled cat-eye in black acetate with pointed outer tips and a thick, glossy rim. A dramatic, feminine shape that still reads clean."
+        },
+        {
+          "model": "Oval Cat-Eye Eyeglasses GG1832O",
+          "image": "images/optical/gucci/Oval-Cat-Eye-Eyeglasses-GG1832O.jpg",
+          "detail_url": "https://www.smartbuyglasses.com/designer-eyeglasses/Gucci/Gucci-GG1832O-001-703987.html",
+          "description": "Rounded oval lenses with a subtle upswept corner, cut from smooth black acetate. A compact, retro-leaning shape."
+        },
+        {
+          "model": "Square Eyeglasses GG2042O",
+          "image": "images/optical/gucci/Square-Eyeglasses-GG2042O.jpg",
+          "detail_url": "https://www.smartbuyglasses.com/designer-eyeglasses/Gucci/Gucci-GG2042O-004-751500.html",
+          "description": "A chunky square frame in bright havana acetate with extra-wide temples carrying a gold Gucci script logo."
+        },
+        {
+          "model": "Aviator Eyeglasses GG1044O",
+          "image": "images/optical/gucci/Aviator-Eyeglasses-GG1044O.jpg",
+          "detail_url": "https://www.smartbuyglasses.com/designer-eyeglasses/Gucci/Gucci-GG1044O-001-563985.html",
+          "description": "A black acetate aviator with a straight double bridge and teardrop lenses. A small gold stud sits at each end piece."
+        },
+        {
+          "model": "Round Eyeglasses GG1871O",
+          "image": "images/optical/gucci/Round-Eyeglasses-GG1871O.jpg",
+          "detail_url": "https://www.smartbuyglasses.com/designer-eyeglasses/Gucci/Gucci-GG1871O-002-704090.html",
+          "description": "A classic round panto frame in dark tortoiseshell acetate with a keyhole-style bridge. Red temple tips show on the inside."
+        },
+        {
+          "model": "Rectangular Metal Eyeglasses GG1291O",
+          "image": "images/optical/gucci/Rectangular-Metal-Eyeglasses-GG1291O.jpg",
+          "detail_url": "https://www.smartbuyglasses.com/designer-eyeglasses/Gucci/Gucci-GG1291O-002-632164.html",
+          "description": "A slim rectangular frame in light gold-tone metal with a flat brow line and tortoiseshell acetate temple tips."
+        },
+        {
+          "model": "Rectangular Metal Eyeglasses GG1882O",
+          "image": "images/optical/gucci/Rectangular-Metal-Eyeglasses-GG1882O.jpg",
+          "detail_url": "https://www.smartbuyglasses.com/designer-eyeglasses/Gucci/Gucci-GG1882O-001-704131.html",
+          "description": "A clean, thin-rimmed rectangle in silver-tone metal with adjustable nose pads. Understated and light enough for all-day wear."
+        },
+        {
+          "model": "Panto Eyeglasses GG1519O",
+          "image": "images/optical/gucci/Panto-Eyeglasses-GG1519O.jpg",
+          "detail_url": "https://www.smartbuyglasses.com/designer-eyeglasses/Gucci/Gucci-GG1519O-001-655476.html",
+          "description": "A thick black acetate panto with a keyhole bridge and flat top line. Gold metal bars across the end pieces give it a sharp finish."
+        },
+        {
+          "model": "Rectangular Eyeglasses GG0343O",
+          "image": "images/optical/gucci/Rectangular-Eyeglasses-GG0343O.jpg",
+          "detail_url": "https://www.smartbuyglasses.com/designer-eyeglasses/Gucci/Gucci-GG0343O-007-467564.html",
+          "description": "A sturdy rectangular frame in black acetate with gently squared lenses. The green-and-red Web stripe shows on the inner temples."
+        }
+      ]
     }
   ]
 }

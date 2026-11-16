@@ -732,6 +732,315 @@
           "description": "Rimless titanium design with premium tinted lenses; screwless and ultralight."
         }
       ]
+    },
+    {
+      "id": "cartier",
+      "name": "Cartier",
+      "source_note": "Imagery and model names from the brand's official site at build time.",
+      "frames": [
+        {
+          "model": "Panthère de Cartier Sunglasses ESW00639",
+          "image": "images/sunglasses/cartier/Panthere-de-Cartier-Sunglasses-ESW00639.jpg",
+          "detail_url": "https://www.cartier.com/en-us/bags-and-accessories/sunglasses/panthere-de-cartier/panthere-de-cartier-sunglasses-CRESW00639.html",
+          "description": "A rimless Panthère de Cartier frame in smooth golden-finish metal with gray lenses, carrying the Maison's panther emblem."
+        },
+        {
+          "model": "Panthère de Cartier Sunglasses ESW00803",
+          "image": "images/sunglasses/cartier/Panthere-de-Cartier-Sunglasses-ESW00803.jpg",
+          "detail_url": "https://www.cartier.com/en-us/bags-and-accessories/sunglasses/panthere-de-cartier/panthere-de-cartier-sunglasses-CRESW00803.html",
+          "description": "Panthère de Cartier in a rimmed metal oval with a smooth golden finish and gray lenses with a golden mirror effect."
+        },
+        {
+          "model": "Panthère de Cartier Sunglasses ESW00688",
+          "image": "images/sunglasses/cartier/Panthere-de-Cartier-Sunglasses-ESW00688.jpg",
+          "detail_url": "https://www.cartier.com/en-us/bags-and-accessories/sunglasses/panthere-de-cartier/panthere-de-cartier-sunglasses-CRESW00688.html",
+          "description": "A square Panthère de Cartier frame in black acetate, with golden-finish metal details on the temples and gray lenses with a golden mirror effect."
+        },
+        {
+          "model": "Panthère de Cartier Sunglasses ESW00820",
+          "image": "images/sunglasses/cartier/Panthere-de-Cartier-Sunglasses-ESW00820.jpg",
+          "detail_url": "https://www.cartier.com/en-us/bags-and-accessories/sunglasses/panthere-de-cartier/panthere-de-cartier-sunglasses-CRESW00820.html",
+          "description": "A rectangular Panthère de Cartier frame mixing tortoiseshell acetate and golden-finish metal, with brown lenses and a golden mirror effect."
+        },
+        {
+          "model": "Santos de Cartier Sunglasses ESW00431",
+          "image": "images/sunglasses/cartier/Santos-de-Cartier-Sunglasses-ESW00431.jpg",
+          "detail_url": "https://www.cartier.com/en-us/bags-and-accessories/sunglasses/santos-de-cartier/santos-de-cartier-sunglasses-CRESW00431.html",
+          "description": "A pilot shape in smooth and brushed platinum-finish metal with gray lenses, inspired by the screws of the Santos de Cartier watch."
+        },
+        {
+          "model": "Santos de Cartier Sunglasses ESW00754",
+          "image": "images/sunglasses/cartier/Santos-de-Cartier-Sunglasses-ESW00754.jpg",
+          "detail_url": "https://www.cartier.com/en-us/bags-and-accessories/sunglasses/santos-de-cartier/santos-de-cartier-sunglasses-CRESW00754.html",
+          "description": "A round, metal-rimmed Santos de Cartier frame in smooth and brushed golden finish with black polarized lenses and the watch's screw motif."
+        },
+        {
+          "model": "Santos de Cartier Sunglasses ESW00766",
+          "image": "images/sunglasses/cartier/Santos-de-Cartier-Sunglasses-ESW00766.jpg",
+          "detail_url": "https://www.cartier.com/en-us/bags-and-accessories/sunglasses/santos-de-cartier/santos-de-cartier-sunglasses-CRESW00766.html",
+          "description": "A rectangular Santos de Cartier frame in smooth and brushed black PVD with brushed platinum accents and black lenses."
+        },
+        {
+          "model": "Première de Cartier Sunglasses ESW00628",
+          "image": "images/sunglasses/cartier/Premiere-de-Cartier-Sunglasses-ESW00628.jpg",
+          "detail_url": "https://www.cartier.com/en-us/bags-and-accessories/sunglasses/premiere-de-cartier/premiere-de-cartier-sunglasses-CRESW00628.html",
+          "description": "A rectangular Première de Cartier frame in black composite with gray lenses, referencing the Maison's 1980s eyewear and its gadroon motif."
+        },
+        {
+          "model": "Première de Cartier Sunglasses ESW00731",
+          "image": "images/sunglasses/cartier/Premiere-de-Cartier-Sunglasses-ESW00731.jpg",
+          "detail_url": "https://www.cartier.com/en-us/bags-and-accessories/sunglasses/premiere-de-cartier/premiere-de-cartier-sunglasses-CRESW00731.html",
+          "description": "An almond-shaped Première de Cartier frame in black acetate with golden-finish metal details and gray lenses with a golden mirror effect."
+        },
+        {
+          "model": "Première de Cartier Sunglasses ESW00818",
+          "image": "images/sunglasses/cartier/Premiere-de-Cartier-Sunglasses-ESW00818.jpg",
+          "detail_url": "https://www.cartier.com/en-us/bags-and-accessories/sunglasses/premiere-de-cartier/premiere-de-cartier-sunglasses-CRESW00818.html",
+          "description": "A round Première de Cartier frame in light brown wood with a smooth golden finish and light brown lenses."
+        },
+        {
+          "model": "Signature C de Cartier Sunglasses ESW00294",
+          "image": "images/sunglasses/cartier/Signature-C-de-Cartier-Sunglasses-ESW00294.jpg",
+          "detail_url": "https://www.cartier.com/en-us/bags-and-accessories/sunglasses/signature-c-de-cartier/signature-c-de-cartier-sunglasses-CRESW00294.html",
+          "description": "A rectangular two-tone golden and palladium-finish frame with a metal double bridge shaped like a C, brown lenses and tortoiseshell-effect temples."
+        },
+        {
+          "model": "Signature C de Cartier Sunglasses ESW00704",
+          "image": "images/sunglasses/cartier/Signature-C-de-Cartier-Sunglasses-ESW00704.jpg",
+          "detail_url": "https://www.cartier.com/en-us/bags-and-accessories/sunglasses/signature-c-de-cartier/signature-c-de-cartier-sunglasses-CRESW00704.html",
+          "description": "A round metal frame in golden and platinum finish with the C-shaped bridge of the Signature C line and green gradient lenses."
+        },
+        {
+          "model": "Sunglasses C Allongé de Cartier motif ESP00022",
+          "image": "images/sunglasses/cartier/Sunglasses-C-Allonge-de-Cartier-motif-ESP00022.jpg",
+          "detail_url": "https://www.cartier.com/en-us/bags-and-accessories/sunglasses/c-de-cartier/sunglasses-c-allonge-de-cartier-motif-CRESP00022.html",
+          "description": "A square frame in green wood with a smooth golden finish and green lenses, decorated with the elongated C de Cartier motif."
+        },
+        {
+          "model": "Classic C Motif Sunglasses ESW00796",
+          "image": "images/sunglasses/cartier/Classic-C-Motif-Sunglasses-ESW00796.jpg",
+          "detail_url": "https://www.cartier.com/en-us/bags-and-accessories/sunglasses/decor-c-de-cartier/classic-c-motif-sunglasses-CRESW00796.html",
+          "description": "A rimless almond frame in golden-finish metal with the classic C motif on the temples and gray gradient lenses with a golden mirror effect."
+        },
+        {
+          "model": "Sunglasses with Elongated C de Cartier motif ESW00758",
+          "image": "images/sunglasses/cartier/Sunglasses-with-Elongated-C-de-Cartier-motif-ESW00758.jpg",
+          "detail_url": "https://www.cartier.com/en-us/bags-and-accessories/sunglasses/c-de-cartier/sunglasses-with-elongated-c-de-cartier-motif-CRESW00758.html",
+          "description": "A rimless rectangular frame in black horn with a smooth golden finish, gray lenses and the elongated C de Cartier motif."
+        },
+        {
+          "model": "Clash de Cartier Sunglasses ESW00746",
+          "image": "images/sunglasses/cartier/Clash-de-Cartier-Sunglasses-ESW00746.jpg",
+          "detail_url": "https://www.cartier.com/en-us/bags-and-accessories/sunglasses/clash-de-cartier/clash-de-cartier-sunglasses-CRESW00746.html",
+          "description": "A rimless cat-eye in smooth golden-finish metal that borrows the studs of the Clash de Cartier jewelry line, with graduated gray mirrored lenses."
+        }
+      ]
+    },
+    {
+      "id": "bottega-veneta",
+      "name": "Bottega Veneta",
+      "source_note": "Imagery and model names from the brand's official site at build time.",
+      "frames": [
+        {
+          "model": "Knot Cat Eye Sunglasses BV1390S",
+          "image": "images/sunglasses/bottega-veneta/Knot-Cat-Eye-Sunglasses-BV1390S.jpg",
+          "detail_url": "https://www.bottegaveneta.com/en-us/knot-cat-eye-sunglasses-black-gold-grey-821447VBL801280.html",
+          "description": "A cat-eye in injected acetate paired with full metal temples, finished with gold-tone knot details. Cutouts in the lenses frame the knot on each side."
+        },
+        {
+          "model": "Mitre Cat Eye Sunglasses BV1489S",
+          "image": "images/sunglasses/bottega-veneta/Mitre-Cat-Eye-Sunglasses-BV1489S.jpg",
+          "detail_url": "https://www.bottegaveneta.com/en-us/mitre-cat-eye-sunglasses-black-gray-A0099XV2Q301049.html",
+          "description": "A cat-eye cut from recycled acetate, with a bold gold-finished ribbon that wraps around the temples. Lenses use partly bio-based polyamide."
+        },
+        {
+          "model": "Angle Cat Eye Sunglasses BV1431S",
+          "image": "images/sunglasses/bottega-veneta/Angle-Cat-Eye-Sunglasses-BV1431S.jpg",
+          "detail_url": "https://www.bottegaveneta.com/en-us/angle-cat-eye-sunglasses-black-grey-872374V2Q301049.html",
+          "description": "This cat-eye mixes recycled acetate with a thin metal rim along the lower edge. The house's gold-finished ribbon detail sits at the temples."
+        },
+        {
+          "model": "Prisma Cat Eye Sunglasses BV1477S",
+          "image": "images/sunglasses/bottega-veneta/Prisma-Cat-Eye-Sunglasses-BV1477S.jpg",
+          "detail_url": "https://www.bottegaveneta.com/en-us/prisma-cat-eye-sunglasses-black-green-872363V2Q301282.html",
+          "description": "A recycled-acetate cat-eye with metal brow bars and sculpted temple tips inspired by the Prisma motif, plus a gold-finished ribbon at the temples."
+        },
+        {
+          "model": "Snap Cat Eye Sunglasses BV1446S",
+          "image": "images/sunglasses/bottega-veneta/Snap-Cat-Eye-Sunglasses-BV1446S.jpg",
+          "detail_url": "https://www.bottegaveneta.com/en-us/snap-cat-eye-sunglasses-beige-brown-872041V2Q309725.html",
+          "description": "A cat-eye in recycled acetate where the signature ribbon becomes a three-dimensional gold-finished accent at the temples."
+        },
+        {
+          "model": "Sardine Oval Sunglasses BV1484S",
+          "image": "images/sunglasses/bottega-veneta/Sardine-Oval-Sunglasses-BV1484S.jpg",
+          "detail_url": "https://www.bottegaveneta.com/en-us/sardine-oval-sunglasses-black-gray-A002DPVBL801049.html",
+          "description": "An oval frame in bio-based polyamide whose temples take the sculptural shape of the brand's Sardine motif."
+        },
+        {
+          "model": "Dash Oval Sunglasses BV1456S",
+          "image": "images/sunglasses/bottega-veneta/Dash-Oval-Sunglasses-BV1456S.jpg",
+          "detail_url": "https://www.bottegaveneta.com/en-us/dash-oval-sunglasses-gold-brown-872418V44501251.html",
+          "description": "A slim oval in gold-finished metal that reworks the classic Bottega ribbon, splitting it across the top and bottom of each temple."
+        },
+        {
+          "model": "Classic Oval Sunglasses BV1502S",
+          "image": "images/sunglasses/bottega-veneta/Classic-Oval-Sunglasses-BV1502S.jpg",
+          "detail_url": "https://www.bottegaveneta.com/en-us/classic-oval-sunglasses-black-gray-A002FJV2Q301049.html",
+          "description": "An oval shape in recycled acetate, kept clean and finished with the gold-tone ribbon detail on the temples."
+        },
+        {
+          "model": "Knot Rectangular Sunglasses BV1439S",
+          "image": "images/sunglasses/bottega-veneta/Knot-Rectangular-Sunglasses-BV1439S.jpg",
+          "detail_url": "https://www.bottegaveneta.com/en-us/knot-rectangular-sunglasses-black-grey-861357VBL801280.html",
+          "description": "A rectangular frame in polyamide and metal with aerodynamic metal temples and signature knot details, framed by small lens cutouts."
+        },
+        {
+          "model": "Intrecciato Rectangular Sunglasses BV1442S",
+          "image": "images/sunglasses/bottega-veneta/Intrecciato-Rectangular-Sunglasses-BV1442S.jpg",
+          "detail_url": "https://www.bottegaveneta.com/en-us/intrecciato-rectangular-sunglasses-black-grey-861360V2Q301049.html",
+          "description": "A rectangular recycled-acetate frame with a gold-finished core wire showing the Intrecciato weave through the temples, echoed by gold details on the front."
+        },
+        {
+          "model": "Intrecciato Wraparound Sunglasses BV1528S",
+          "image": "images/sunglasses/bottega-veneta/Intrecciato-Wraparound-Sunglasses-BV1528S.jpg",
+          "detail_url": "https://www.bottegaveneta.com/en-us/intrecciato-wraparound-sunglasses-black-gray-A009H5VBL801049.html",
+          "description": "A wraparound shape in polyamide with curved lenses, contrasting zebra-inspired temples and a hinge that recalls woven leather strips."
+        },
+        {
+          "model": "Drop Squared Sunglasses BV1436S",
+          "image": "images/sunglasses/bottega-veneta/Drop-Squared-Sunglasses-BV1436S.jpg",
+          "detail_url": "https://www.bottegaveneta.com/en-us/drop-squared-sunglasses-black-yellow-845792V2Q301281.html",
+          "description": "A squared frame in recycled acetate, finished with metal temple tips in the brand's signature drop shape."
+        },
+        {
+          "model": "Dizzy Squared Sunglasses BV1486S",
+          "image": "images/sunglasses/bottega-veneta/Dizzy-Squared-Sunglasses-BV1486S.jpg",
+          "detail_url": "https://www.bottegaveneta.com/en-us/dizzy-squared-sunglasses-black-gray-A002H1V2Q301049.html",
+          "description": "A squared recycled-acetate frame with gold-finished hardware recalling the Intrecciato weave and a Bottega Veneta plate on the inner temple."
+        },
+        {
+          "model": "Mitre Aviator Sunglasses BV1488S",
+          "image": "images/sunglasses/bottega-veneta/Mitre-Aviator-Sunglasses-BV1488S.jpg",
+          "detail_url": "https://www.bottegaveneta.com/en-us/mitre-aviator-sunglasses-black-gray-A00998V2Q301049.html",
+          "description": "An acetate aviator in recycled material, wrapped at the temples with a bold gold-finished ribbon."
+        },
+        {
+          "model": "Sophia Ribbon Butterfly Sunglasses BV1493S",
+          "image": "images/sunglasses/bottega-veneta/Sophia-Ribbon-Butterfly-Sunglasses-BV1493S.jpg",
+          "detail_url": "https://www.bottegaveneta.com/en-us/sophia-ribbon-butterfly-sunglasses-black-gray-A002JZV2Q301049.html",
+          "description": "A butterfly shape in recycled acetate with softly rounded temples, butterfly-shaped lens cutouts and the gold-tone ribbon detail."
+        },
+        {
+          "model": "Knot Aviator Sunglasses BV1513S",
+          "image": "images/sunglasses/bottega-veneta/Knot-Aviator-Sunglasses-BV1513S.jpg",
+          "detail_url": "https://www.bottegaveneta.com/en-us/knot-aviator-sunglasses-black-gray-A002JCVBL801280.html",
+          "description": "An aviator in polyamide and gold-finished metal with sleek temples and signature knot details shown through lens cutouts."
+        }
+      ]
+    },
+    {
+      "id": "gucci",
+      "name": "Gucci",
+      "source_note": "Model names and imagery from MR PORTER and NET-A-PORTER Gucci sunglasses listings at build time.",
+      "frames": [
+        {
+          "model": "Bamboo Double-Bridge Aviator Sunglasses",
+          "image": "images/sunglasses/gucci/Bamboo-Double-Bridge-Aviator-Sunglasses.jpg",
+          "detail_url": "https://www.mrporter.com/en-us/mens/product/gucci-eyewear/accessories/aviator/bamboo-double-bridge-aviator-style-gold-tone-sunglasses/46376663163026483",
+          "description": "A gold-tone metal aviator with a straight double bridge, finished with Gucci's bamboo-carved detailing at the brow bar and hinges. Warm brown lenses keep it easygoing."
+        },
+        {
+          "model": "Bamboo Rimless Square Sunglasses",
+          "image": "images/sunglasses/gucci/Bamboo-Rimless-Square-Sunglasses.jpg",
+          "detail_url": "https://www.mrporter.com/en-us/mens/product/gucci-eyewear/accessories/square-frame/bamboo-rimless-square-frame-metal-sunglasses/46376663163026505",
+          "description": "Frameless square lenses in an icy blue gradient, held by a slim dark metal bridge and temples with the house bamboo motif at the hinge."
+        },
+        {
+          "model": "Horsebit Double-Bridge Aviator Sunglasses",
+          "image": "images/sunglasses/gucci/Horsebit-Double-Bridge-Aviator-Sunglasses.jpg",
+          "detail_url": "https://www.mrporter.com/en-us/mens/product/gucci-eyewear/accessories/aviator/horsebit-embellished-double-bridge-aviator-style-acetate-sunglasses/46376663163026513",
+          "description": "A squared-off black acetate aviator with a sculpted double bridge and grey gradient lenses. Horsebit hardware on the temples gives it the Gucci signature."
+        },
+        {
+          "model": "The Wirecore Square Sunglasses",
+          "image": "images/sunglasses/gucci/The-Wirecore-Square-Sunglasses.jpg",
+          "detail_url": "https://www.mrporter.com/en-us/mens/product/gucci-eyewear/accessories/square-frame/the-wirecore-square-frame-tortoiseshell-recycled-acetate-sunglasses/46376663163187042",
+          "description": "A compact square frame in tortoiseshell recycled acetate with a softly rounded brow and olive-green lenses. A slim gold Gucci plaque sits on each temple."
+        },
+        {
+          "model": "Interlocking G Rimless Square Sunglasses",
+          "image": "images/sunglasses/gucci/Interlocking-G-Rimless-Square-Sunglasses.jpg",
+          "detail_url": "https://www.mrporter.com/en-us/mens/product/gucci-eyewear/accessories/square-frame/interlocking-g-detailed-rimless-square-frame-silver-tone-metal-and-tortoiseshell-acetate-sunglasses/46376663163187044",
+          "description": "Rimless square lenses in a brown gradient joined by a fine silver-tone bridge, with tortoiseshell acetate temples and Interlocking G accents at the hinges."
+        },
+        {
+          "model": "Interlocking G Double-Bridge Square Sunglasses",
+          "image": "images/sunglasses/gucci/Interlocking-G-Double-Bridge-Square-Sunglasses.jpg",
+          "detail_url": "https://www.mrporter.com/en-us/mens/product/gucci-eyewear/accessories/square-frame/interlocking-g-detailed-double-bridge-square-frame-silver-tone-metal-and-acetate-sunglasses/46376663163187079",
+          "description": "A slim rectangular silver-tone metal frame with a flat double bridge and pale lilac lenses. Patterned acetate temple tips add a graphic finish."
+        },
+        {
+          "model": "Bold D-Frame Sunglasses",
+          "image": "images/sunglasses/gucci/Bold-D-Frame-Sunglasses.jpg",
+          "detail_url": "https://www.mrporter.com/en-us/mens/product/gucci-eyewear/accessories/round-frame/bold-d-frame-recycled-acetate-sunglasses/46376663163187091",
+          "description": "A chunky, wraparound D-frame in glossy black recycled acetate with dark grey lenses. Thick rounded rims give it a sporty, statement profile."
+        },
+        {
+          "model": "Mask Aviator Sunglasses",
+          "image": "images/sunglasses/gucci/Mask-Aviator-Sunglasses.jpg",
+          "detail_url": "https://www.mrporter.com/en-us/mens/product/gucci-eyewear/accessories/aviator/mask-aviator-style-metal-sunglasses/46376663163187082",
+          "description": "A single-shield mask with an aviator-style metal brow line and a smoke-grey lens. Minimal hardware keeps the futuristic shape clean."
+        },
+        {
+          "model": "Block Bending Oval Sunglasses",
+          "image": "images/sunglasses/gucci/Block-Bending-Oval-Sunglasses.jpg",
+          "detail_url": "https://www.net-a-porter.com/en-us/shop/product/gucci-eyewear/accessories/cat-eye/block-bending-cat-eye-gold-tone-sunglasses/46376663162955713",
+          "description": "A petite oval frame in polished gold-tone metal with tonal amber lenses. The temples are shaped into sculpted links for a jewellery-like look."
+        },
+        {
+          "model": "Oversized Oval Cat-Eye Sunglasses",
+          "image": "images/sunglasses/gucci/Oversized-Oval-Cat-Eye-Sunglasses.jpg",
+          "detail_url": "https://www.net-a-porter.com/en-us/shop/product/gucci-eyewear/accessories/square-frame/oval-cat-eye-acetate-sunglasses/46376663163051412",
+          "description": "An oversized, shield-like cat-eye in black acetate with grey lenses and a sweeping brow. The broad temples carry a discreet Gucci logo."
+        },
+        {
+          "model": "Interlocking G Cat-Eye Sunglasses",
+          "image": "images/sunglasses/gucci/Interlocking-G-Cat-Eye-Sunglasses.jpg",
+          "detail_url": "https://www.net-a-porter.com/en-us/shop/product/gucci-eyewear/accessories/cat-eye/interlocking-gstuck-cat-eye-gold-tone-and-acetate-sunglasses/46376663163063664",
+          "description": "A light gold-tone metal frame with a flat, squared cat-eye shape and gradient brown lenses. Interlocking G hardware decorates the temples."
+        },
+        {
+          "model": "Bamboopop Round Sunglasses",
+          "image": "images/sunglasses/gucci/Bamboopop-Round-Sunglasses.jpg",
+          "detail_url": "https://www.net-a-porter.com/en-us/shop/product/gucci-eyewear/accessories/round-frame/bamboopop-round-frame-acetate-sunglasses/46376663163063700",
+          "description": "A slim black acetate oval-round frame with grey gradient lenses. Bamboo-inspired detailing on the temples nods to the Gucci archive."
+        },
+        {
+          "model": "Double G Round Sunglasses",
+          "image": "images/sunglasses/gucci/Double-G-Round-Sunglasses.jpg",
+          "detail_url": "https://www.net-a-porter.com/en-us/shop/product/gucci-eyewear/accessories/round-frame/double-g-embellished-round-frame-recycled-acetate-sunglasses/46376663163193067",
+          "description": "A bold, oversized round frame in thick black recycled acetate with dark brown lenses. A Double G emblem marks the wide temples."
+        },
+        {
+          "model": "Horsebit Round Sunglasses",
+          "image": "images/sunglasses/gucci/Horsebit-Round-Sunglasses.jpg",
+          "detail_url": "https://www.net-a-porter.com/en-us/shop/product/gucci-eyewear/accessories/round-frame/horsebit-embellished-round-frame-recycled-tortoiseshell-acetate-sunglasses/46376663163193070",
+          "description": "A softly rounded oval frame in warm tortoiseshell recycled acetate with brown gradient lenses, trimmed with gold Horsebit hardware at the hinges."
+        },
+        {
+          "model": "Hailey Cat-Eye Sunglasses",
+          "image": "images/sunglasses/gucci/Hailey-Cat-Eye-Sunglasses.jpg",
+          "detail_url": "https://www.net-a-porter.com/en-us/shop/product/gucci-eyewear/accessories/cat-eye/hailey-interlocking-g-detailed-cat-eye-injection-sunglasses/46376663163193082",
+          "description": "A narrow, sharply lifted cat-eye in glossy black with smoke lenses. Interlocking G detailing sits at the outer corners."
+        },
+        {
+          "model": "Oversized D-Frame Sunglasses",
+          "image": "images/sunglasses/gucci/Oversized-D-Frame-Sunglasses.jpg",
+          "detail_url": "https://www.net-a-porter.com/en-us/shop/product/gucci-eyewear/accessories/d-frame/oversized-d-frame-acetate-sunglasses/46376663163216363",
+          "description": "A wide, wraparound D-frame in thick black acetate with grey lenses. The flat brow and deep rims give it a dramatic, protective feel."
+        }
+      ]
     }
   ]
 }

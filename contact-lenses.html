@@ -191,6 +191,21 @@ tailwind.config = {
     box-sizing: border-box;
   }
 </style>
+<style id="nav-fit">
+  /* Nav fit: the 7 links + right cluster need ~1370px. Tighten spacing on
+     laptop widths, and switch to the hamburger menu below 1100px
+     (also fixes 641–768px, where links were hidden with no toggle). */
+  @media (max-width: 1400px) {
+    #nav-links { gap: 18px !important; margin-left: 24px !important; }
+    #nav-links .nav-link { letter-spacing: 0.07em !important; font-size: 0.78rem !important; }
+  }
+  @media (max-width: 1100px) {
+    #mobile-menu-toggle { display: block !important; }
+    #nav-links { position: fixed !important; top: 72px !important; left: 0 !important; right: 0 !important; flex-direction: column !important; flex-wrap: nowrap !important; background: rgba(255,255,255,0.98) !important; border-bottom: 1px solid rgba(224,17,95,0.1) !important; padding: 1rem !important; gap: 0.75rem !important; margin-left: 0 !important; display: none !important; z-index: 199; max-height: calc(100vh - 72px); overflow-y: auto; }
+    #nav-links.nav-open { display: flex !important; }
+    #nav-links .nav-link { font-size: 0.875rem !important; letter-spacing: 0.14em !important; }
+  }
+</style>
 </head>
 <body class="bg-white selection:bg-pink-100 overflow-x-hidden" data-i18n-title-doc="meta.contactLenses">
 
@@ -214,6 +229,8 @@ tailwind.config = {
     <a class="nav-link" href="optical.html" data-i18n="nav.optical">Optical</a>
     <a class="nav-link" href="sunglasses.html" data-i18n="nav.sunglasses">Sunglasses</a>
     <a class="nav-link active" href="contact-lenses.html" data-i18n="nav.contactLenses">Contact Lenses</a>
+
+    <a class="nav-link" href="book.html" data-i18n="nav.book">Book Exam</a>
 
     <a class="nav-link" href="contact.html" data-i18n="nav.contact">Contact Us</a>
 
