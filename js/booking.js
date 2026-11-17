@@ -11,9 +11,9 @@
     en: {
       eyebrow: "Eye exams",
       h1: 'Book an<br/><span class="text-[#E0115F]">eye exam</span>',
-      lead: 'Monday, Wednesday, Friday &amp; Saturday · 10:00 – 18:00 (Los Angeles time). Prefer to talk? Call <a href="tel:+12133881447" class="text-[#E0115F] font-semibold no-underline">213.388.1447</a>.',
+      lead: 'Pick any open time below — all times are Los Angeles time. Prefer to talk? Call <a href="tel:+12133881447" class="text-[#E0115F] font-semibold no-underline">213.388.1447</a>.',
       s1: "Service", s2: "Date", s3: "Time", s4: "Your details",
-      closedNote: "Greyed-out days: no exams (Tue, Thu, Sun) or outside the booking window.",
+      closedNote: "Greyed-out days have no open exam times.",
       name: "Full name", phone: "Phone", email: "Email", notes: "Anything we should know? (optional)",
       submit: "Confirm appointment", sending: "Booking…",
       privacy: "We'll email your confirmation. Please don't include medical details here — we'll go over everything at your visit.",
@@ -34,9 +34,9 @@
     ko: {
       eyebrow: "시력 검사",
       h1: '시력 검사<br/><span class="text-[#E0115F]">예약하기</span>',
-      lead: '월 · 수 · 금 · 토 · 10:00 – 18:00 (LA 시간). 전화가 편하시면 <a href="tel:+12133881447" class="text-[#E0115F] font-semibold no-underline">213.388.1447</a>로 연락 주세요.',
+      lead: '아래에서 비어 있는 시간을 골라주세요 (모두 LA 시간). 전화가 편하시면 <a href="tel:+12133881447" class="text-[#E0115F] font-semibold no-underline">213.388.1447</a>로 연락 주세요.',
       s1: "서비스", s2: "날짜", s3: "시간", s4: "예약자 정보",
-      closedNote: "회색 날짜: 검사 없는 날(화·목·일) 또는 예약 가능 기간 밖이에요.",
+      closedNote: "회색 날짜는 예약 가능한 시간이 없는 날이에요.",
       name: "이름", phone: "전화번호", email: "이메일", notes: "전달할 내용 (선택)",
       submit: "예약 확정", sending: "예약 중…",
       privacy: "확인 메일을 보내드려요. 건강 관련 정보는 여기 적지 마시고 방문하셨을 때 말씀해 주세요.",
@@ -111,7 +111,7 @@
       cfg &&
       dateStr >= cfg.today &&
       dateStr <= addDays(cfg.today, cfg.daysAhead) &&
-      cfg.openWeekdays.indexOf(weekday(dateStr)) >= 0
+      (cfg.openDays || []).indexOf(dateStr) >= 0
     );
   }
 
@@ -358,6 +358,7 @@
           var ds = addDays(cfg.today, i);
           if (bookable(ds)) { state.view = { y: +ds.slice(0, 4), m: +ds.slice(5, 7) }; selectDate(ds); break; }
         }
+        if (!state.date) $("bk-slots").innerHTML = '<p class="bk-muted">' + L().none + "</p>";
         renderCalendar();
       })
       .catch(function () {

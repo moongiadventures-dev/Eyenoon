@@ -1,28 +1,31 @@
 /**
  * EYE:NOON Optical — eye-exam booking, backed by the store's Google Calendar.
  *
- * The Google Calendar is the ONE booking ledger. Phone staff add events to it
- * directly; the website reads it and writes to it. Rule for staff:
- *   ANY event on the calendar (timed or all-day) blocks that time on the web.
+ * The store already runs its exam book in Google Calendar like this:
+ *   - every bookable 30-min exam time is an event titled "Eye Exam" (an open slot)
+ *   - when someone books, staff rename that event to the patient's name
+ *   - "Lunch Break", days off etc. are their own events
+ * The website follows the same convention:
+ *   - it offers ONLY "Eye Exam" events (case-insensitive) that nothing else overlaps
+ *   - booking renames that event to "[WEB] Name / Phone / Service"
+ *   - cancelling renames it back to "Eye Exam"
+ * So staff decide the days and hours simply by which "Eye Exam" slots exist.
  *
  * Endpoints (mounted under /api/booking):
- *   GET  /config                 → hours, slot length, services, booking window
- *   GET  /slots?date=YYYY-MM-DD  → free start times for that day (store time)
- *   POST /                       → create a booking { start, service, name, phone, email, notes }
+ *   GET  /config                 → services, booking window, days that have open slots
+ *   GET  /slots?date=YYYY-MM-DD  → open start times for that day (store time)
+ *   POST /                       → book { start, service, name, phone, email, notes }
  *   GET  /lookup?id=&token=      → booking details for the cancel page
  *   POST /cancel  { id, token }  → cancel a web booking
  *
- * Double-booking protection (one exam per time slot):
- *   1. /slots only shows times with nothing on the calendar.
- *   2. POST re-reads the calendar under a per-slot lock right before inserting.
- *   3. After inserting, it reads the slot again; if anything else is there
- *      (e.g. staff typed a phone booking in the same second), it deletes its
- *      own event and answers 409 — the phone booking wins.
+ * Double-booking protection: the rename is a conditional update (If-Match on the
+ * event's etag). If staff renamed or moved the slot since we read it, Google
+ * answers 412 and the customer is asked to pick another time — staff win.
  *
  * Backends:
  *   - Google Calendar when GOOGLE_CALENDAR_ID + service-account creds are set.
- *   - Otherwise a local JSON file (server/.bookings-dev.json) so the flow can be
- *     built and tested before the store shares its calendar.
+ *   - Otherwise (local dev only) a JSON file that simulates "Eye Exam" slots from
+ *     BOOKING_HOURS_JSON / the defaults below.
  */
 
 const crypto = require("crypto");
@@ -39,19 +42,21 @@ const MIN_NOTICE_MINUTES = parseInt(process.env.BOOKING_MIN_NOTICE_MINUTES || "1
 const DAYS_AHEAD = parseInt(process.env.BOOKING_DAYS_AHEAD || "60", 10);
 
 /**
- * Exam hours per weekday (0 = Sunday). Format "HH:MM-HH:MM", comma-separated
- * ranges allowed (e.g. lunch break "10:00-13:00,14:00-18:00"). Empty = closed.
- * Default matches contact.html: exams Mon, Wed, Fri, Sat, 10:00–18:00.
+ * LOCAL DEV ONLY: which "Eye Exam" slots the simulated calendar has, per weekday
+ * (0 = Sunday). On Google the real calendar decides. Mirrors the store's book:
+ * Wed/Fri/Sat 9:30–17:30 with lunch 13:00–14:00.
  */
 const DEFAULT_HOURS = {
   0: "",
-  1: "10:00-18:00",
+  1: "",
   2: "",
-  3: "10:00-18:00",
+  3: "09:30-13:00,14:00-17:30",
   4: "",
-  5: "10:00-18:00",
-  6: "10:00-18:00",
+  5: "09:30-13:00,14:00-17:30",
+  6: "09:30-13:00,14:00-17:30",
 };
+const OPEN_SLOT_TITLE = "Eye Exam";
+const isOpenTitle = (t) => /^\s*eye\s*exam\s*$/i.test(String(t || ""));
 function loadHours() {
   const raw = process.env.BOOKING_HOURS_JSON;
   if (!raw) return DEFAULT_HOURS;
@@ -266,13 +271,13 @@ async function googleToken() {
   return tokenCache.token;
 }
 
-async function gcal(method, pathAndQuery, body) {
+async function gcal(method, pathAndQuery, body, extraHeaders) {
   const token = await googleToken();
   const url =
     "https://www.googleapis.com/calendar/v3/calendars/" + encodeURIComponent(CALENDAR_ID) + pathAndQuery;
   const res = await fetch(url, {
     method,
-    headers: { Authorization: "Bearer " + token, "Content-Type": "application/json" },
+    headers: Object.assign({ Authorization: "Bearer " + token, "Content-Type": "application/json" }, extraHeaders || {}),
     body: body ? JSON.stringify(body) : undefined,
   });
   if (res.status === 204) return null;
@@ -299,7 +304,15 @@ function normGoogleEvent(ev) {
     return null;
   }
   const priv = (ev.extendedProperties && ev.extendedProperties.private) || {};
-  return { id: ev.id, start, end, bookingId: priv.eyenoonBookingId || "", raw: ev };
+  return {
+    id: ev.id,
+    start,
+    end,
+    title: ev.summary || "",
+    etag: ev.etag || "",
+    allDay: !ev.start.dateTime,
+    bookingId: priv.eyenoonBookingId || "",
+  };
 }
 
 const googleStore = {
@@ -325,29 +338,38 @@ const googleStore = {
     } while (pageToken);
     return out;
   },
-  async insert(b) {
-    const ev = await gcal("POST", "/events", {
-      summary: "[WEB] " + b.name + " / " + b.phone + " / " + b.serviceLabel,
-      description:
-        "Booked on the website.\n" +
-        "Name: " + b.name + "\nPhone: " + b.phone + "\nEmail: " + b.email +
-        "\nService: " + b.serviceLabel + (b.notes ? "\nNotes: " + b.notes : "") +
-        "\nBooking ID: " + b.id,
-      start: { dateTime: b.start.toISOString(), timeZone: TZ },
-      end: { dateTime: b.end.toISOString(), timeZone: TZ },
-      colorId: "10",
-      extendedProperties: {
-        private: { eyenoonBookingId: b.id, source: "web", customerEmail: b.email },
-      },
-    });
-    return ev.id;
-  },
-  async remove(eventId) {
+  /** Rename an open "Eye Exam" slot to the web booking. false = slot changed meanwhile. */
+  async claim(slot, b) {
     try {
-      await gcal("DELETE", "/events/" + encodeURIComponent(eventId));
+      await gcal(
+        "PATCH",
+        "/events/" + encodeURIComponent(slot.id),
+        {
+          summary: "[WEB] " + b.name + " / " + b.phone + " / " + b.serviceLabel,
+          description:
+            "Booked on the website.\n" +
+            "Name: " + b.name + "\nPhone: " + b.phone + "\nEmail: " + b.email +
+            "\nService: " + b.serviceLabel + (b.notes ? "\nNotes: " + b.notes : "") +
+            "\nBooking ID: " + b.id,
+          colorId: "10",
+          extendedProperties: { private: { eyenoonBookingId: b.id, source: "web", customerEmail: b.email } },
+        },
+        slot.etag ? { "If-Match": slot.etag } : undefined
+      );
+      return true;
     } catch (e) {
-      if (e.status !== 404 && e.status !== 410) throw e;
+      if (e.status === 412 || e.status === 404 || e.status === 410) return false;
+      throw e;
     }
+  },
+  /** Turn a web booking back into an open "Eye Exam" slot. */
+  async release(eventId) {
+    await gcal("PATCH", "/events/" + encodeURIComponent(eventId), {
+      summary: OPEN_SLOT_TITLE,
+      description: "",
+      colorId: null,
+      extendedProperties: { private: { eyenoonBookingId: "", source: "", customerEmail: "" } },
+    });
   },
   async findByBookingId(bookingId) {
     const q = new URLSearchParams({
@@ -368,6 +390,7 @@ const googleStore = {
     return {
       eventId: ev.id,
       id: bookingId,
+      title: n.title,
       start: n.start,
       end: n.end,
       name: field("Name"),
@@ -378,57 +401,84 @@ const googleStore = {
 };
 
 /* ----------------------------------------------------------------------------
- * Local dev backend (JSON file) — same interface as googleStore.
- * Add a "staff" block by hand in the file to simulate a phone booking:
- *   { "id": "x1", "start": "2026-11-16T18:00:00.000Z", "end": "...", "title": "[PHONE] Kim" }
+ * Local dev backend — simulates the store calendar: an "Eye Exam" event for
+ * every slot in DEFAULT_HOURS / BOOKING_HOURS_JSON, with changes (bookings,
+ * staff renames) kept in server/.bookings-dev.json as { [slotId]: {...} }.
+ * To simulate staff booking a slot by phone, add e.g.
+ *   { "ph_2026-11-18T18:00:00.000Z": { "title": "Jane Doe", "v": 1 } }
  * ------------------------------------------------------------------------- */
 const DEV_FILE = path.join(__dirname, ".bookings-dev.json");
 function devRead() {
   try {
-    return JSON.parse(fs.readFileSync(DEV_FILE, "utf8"));
+    const j = JSON.parse(fs.readFileSync(DEV_FILE, "utf8"));
+    return j && !Array.isArray(j) ? j : {};
   } catch (e) {
-    return [];
+    return {};
   }
 }
-function devWrite(list) {
-  fs.writeFileSync(DEV_FILE, JSON.stringify(list, null, 2));
+function devWrite(map) {
+  fs.writeFileSync(DEV_FILE, JSON.stringify(map, null, 2));
+}
+function devEvent(slot, over) {
+  const id = "ph_" + slot.start.toISOString();
+  const o = over[id] || {};
+  return {
+    id,
+    start: slot.start,
+    end: slot.end,
+    title: o.title || OPEN_SLOT_TITLE,
+    etag: String(o.v || 0),
+    allDay: false,
+    bookingId: o.bookingId || "",
+  };
 }
 const devStore = {
   async list(timeMin, timeMax) {
-    return devRead()
-      .map((e) => ({ id: e.id, start: new Date(e.start), end: new Date(e.end), bookingId: e.bookingId || "" }))
-      .filter((e) => overlaps(e.start, e.end, timeMin, timeMax));
+    const over = devRead();
+    const out = [];
+    const last = addDaysStr(todayInStore(), DAYS_AHEAD + 1);
+    for (let ds = todayInStore(); ds <= last; ds = addDaysStr(ds, 1)) {
+      for (const c of candidateSlots(ds)) {
+        if (overlaps(c.start, c.end, timeMin, timeMax)) out.push(devEvent(c, over));
+      }
+    }
+    return out;
   },
-  async insert(b) {
-    const list = devRead();
-    const id = "dev_" + crypto.randomBytes(6).toString("hex");
-    list.push({
-      id,
-      bookingId: b.id,
+  async claim(slot, b) {
+    const over = devRead();
+    const cur = over[slot.id] || {};
+    if (String(cur.v || 0) !== slot.etag) return false;
+    over[slot.id] = {
+      v: (cur.v || 0) + 1,
       title: "[WEB] " + b.name + " / " + b.phone + " / " + b.serviceLabel,
-      start: b.start.toISOString(),
-      end: b.end.toISOString(),
+      bookingId: b.id,
       name: b.name,
       email: b.email,
       serviceLabel: b.serviceLabel,
-    });
-    devWrite(list);
-    return id;
+    };
+    devWrite(over);
+    return true;
   },
-  async remove(eventId) {
-    devWrite(devRead().filter((e) => e.id !== eventId));
+  async release(eventId) {
+    const over = devRead();
+    const cur = over[eventId] || {};
+    over[eventId] = { v: (cur.v || 0) + 1 };
+    devWrite(over);
   },
   async findByBookingId(bookingId) {
-    const e = devRead().find((x) => x.bookingId === bookingId);
-    if (!e) return null;
+    const over = devRead();
+    const id = Object.keys(over).find((k) => over[k].bookingId === bookingId);
+    if (!id) return null;
+    const start = new Date(id.slice(3));
     return {
-      eventId: e.id,
+      eventId: id,
       id: bookingId,
-      start: new Date(e.start),
-      end: new Date(e.end),
-      name: e.name || "",
-      email: e.email || "",
-      serviceLabel: e.serviceLabel || "",
+      title: over[id].title,
+      start,
+      end: new Date(start.getTime() + SLOT_MINUTES * 60000),
+      name: over[id].name || "",
+      email: over[id].email || "",
+      serviceLabel: over[id].serviceLabel || "",
     };
   },
 };
@@ -438,16 +488,48 @@ const store = useGoogle ? googleStore : devStore;
 /* ----------------------------------------------------------------------------
  * Availability
  * ------------------------------------------------------------------------- */
+/** Open "Eye Exam" slots among events, honoring min notice and overlaps. */
+function openSlotsFrom(events) {
+  const earliest = Date.now() + MIN_NOTICE_MINUTES * 60000;
+  const isSlot = (e) => isOpenTitle(e.title) && !e.allDay;
+  const blockers = events.filter((e) => !isSlot(e));
+  const seen = new Set();
+  return events
+    .filter(isSlot)
+    .filter((e) => e.start.getTime() >= earliest)
+    .filter((e) => !blockers.some((x) => overlaps(e.start, e.end, x.start, x.end)))
+    .sort((a, b) => a.start - b.start)
+    .filter((e) => {
+      const k = e.start.getTime();
+      if (seen.has(k)) return false; // two "Eye Exam" events at the same time = one slot
+      seen.add(k);
+      return true;
+    });
+}
+
+function storeDate(d) {
+  const p = zonedParts(d);
+  return p.y + "-" + pad(p.m) + "-" + pad(p.d);
+}
+
 async function freeSlots(dateStr) {
   if (!parseDateStr(dateStr) || !dateInWindow(dateStr)) return [];
-  const cands = candidateSlots(dateStr);
-  if (!cands.length) return [];
   const { start, end } = dayBounds(dateStr);
-  const events = await store.list(start, end);
-  const earliest = Date.now() + MIN_NOTICE_MINUTES * 60000;
-  return cands.filter(
-    (c) => c.start.getTime() >= earliest && !events.some((e) => overlaps(c.start, c.end, e.start, e.end))
-  );
+  return openSlotsFrom(await store.list(start, end)).filter((e) => storeDate(e.start) === dateStr);
+}
+
+/** Store-local dates in the booking window that have at least one open slot. */
+let daysCache = { at: 0, days: [] };
+async function openDays() {
+  if (Date.now() - daysCache.at < 30000) return daysCache.days;
+  const today = todayInStore();
+  const last = addDaysStr(today, DAYS_AHEAD);
+  const events = await store.list(dayBounds(today).start, dayBounds(last).end);
+  const days = Array.from(new Set(openSlotsFrom(events).map((e) => storeDate(e.start))))
+    .filter((d) => d >= today && d <= last)
+    .sort();
+  daysCache = { at: Date.now(), days };
+  return days;
 }
 
 /* Per-slot lock so two web customers can't race inside this process. */
@@ -541,18 +623,25 @@ function createBookingRouter() {
     res.status(503).json({ error: "Online booking isn't open yet. Please call us at " + STORE_PHONE + "." });
   });
 
-  r.get("/config", (req, res) => {
-    const openWeekdays = Object.keys(HOURS).filter((d) => HOURS[d]).map(Number);
-    res.json({
+  r.get("/config", async (req, res) => {
+    const out = {
       timezone: TZ,
-      slotMinutes: SLOT_MINUTES,
       daysAhead: DAYS_AHEAD,
       today: todayInStore(),
-      openWeekdays,
       services: SERVICES,
       backend: useGoogle ? "google" : "dev",
       enabled: BOOKING_ENABLED,
-    });
+      openDays: [],
+    };
+    res.set("Cache-Control", "no-store");
+    if (!BOOKING_ENABLED) return res.json(out);
+    try {
+      out.openDays = await openDays();
+      res.json(out);
+    } catch (e) {
+      console.error("[booking/config]", e);
+      res.status(502).json({ error: "Could not load availability. Please call us at " + STORE_PHONE + "." });
+    }
   });
 
   r.get("/slots", async (req, res) => {
@@ -588,16 +677,13 @@ function createBookingRouter() {
     if (phone.replace(/\D/g, "").length < 10) return res.status(400).json({ error: "Please enter a valid phone number." });
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return res.status(400).json({ error: "Please enter a valid email." });
 
-    const p = zonedParts(start);
-    const dateStr = p.y + "-" + pad(p.m) + "-" + pad(p.d);
-    // The requested start must be one of the store's real slots.
-    const slot = candidateSlots(dateStr).find((c) => c.start.getTime() === start.getTime());
-    if (!slot || !dateInWindow(dateStr)) return res.status(400).json({ error: "That time isn't bookable." });
+    const dateStr = storeDate(start);
+    if (!dateInWindow(dateStr)) return res.status(400).json({ error: "That time isn't bookable." });
 
     const booking = {
       id: crypto.randomBytes(9).toString("base64url"),
-      start: slot.start,
-      end: slot.end,
+      start,
+      end: start,
       name,
       phone,
       email,
@@ -606,22 +692,16 @@ function createBookingRouter() {
     };
 
     try {
-      const result = await withLock(slot.start.toISOString(), async () => {
-        // 2. re-check right before writing
-        const free = await freeSlots(dateStr);
-        if (!free.some((f) => f.start.getTime() === slot.start.getTime())) return { conflict: true };
-
-        const eventId = await store.insert(booking);
-
-        // 3. verify — if anything else landed in this slot, back out
-        const after = await store.list(slot.start, slot.end);
-        const others = after.filter((e) => e.id !== eventId);
-        if (others.length) {
-          await store.remove(eventId);
-          return { conflict: true };
-        }
-        return { eventId };
+      const result = await withLock(start.toISOString(), async () => {
+        // Re-read the day and find the open "Eye Exam" slot at this time.
+        const slot = (await freeSlots(dateStr)).find((f) => f.start.getTime() === start.getTime());
+        if (!slot) return { conflict: true };
+        booking.end = slot.end;
+        // Conditional rename — fails if staff changed the slot since we read it.
+        const ok = await store.claim(slot, booking);
+        return ok ? { eventId: slot.id } : { conflict: true };
       });
+      daysCache.at = 0;
 
       if (result.conflict) {
         return res.status(409).json({ error: "Sorry — that time was just taken. Please pick another." });
@@ -661,7 +741,7 @@ function createBookingRouter() {
     if (!id || !tokenOk(id, req.query.token)) return res.status(403).json({ error: "Invalid link." });
     try {
       const b = await store.findByBookingId(id);
-      if (!b) return res.status(404).json({ error: "This appointment was already cancelled or not found." });
+      if (!b || isOpenTitle(b.title)) return res.status(404).json({ error: "This appointment was already cancelled or not found." });
       res.json({ id, start: b.start.toISOString(), when: longFmt.format(b.start), service: b.serviceLabel, name: b.name });
     } catch (e) {
       console.error("[booking/lookup]", e);
@@ -675,7 +755,12 @@ function createBookingRouter() {
     try {
       const b = await store.findByBookingId(id);
       if (!b) return res.status(404).json({ error: "This appointment was already cancelled or not found." });
-      await store.remove(b.eventId);
+      if (!/^\[WEB\]/i.test(b.title || "")) {
+        // Staff already edited this booking in the calendar — don't undo their change.
+        return res.status(409).json({ error: "This appointment was changed by the store. Please call us at " + STORE_PHONE + "." });
+      }
+      await store.release(b.eventId);
+      daysCache.at = 0;
       console.log("[booking] cancelled", id);
       if (NOTIFY_EMAIL) {
         const t = "Cancelled by customer: " + b.name + " — " + longFmt.format(b.start);
@@ -695,11 +780,11 @@ function bookingStatusLine() {
   if (useGoogle && !BOOKING_SECRET) return "OFF — Google Calendar set but BOOKING_SECRET missing";
   if (useGoogle) return "Google Calendar (" + CALENDAR_ID + ")";
   if (!BOOKING_ENABLED) return "OFF (page shows 'call us') — set GOOGLE_CALENDAR_ID + service account + BOOKING_SECRET";
-  return "LOCAL DEV FILE (" + path.basename(DEV_FILE) + ") — set GOOGLE_CALENDAR_ID + service account for real calendar";
+  return "LOCAL DEV (simulated 'Eye Exam' slots in " + path.basename(DEV_FILE) + ")";
 }
 
 if (useGoogle && !BOOKING_SECRET) {
-  throw new Error("BOOKING_SECRET must be set when using Google Calendar (signs cancel links).");
+  console.error("[booking] BOOKING_SECRET is not set — online booking stays OFF (checkout is unaffected).");
 }
 
-module.exports = { createBookingRouter, bookingStatusLine, _test: { candidateSlots, zonedToUtc } };
+module.exports = { createBookingRouter, bookingStatusLine, _test: { candidateSlots, zonedToUtc, openSlotsFrom, isOpenTitle } };
