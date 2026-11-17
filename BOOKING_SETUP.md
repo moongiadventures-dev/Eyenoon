@@ -1,85 +1,71 @@
 # Eye exam booking — setup & staff rules
 
-Online booking at `book.html` writes straight into the store's Google Calendar.
-The calendar is the single booking ledger: phone staff (Philippines) add
-bookings there by hand, the website reads it before offering times.
+Online booking at `book.html` uses the store's existing Google Calendar
+(**eyenoonoptical@gmail.com**, the "Stacy w Lee" calendar), the same one phone
+staff already use. Until it's connected on Render, the page shows
+"Online booking opens soon — call us".
 
-Until the steps below are done, the API runs on a local test file
-(`server/.bookings-dev.json`), so the page works for testing but nothing
-reaches a real calendar.
+## How it works (same as the staff already do it)
+
+- Every bookable exam time is a 30-min event titled **`Eye Exam`** = an open slot.
+- The website offers **only** those `Eye Exam` slots (capital letters don't matter).
+- A web booking **renames** that slot to `[WEB] Name / Phone / Service` (green) and
+  puts the email/notes in the description.
+- If the customer cancels from their email link, it turns back into `Eye Exam`.
+- So **staff decide the days and hours** just by which `Eye Exam` slots exist.
 
 ---
 
-## 1. Connect the store calendar (one time, ~20 min)
+## 1. Connection (done once)
 
-1. **Pick the calendar.** Use a dedicated calendar such as "EYE:NOON Exams"
-   in the store's Google account (Google Calendar → Other calendars → + → Create new calendar).
-   Settings → *Time zone* → **(GMT-08:00) Pacific Time – Los Angeles**.
-2. **Google Cloud.** https://console.cloud.google.com → new project "eyenoon-booking"
-   → APIs & Services → Library → enable **Google Calendar API**.
-3. **Service account.** IAM & Admin → Service accounts → Create
-   (`eyenoon-booking`). Open it → Keys → Add key → JSON. Download the file.
-4. **Share the calendar** with the service account's email
-   (`…@eyenoon-booking.iam.gserviceaccount.com`):
-   Calendar settings → *Share with specific people* → **Make changes to events**.
-5. **Calendar ID.** Calendar settings → *Integrate calendar* → Calendar ID
-   (looks like `abc123@group.calendar.google.com`).
-6. **Render env vars** on the API service:
+- Service account (robot): `eyenoon-booking@eyenoon-booking.iam.gserviceaccount.com`
+  (Google Cloud project `eyenoon-booking`, Calendar API on, JSON key downloaded).
+- The "Stacy w Lee" calendar is shared with the robot:
+  **Make changes and see all event details**.
+- Render env vars on the API service (`eyenoon-api`):
 
-   | Var | Value |
-   |---|---|
-   | `GOOGLE_CALENDAR_ID` | the Calendar ID from step 5 |
-   | `GOOGLE_SERVICE_ACCOUNT_JSON` | the whole JSON key file content (paste as one value) |
-   | `BOOKING_SECRET` | any long random string (signs cancel links) — e.g. `openssl rand -hex 32` |
-   | `BOOKING_NOTIFY_EMAIL` | store inbox that gets a copy of each web booking/cancel (optional) |
-   | `PUBLIC_SITE_URL` | the live site URL (cancel links point to `<this>/book.html`) |
-   | `RESEND_API_KEY` / `FROM_EMAIL` | already used for order receipts; booking emails reuse them |
+  | Var | Value |
+  |---|---|
+  | `GOOGLE_CALENDAR_ID` | `eyenoonoptical@gmail.com` |
+  | `GOOGLE_SERVICE_ACCOUNT_JSON` | the whole JSON key file content (paste as one value) |
+  | `BOOKING_SECRET` | any long random string (Render → Generate) — signs cancel links |
+  | `BOOKING_NOTIFY_EMAIL` | optional: store inbox that gets a copy of each web booking/cancel |
+  | `PUBLIC_SITE_URL` | `https://eyenoonoptical.com` (cancel links point to `<this>/book.html`) |
 
-   On start the API logs `Booking : Google Calendar (<id>)` when connected.
+  On start the API logs `Booking : Google Calendar (eyenoonoptical@gmail.com)`.
+  If something is missing it logs `Booking : OFF …` and checkout keeps working.
 
-### Optional tuning (env vars, defaults shown)
-
-| Var | Default | Meaning |
-|---|---|---|
-| `BOOKING_HOURS_JSON` | `{"1":"10:00-18:00","3":"10:00-18:00","5":"10:00-18:00","6":"10:00-18:00"}` | Exam hours per weekday (0=Sun). Lunch break: `"10:00-13:00,14:00-18:00"` |
-| `BOOKING_SLOT_MINUTES` | `30` | Length of one exam slot |
-| `BOOKING_MIN_NOTICE_MINUTES` | `120` | How soon the next bookable slot is |
-| `BOOKING_DAYS_AHEAD` | `60` | How far ahead customers can book |
+Optional: `BOOKING_MIN_NOTICE_MINUTES` (default 120 — how soon the next bookable
+slot is), `BOOKING_DAYS_AHEAD` (default 60).
 
 ---
 
 ## 2. Rules for phone staff (send this to the team)
 
-1. **Your Google Calendar must be set to Los Angeles time.**
-   Settings → General → Time zone → *Primary time zone: (GMT-08:00) Pacific Time – Los Angeles*.
-   (Add Manila as a secondary time zone if helpful.) If this is wrong,
-   bookings land 15–16 hours off.
-2. **Anything on the exam calendar blocks that time on the website** — timed
-   events and all-day events alike. So:
-   - Phone booking → create an event for the exam time.
-   - Day off / lunch / doctor out → create a "Closed" event (all-day or timed).
-3. **Title format for phone bookings:** `[PHONE] Name / Phone / Service`
-   (web bookings show up as `[WEB] Name / Phone / Service`, in green).
-4. **To cancel or move a web booking,** edit or delete the event in the calendar.
-   The freed time reopens on the website right away.
-5. Don't put medical/prescription details in event titles or descriptions.
-
----
+1. Keep doing what you do: open times are events called **`Eye Exam`**.
+   To book a phone patient, **rename** the `Eye Exam` slot to the patient's name.
+2. **Don't create a second event on top of an `Eye Exam` slot** — rename the slot
+   instead. (If you do stack one, the website treats the time as taken.)
+3. Web bookings appear as **`[WEB] Name / Phone / Service`** in green.
+   To cancel or move one, edit it like any other booking. To free the time again,
+   rename it back to `Eye Exam`.
+4. Days off / doctor out: delete those `Eye Exam` slots, or add an all-day
+   "Closed" event — anything that isn't titled `Eye Exam` blocks the time.
+5. Calendar time zone must be **Los Angeles** (Settings → General → Time zone).
+6. Don't put medical/prescription details in event titles or descriptions.
 
 ## 3. How double-booking is prevented
 
-- The website only offers times that have nothing on the calendar.
-- Right before saving, the API re-reads the calendar (with a per-slot lock).
-- After saving, it reads the slot again; if a phone booking landed in the same
-  second, the web booking is removed and the customer is asked to pick another
-  time. **The phone booking always wins.**
+The website renames a slot only if it is still exactly the `Eye Exam` event it
+just read (Google's If-Match/etag check). If staff renamed it a second earlier,
+Google refuses, and the customer is asked to pick another time. **Staff always win.**
 
 ## 4. Local testing
 
 ```bash
-cd server && npm start          # API on :4242, uses .bookings-dev.json
+cd server && npm start          # API on :4242 — simulates Wed/Fri/Sat 9:30–17:30 "Eye Exam" slots
 py -3 -m http.server 8765       # in Website/, then open http://127.0.0.1:8765/book.html
 ```
 (Set `ALLOWED_ORIGIN=http://127.0.0.1:8765` for the API when testing this way.)
-To simulate a phone booking, add an entry to `server/.bookings-dev.json`:
-`{ "id": "p1", "start": "2026-11-16T18:00:00.000Z", "end": "2026-11-16T18:30:00.000Z" }`
+To simulate staff booking a slot by phone, put this in `server/.bookings-dev.json`:
+`{ "ph_2026-11-18T18:00:00.000Z": { "title": "Jane Doe", "v": 1 } }`
